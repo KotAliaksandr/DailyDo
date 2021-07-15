@@ -9,6 +9,9 @@
             rel="stylesheet"
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
             crossorigin="anonymous">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
         <title>Daily Do</title>
     </head>
     <body>
@@ -22,41 +25,72 @@
                         <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                             Sign up
                         </button>
-                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title" id="staticBackdropLabel">Sign up</h1>
-                                        <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form class="sign_up__form">
-                                            <div class="mb-3">
-                                                <label for="name" class="form-label">Name</label>
-                                                <input type="text" class="form-control" id="name" >
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="surname" class="form-label">Surname</label>
-                                                <input type="text" class="form-control" id="surname" >
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="birth" class="form-label">Birth date</label>
-                                                <input type="date" class="form-control" id="birth" >
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="email" class="form-label">Email address</label>
-                                                <input type="email" class="form-control" id="email" >
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="password" class="form-label">Password</label>
-                                                <input type="password" class="form-control" id="password">
-                                            </div>
-                                            <button type="submit" class="btn btn-warning">Submit</button>
-                                        </form>
-                                    </div>
-                                </div>
+                    </div>
+                    <div class="fatherDaily__Header__btnRegistration__signIn">
+                        <button class="btn btn-warning" id="modalSignInBtn">
+                            Sign in
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sign Up Modal Window -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+            <div class="modal-dialog animate__animated animate__bounceInDown">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title" id="staticBackdropLabel">Sign up</h1>
+                        <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" >
                             </div>
-                        </div>
+                            <div class="mb-3">
+                                <label for="surname" class="form-label">Surname</label>
+                                <input type="text" class="form-control" id="surname" >
+                            </div>
+                            <div class="mb-3">
+                                <label for="birth" class="form-label">Birth date</label>
+                                <input type="date" class="form-control" id="birth" >
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="email" >
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password">
+                            </div>
+                            <button type="submit" class="btn btn-warning">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sign in Modal Window -->
+        <div class="modalSignIn">
+            <div class="modal-overlay" id="modalWindowSignIn">
+                <div class="modal-window animate__animated animate__bounceInDown">
+                    <div class="modal-header">
+                        <span class="modal-title">Sign in</span>
+                        <button class="btn-close" id="closeWindowSignIn"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="email" >
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password">
+                            </div>
+                            <button type="submit" class="btn btn-warning">Submit</button>
+                        </form>
                     </div>
                 </div>
             </div>

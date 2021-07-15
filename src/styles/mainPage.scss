@@ -20,14 +20,10 @@
         &__btnRegistration {
             margin: 5vh 5vw;
 
-            button, input, label, h1 {
-                font-size: 3vh;
-            }
-
-            .modal-dialog {
-                max-width: 40vw;
-                margin-left: 30vw;
-                margin-right: 30vw;
+            button {
+                font-size: 2vh;
+                margin: 2px;
+                width: 10vw;
             }
         }
     }

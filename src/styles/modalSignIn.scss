@@ -1,0 +1,35 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .5);
+    display: none;
+
+    .modal-window {
+        width: 40vw;
+        border-radius: 5px;
+        background: #fff;
+        margin: 15vh auto;
+        height: 35vh;
+
+        .modal-header {
+            padding: 5px 10px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+
+            button, span {
+                font-size: 2vh;
+            }
+        }
+
+        .modal-body {
+
+            input, label, button {
+                font-size: 2vh;
+            }
+        }
+    }
+}
