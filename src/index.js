@@ -1,13 +1,10 @@
+import { showModalSignIn } from '../shared/modalSignIn';
+import { signInHandlers } from '../components/sign-in/sign-in';
+import { initApi } from '../api/api-handlers';
 import './styles/styles.scss';
 
-const modalSignInBtn = document.getElementById('modalSignInBtn');
-const modalWindowSignIn = document.getElementById('modalWindowSignIn');
-const closeWindowSignIn = document.getElementById('closeWindowSignIn');
+showModalSignIn();
 
-modalSignInBtn.onclick = () => {
-    modalWindowSignIn.style.display = 'block';
-};
+initApi();
 
-closeWindowSignIn.onclick = () => {
-    modalWindowSignIn.style.display = 'none';
-};
+signInHandlers();
