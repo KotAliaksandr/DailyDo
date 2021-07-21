@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Qahiri&family=Uchen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Otomanopee+One&family=Qahiri&family=Uchen&display=swap');
+
 .fatherDaily {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(to bottom, #ffff99 -14%, #ffff00 122%);
     padding: 5px;
+    background-color: rgb(238, 234, 234);
 
     &__Header {
         display: flex;
@@ -13,15 +16,29 @@
             margin: 2vh 5vw 1vh 40vw;
 
             h1 {
+                font-family: 'Otomanopee One', sans-serif;
                 font-size: 8vh;
-                color: rgb(201, 133, 6);
+                color: rgb(58, 54, 48);
             }
         }
 
         &__btnRegistration {
             margin: 5vh 5vw;
 
-            .btn-warning {
+            .btn-outline-dark {
+                font-size: 2vh;
+                margin: 2px;
+                width: 8vw;
+                height: auto;
+                padding: 1px;
+            }
+        }
+
+        &__btnLogOut {
+            margin: 5vh 5vw;
+            display: none;
+
+            .btn-outline-dark {
                 font-size: 2vh;
                 margin: 2px;
                 width: 8vw;
@@ -34,11 +51,12 @@
     &__descriptionDaily {
         margin: 5vh 10vw;
         padding: 1vh 1vw;
-        border: 2px solid darkgreen;
+        border: 2px solid rgb(0, 0, 0);
         border-radius: 20px;
+        font-family: 'Uchen', serif;
         font-size: 3vh;
         font-weight: bold;
-        color: rgb(128, 81, 27);
+        color: rgb(58, 54, 48);
 
         p {
             text-indent: 4vw;

@@ -12,3 +12,15 @@ export const showModalSignIn = () => {
         modalWindowSignIn.style.display = 'none';
     };
 };
+
+export const outModalSignIn = () => {
+    const modalWindowSignIn = document.getElementById('modalWindowSignIn');
+    modalWindowSignIn.style.display = 'none';
+};
+
+export const outModalSignUp = () => {
+    const modalWindowSignUp = document.getElementById('staticBackdrop');
+    const divBackDrop = document.querySelector('.modal-backdrop');
+    modalWindowSignUp.style.display = 'none';
+    divBackDrop.classList.remove('modal-backdrop');
+};

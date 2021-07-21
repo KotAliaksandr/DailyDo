@@ -14,7 +14,7 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
         <title>Daily Do</title>
     </head>
-    <body>
+    <body id="bodyHed">
         <div class="fatherDaily">
             <div class="fatherDaily__Header">
                 <div class="fatherDaily__Header__nameVeb">
@@ -22,18 +22,23 @@
                 </div>
                 <div class="fatherDaily__Header__btnRegistration">
                     <div class="fatherDaily__Header__btnRegistration__signUp">
-                        <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                             Sign up
                         </button>
                     </div>
                     <div class="fatherDaily__Header__btnRegistration__signIn">
-                        <button class="btn btn-warning" id="modalSignInBtn">
+                        <button class="btn btn-outline-dark" id="modalSignInBtn">
                             Sign in
                         </button>
                     </div>
                 </div>
+                <div class="fatherDaily__Header__btnLogOut">
+                    <button class="btn btn-outline-dark" id="btnLogOut">
+                        Log out
+                    </button>
+                </div>
             </div>
-            <div class="fatherDaily__descriptionDaily">
+            <div class="fatherDaily__descriptionDaily" id="#descriptionDaily">
                 <p>Ultimate daily planner with Calendar, Planner, Reminder.</p>
                 <p>
                     You can run through your daily to-do's and prioritize them so that
@@ -60,7 +65,7 @@
                         <form class="formSignUp">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" >
+                                <input type="text" class="form-control" id="userName" >
                             </div>
                             <div class="mb-3">
                                 <label for="surname" class="form-label">Surname</label>
@@ -78,7 +83,7 @@
                                 <label for="password" class="form-label">Password</label>
                                 <input type="password" class="form-control" id="passwordSignUp">
                             </div>
-                            <button type="submit" class="btn btn-warning">Submit</button>
+                            <button type="submit" class="btn btn-dark">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -103,7 +108,7 @@
                                 <label for="password" class="form-label">Password</label>
                                 <input type="password" class="form-control" id="password">
                             </div>
-                            <button type="submit" class="btn btn-warning">Submit</button>
+                            <button type="submit" class="btn btn-dark">Login</button>
                         </form>
                     </div>
                 </div>
