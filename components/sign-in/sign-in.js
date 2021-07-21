@@ -1,4 +1,5 @@
 import { signIn } from "../../api/api-handlers";
+import { setToken } from "../../shared/ls-service";
 
 export const signInHandlers = () => {
     const formSignIn = document.querySelector('.formSignIn');
@@ -9,6 +10,12 @@ export const signInHandlers = () => {
         const password = document.getElementById('password').value;
 
         signIn(email,password)
-            .then(result => console.log(result))
+            .then(response => {
+                if (response) {
+                    const { idToken: token } = response.data;
+                    setToken(token);
+                }
+            })
+            .then( () => window.location.reload());
     });
 };

@@ -8,17 +8,18 @@
     display: none;
 
     .modal-window {
-        width: 40vw;
+        width: 50vw;
         border-radius: 5px;
         background: #fff;
         margin: 15vh auto;
-        height: 35vh;
+        height: auto;
 
         .modal-header {
-            padding: 5px 10px;
+            padding: 10px;
             display: flex;
             justify-content: space-between;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid rgb(114, 110, 110);
+            font-weight: bold;
 
             button, span {
                 font-size: 2vh;
@@ -29,6 +30,10 @@
 
             input, label, button {
                 font-size: 2vh;
+            }
+
+            input {
+                border-color: black;
             }
         }
     }
