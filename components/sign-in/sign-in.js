@@ -1,5 +1,7 @@
 import { signIn } from "../../api/api-handlers";
 import { setToken } from "../../shared/ls-service";
+import { userAccountLogin } from "../../DOM/accountUser";
+import { outModalSignIn } from "../../shared/modalWindow";
 
 export const signInHandlers = () => {
     const formSignIn = document.querySelector('.formSignIn');
@@ -16,6 +18,7 @@ export const signInHandlers = () => {
                     setToken(token);
                 }
             })
-            .then( () => window.location.reload());
+            .then( () => userAccountLogin())
+            .then( () => outModalSignIn());
     });
 };

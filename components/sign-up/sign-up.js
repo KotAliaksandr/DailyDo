@@ -1,5 +1,7 @@
 import { signUp } from "../../api/api-handlers";
 import { setToken, setUserEmail } from "../../shared/ls-service";
+import { userAccountLogin } from "../../DOM/accountUser";
+import { outModalSignUp } from "../../shared/modalWindow";
 
 export const signUpHandlers = () => {
     const formSignUp = document.querySelector('.formSignUp');
@@ -21,9 +23,9 @@ export const signUpHandlers = () => {
 
                     setToken(token);
                     setUserEmail(email);
-                    console.log(response);
                 };
             })
-            .then( () => window.location.reload());
+            .then( () => userAccountLogin())
+            .then( () => outModalSignUp());
     });
 };
