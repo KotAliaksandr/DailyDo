@@ -3,13 +3,13 @@ import { setToken } from "../../shared/ls-service";
 import { userAccountLogin } from "../../DOM/accountUser";
 import { outModalSignIn } from "../../shared/modalWindow";
 import { passwordLengthValidation, emailValidation } from "../../shared/validation";
-import { showNotFoundUserError } from '../../shared/help-user';
 import {
     showErrorMesagePasswordLength,
     hideErrorMesagePasswordLength,
     showEmailErrorMesage,
-    hideEmailErrorMesage
-} from "../../shared/help-user";
+    hideEmailErrorMesage,
+    showNotFoundUserError
+} from "../../shared/helpUserSignIn";
 
 export const signInHandlers = () => {
     const formSignIn = document.querySelector('.formSignIn');
