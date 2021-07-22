@@ -22,7 +22,7 @@
                 </div>
                 <div class="fatherDaily__Header__btnRegistration">
                     <div class="fatherDaily__Header__btnRegistration__signUp">
-                        <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <button class="btn btn-outline-dark" id="modalSignUpBtn">
                             Sign up
                         </button>
                     </div>
@@ -68,37 +68,35 @@
             </div>
         </div>
         <!-- Sign Up Modal Window -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
-            <div class="modal-dialog animate__animated animate__bounceInDown">
-                <div class="modal-content">
+        <div class="modalSignUp">
+            <div class="modal-overlay" id="modalWindowSignUp">
+                <div class="modal-window animate__animated animate__bounceInDown">
                     <div class="modal-header">
-                        <h1 class="modal-title" id="staticBackdropLabel">Sign up</h1>
-                        <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <span class="modal-title">Sign Up</span>
+                        <button class="btn-close" id="closeWindowSignUp"></button>
                     </div>
                     <div class="modal-body">
                         <form class="formSignUp">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
                                 <input type="text" class="form-control" id="userName" >
-                            </div>
-                            <div class="mb-3">
-                                <label for="surname" class="form-label">Surname</label>
-                                <input type="text" class="form-control" id="surname" >
-                            </div>
-                            <div class="mb-3">
-                                <label for="birth" class="form-label">Birth date</label>
-                                <input type="date" class="form-control" id="birth" >
+                                <p class="errorInput" id="userNameInValid"></p>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email address</label>
                                 <input type="email" class="form-control" id="emailSignUp" >
+                                <p class="errorInput" id="emailSignUpInValid"></p>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
                                 <input type="password" class="form-control" id="passwordSignUp">
+                                <p class="errorInput" id="passwordSignUpInValid"></p>
                             </div>
-                            <button type="submit" class="btn btn-dark">Submit</button>
+                            <button type="submit" class="btn btn-dark" id="submitFormSignUp">Submit</button>
                         </form>
+                        <div class="mb-3">
+                            <p class="notFoundUser" id="errorSignUpSubmit"></p>
+                        </div>
                     </div>
                 </div>
             </div>
