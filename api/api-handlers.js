@@ -13,8 +13,7 @@ export const signIn = (email, password) => {
         password,
         returnSecureToken: true
     })
-        .then(response => response)
-        .catch(err => console.log(err))
+        .then(response => response);
 };
 
 export const signUp = async (email, password) => {

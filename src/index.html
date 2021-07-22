@@ -38,19 +38,33 @@
                     </button>
                 </div>
             </div>
+            <div class="fatherDaily__headerUserAccount">
+                <div class="fatherDaily__headerUserAccount__forImgUser">
+                    <img>
+                </div>
+                <div class="fatherDaily__headerUseraccount__forFullNameUser">
+                    <p id="userNameForAccount"></p>
+                    <p id="userSurnameForAccount"></p>
+                </div>
+            </div>
             <div class="fatherDaily__descriptionDaily" id="#descriptionDaily">
-                <p>Ultimate daily planner with Calendar, Planner, Reminder.</p>
+                <p>Daily planner with Calendar.</p>
                 <p>
-                    You can run through your daily to-do's and prioritize them so that
-                    to focus on what's really matter. As people are constantly evaluating
-                    what they are spending time on DailyDo Application will help to save
-                    time and focus on critical aims.
+                    You can run through your daily to-do's and prioritize
+                    them so that to focus on what's really matter.
                 </p>
                 <p>
-                    You can add today's, weekly, monthly and yearly tasks and decide whether
-                    to reschedule them, mark as done or delete completely.
+                    As people are constantly evaluating what they are spending time on
+                    DailyDo Application will help to save time and focus on critical aims.
                 </p>
-                <p>All in all the Application shall contribute to achieving the goals</p>
+                <p>
+                    You can add today's, weekly, monthly and yearly
+                    tasks and mark as done or delete completely.
+                </p>
+                <p>
+                    All in all the Application shall contribute to
+                    achieving the goals.
+                </p>
             </div>
         </div>
         <!-- Sign Up Modal Window -->
@@ -100,16 +114,20 @@
                     <div class="modal-body">
                         <form class="formSignIn">
                             <div class="mb-3">
-                            <div class="mb-3">
                                 <label for="email" class="form-label">Email address</label>
                                 <input type="email" class="form-control" id="email" >
+                                <p class="errorInput" id="emailError"></p>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
                                 <input type="password" class="form-control" id="password">
+                                <p class="errorInput" id="passwordLengthError"></p>
                             </div>
-                            <button type="submit" class="btn btn-dark">Login</button>
+                            <button type="submit" class="btn btn-dark" id="btnForLogin">Login</button>
                         </form>
+                        <div class="mb-3">
+                            <p class="notFoundUser" id="notFoundUserError"></p>
+                        </div>
                     </div>
                 </div>
             </div>

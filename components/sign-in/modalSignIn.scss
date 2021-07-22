@@ -27,12 +27,13 @@
         }
 
         .modal-body {
+            height: auto;
 
             input, label, button {
                 font-size: 2vh;
             }
 
-            input {
+            .form-control {
                 border-color: black;
             }
         }

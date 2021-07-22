@@ -1,0 +1,24 @@
+.errorInput {
+    color: brown;
+    display: none;
+    position: absolute;
+}
+
+.mb-3 {
+    margin-bottom: 5vh !important;
+    position: relative;
+}
+
+.inValid {
+    border: 1px solid brown;
+}
+
+.notFoundUser {
+    color: white;
+    display: none;
+    position: absolute;
+    background-color: brown;
+    margin-left: 15vw;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
