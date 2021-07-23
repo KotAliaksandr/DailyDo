@@ -1,0 +1,97 @@
+.fatherDaily {
+
+    &__containerForCalendar {
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+        display: none;
+        width: 60vw;
+        margin: auto;
+
+        &__calendar {
+            width: 100%;
+
+            .month {
+                margin: 0;
+                padding: 3rem 2rem 2rem;
+                background: #555555;
+                text-align: center;
+                width: 100%;
+                color: #ffffff;
+                list-style: none;
+
+                li {
+                    padding: 0;
+                    margin: 0;
+                    font-size: 1.5rem;
+                    line-height: 1.4;
+                    letter-spacing: 0.1rem;
+                    text-transform: uppercase;
+                    font-weight: 700;
+
+                }
+
+                .prev, .next {
+                    cursor: pointer;
+                }
+
+                .prev {
+                    float: left;
+                }
+
+                .next {
+                    float: right;
+                }
+
+                .year-name {
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                }
+            }
+
+            .weekdays {
+                margin: 0;
+                padding: 1rem 0;
+                background-color: #dddddd;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: left;
+
+                li {
+                    display: inline-block;
+                    flex: 0 0 calc(100% / 7);
+                    text-align: center;
+                }
+            }
+
+            .days {
+                margin: 0;
+                padding: 1rem 0;
+                background-color: white;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: left;
+                align-content: flex-start;
+                height: 14rem;
+
+                li {
+                    padding: 0.5rem;
+                    list-style: none;
+                    display: inline-block;
+                    flex: 0 0 calc(100% / 7);
+                    text-align: center;
+                    color: #999;
+                    font-size: 0.9rem;
+                    line-height: 1rem;
+
+                    .date-now{
+                        color: #000;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+}
