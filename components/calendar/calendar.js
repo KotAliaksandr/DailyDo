@@ -44,7 +44,7 @@ export const workCalendar = () => {
     setMonthCalendar(nowYear,nowMonth);
 
     prev.onclick = () => {
-        const curDate = new Date(yearContainer.textContent,monthName.indexOf(monthContainer.textContent));
+        let curDate = new Date(yearContainer.textContent,monthName.indexOf(monthContainer.textContent));
         curDate.setMonth(curDate.getMonth() - 1);
         const curYear = curDate.getFullYear();
         const curMonth = curDate.getMonth();
@@ -53,7 +53,7 @@ export const workCalendar = () => {
     };
 
     next.onclick = () => {
-        const curDate = new Date(yearContainer.textContent,monthName.indexOf(monthContainer.textContent));
+        let curDate = new Date(yearContainer.textContent,monthName.indexOf(monthContainer.textContent));
         curDate.setMonth(curDate.getMonth() + 1);
         const curYear = curDate.getFullYear();
         const curMonth = curDate.getMonth();

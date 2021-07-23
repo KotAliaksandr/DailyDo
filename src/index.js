@@ -25,7 +25,7 @@ window.onload = () => {
             showModalSignUp();
             signUpHandlers();
         };
-    }  workCalendar();
+    } workCalendar();
 
     btnLogOut.onfocus = () => logOut();
 };
