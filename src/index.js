@@ -13,19 +13,19 @@ window.onload = () => {
     const btnLogOut = document.getElementById('btnLogOut');
     const tokenUsers = getToken();
 
-    if (!tokenUsers) {
-        initApi();
+    initApi();
 
-        modalSignInBtn.onfocus = () => {
-            showModalSignIn();
-            signInHandlers();
-        };
+    modalSignInBtn.onfocus = () => {
+        showModalSignIn();
+        signInHandlers();
+    };
 
-        modalSignUpBtn.onfocus = () => {
-            showModalSignUp();
-            signUpHandlers();
-        };
-    } workCalendar();
+    modalSignUpBtn.onfocus = () => {
+        showModalSignUp();
+        signUpHandlers();
+    };
+
+    workCalendar();
 
     btnLogOut.onfocus = () => logOut();
 };
