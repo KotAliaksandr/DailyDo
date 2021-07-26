@@ -1,6 +1,6 @@
-export const showModalSignIn = () => {
+import { modalSignInBtn, modalSignUpBtn } from "./constants/domConst";
 
-    const modalSignInBtn = document.getElementById('modalSignInBtn');
+export const showModalSignIn = () => {
     const modalWindowSignIn = document.getElementById('modalWindowSignIn');
     const closeWindowSignIn = document.getElementById('closeWindowSignIn');
 
@@ -14,7 +14,6 @@ export const showModalSignIn = () => {
 };
 
 export const showModalSignUp = () => {
-    const modalSignUpBtn = document.getElementById('modalSignUpBtn');
     const modalWindowSignUp = document.getElementById('modalWindowSignUp');
     const closeWindowSignUp = document.getElementById('closeWindowSignUp');
 

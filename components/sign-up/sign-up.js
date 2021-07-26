@@ -1,7 +1,6 @@
 import { signUp } from "../../api/api-handlers";
-import { setToken, setUserEmail } from "../../shared/ls-service";
-import { userAccountLogin } from "../../DOM/accountUser";
-import { outModalSignUp } from "../../shared/modalWindow";
+import { setToken } from "../../shared/ls-service";
+import { routes } from "../../shared/constants/routes";
 import { passwordLengthValidation, emailValidation, userNameValidation } from "../../shared/validation";
 import {
     showMessageUserNameInValid,
@@ -10,7 +9,6 @@ import {
     hideMessageEmaiInValid,
     hideMessagePasswordInValid,
     hideMessageUserNameInValid,
-    showErrorSignUpSubmit
 } from "../../shared/helpUserSignUp.js";
 
 export const signUpHandlers = () => {
@@ -48,12 +46,9 @@ export const signUpHandlers = () => {
                     const { email } = response.user;
 
                     setToken(token);
-                    setUserEmail(email);
+                    window.location.href = routes.mainPage;
                 };
             })
-            .catch(err => err)
-            .then( err => err ? showErrorSignUpSubmit(err) : outModalSignUp())
-            .then( () => userAccountLogin());
     });
 
     passwordInput.oninput = () => {
@@ -110,6 +105,8 @@ export const signUpHandlers = () => {
 
     const checkValidityFormSignUp = () => {
         const validityFormSignUp = Object.values(fieldsFormSignUp).every(value => value.isValid);
-        validityFormSignUp ? submitFormSignUp.removeAttribute('disabled') : submitFormSignUp.setAttribute('disabled', true);
+        validityFormSignUp ?
+            submitFormSignUp.removeAttribute('disabled') :
+            submitFormSignUp.setAttribute('disabled', true);
     };
 };

@@ -1,14 +1,12 @@
 import { signIn } from "../../api/api-handlers";
 import { setToken } from "../../shared/ls-service";
-import { userAccountLogin } from "../../DOM/accountUser";
-import { outModalSignIn } from "../../shared/modalWindow";
+import { routes } from "../../shared/constants/routes";
 import { passwordLengthValidation, emailValidation } from "../../shared/validation";
 import {
     showErrorMesagePasswordLength,
     hideErrorMesagePasswordLength,
     showEmailErrorMesage,
     hideEmailErrorMesage,
-    showNotFoundUserError
 } from "../../shared/helpUserSignIn";
 
 export const signInHandlers = () => {
@@ -38,18 +36,16 @@ export const signInHandlers = () => {
                 if (response) {
                     const { idToken: token } = response.data;
                     setToken(token);
+                    window.location.href = routes.mainPage;
                 };
             })
-            .catch(err => err)
-            .then( err => err ? showNotFoundUserError(err) : outModalSignIn())
-            .then( () => userAccountLogin());
     });
 
     passwordInput.oninput = () => {
         if (passwordLengthValidation(passwordInput.value)) {
             fieldsForm.password.isValid = true;
             hideErrorMesagePasswordLength();
-            passwordInput.style.borderColor = 'black'
+            passwordInput.style.borderColor = 'green';
         } else {
             fieldsForm.password.isValid = false;
             passwordInput.style.borderColor = 'brown';
@@ -67,7 +63,7 @@ export const signInHandlers = () => {
         if (emailValidation(emailInput.value)) {
             fieldsForm.email.isValid = true;
             hideEmailErrorMesage();
-            emailInput.style.borderColor = 'black'
+            emailInput.style.borderColor = 'green'
         } else {
             fieldsForm.email.isValid = false;
             emailInput.style.borderColor = 'brown';

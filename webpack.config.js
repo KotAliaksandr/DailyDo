@@ -11,6 +11,11 @@ module.exports = {
         new HTMLWebpackPlugin({
             filename: 'index.html',
             template: './src/index.html'
+        }),
+
+        new HTMLWebpackPlugin ({
+            filename: 'registration.html',
+            template: './src/registration.html'
         })
     ],
     module: {
@@ -29,6 +34,10 @@ module.exports = {
                         }
                     }
                 ]
+            },
+            {
+                test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+                type: 'asset/resource',
             }
         ]
     },

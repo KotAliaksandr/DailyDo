@@ -20,18 +20,6 @@
                 <div class="fatherDaily__Header__nameVeb">
                     <h1>DailyDo</h1>
                 </div>
-                <div class="fatherDaily__Header__btnRegistration">
-                    <div class="fatherDaily__Header__btnRegistration__signUp">
-                        <button class="btn btn-outline-dark" id="modalSignUpBtn">
-                            Sign up
-                        </button>
-                    </div>
-                    <div class="fatherDaily__Header__btnRegistration__signIn">
-                        <button class="btn btn-outline-dark" id="modalSignInBtn">
-                            Sign in
-                        </button>
-                    </div>
-                </div>
                 <div class="fatherDaily__Header__btnLogOut">
                     <button class="btn btn-outline-dark" id="btnLogOut">
                         Log out
@@ -48,22 +36,6 @@
             </div>
             <div class="fatherDaily__descriptionDaily" id="#descriptionDaily">
                 <p>Daily planner with Calendar.</p>
-                <p>
-                    You can run through your daily to-do's and prioritize
-                    them so that to focus on what's really matter.
-                </p>
-                <p>
-                    As people are constantly evaluating what they are spending time on
-                    DailyDo Application will help to save time and focus on critical aims.
-                </p>
-                <p>
-                    You can add today's, weekly, monthly and yearly
-                    tasks and mark as done or delete completely.
-                </p>
-                <p>
-                    All in all the Application shall contribute to
-                    achieving the goals.
-                </p>
             </div>
             <div class="fatherDaily__containerForCalendar">
                 <div class="fatherDaily__containerForCalendar__calendar" id="month-calendar">
@@ -83,69 +55,6 @@
                         <li>Sunday</li>
                     </ul>
                     <ul class="days"></ul>
-                </div>
-            </div>
-        </div>
-        <!-- Sign Up Modal Window -->
-        <div class="modalSignUp">
-            <div class="modal-overlay" id="modalWindowSignUp">
-                <div class="modal-window animate__animated animate__bounceInDown">
-                    <div class="modal-header">
-                        <span class="modal-title">Sign Up</span>
-                        <button class="btn-close" id="closeWindowSignUp"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form class="formSignUp">
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="userName" >
-                                <p class="errorInput" id="userNameInValid"></p>
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="emailSignUp" >
-                                <p class="errorInput" id="emailSignUpInValid"></p>
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="passwordSignUp">
-                                <p class="errorInput" id="passwordSignUpInValid"></p>
-                            </div>
-                            <button type="submit" class="btn btn-dark" id="submitFormSignUp">Submit</button>
-                        </form>
-                        <div class="mb-3">
-                            <p class="notFoundUser" id="errorSignUpSubmit"></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Sign in Modal Window -->
-        <div class="modalSignIn">
-            <div class="modal-overlay" id="modalWindowSignIn">
-                <div class="modal-window animate__animated animate__bounceInDown">
-                    <div class="modal-header">
-                        <span class="modal-title">Sign in</span>
-                        <button class="btn-close" id="closeWindowSignIn"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form class="formSignIn">
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="email" >
-                                <p class="errorInput" id="emailError"></p>
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password">
-                                <p class="errorInput" id="passwordLengthError"></p>
-                            </div>
-                            <button type="submit" class="btn btn-dark" id="btnForLogin">Login</button>
-                        </form>
-                        <div class="mb-3">
-                            <p class="notFoundUser" id="notFoundUserError"></p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

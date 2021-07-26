@@ -48,7 +48,6 @@ export const workCalendar = () => {
         curDate.setMonth(curDate.getMonth() - 1);
         const curYear = curDate.getFullYear();
         const curMonth = curDate.getMonth();
-
         setMonthCalendar(curYear,curMonth);
     };
 
@@ -57,7 +56,6 @@ export const workCalendar = () => {
         curDate.setMonth(curDate.getMonth() + 1);
         const curYear = curDate.getFullYear();
         const curMonth = curDate.getMonth();
-
         setMonthCalendar(curYear,curMonth);
     };
 };
