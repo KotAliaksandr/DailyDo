@@ -34,10 +34,8 @@
             </div>
         </div>
         <div class="descriptionDaily">
-            <div class="descriptionDaily__img">
-            </div>
-            <div class="descriptionDaily__container">
-                <div class="descriptionDaily__container__text">
+            <div class="descriptionDaily__img"></div>
+                <div class="descriptionDaily__container">
                     <p>
                         You can run through your daily To-Dos and set Reminder to focus
                         on what's reallymatter
@@ -50,38 +48,41 @@
                         All in all the DailyDo shall contribute to achieving your goals
                     </p>
                 </div>
-            </div>
         </div>
         <!-- Sign Up Modal Window -->
         <div class="modalSignUp">
             <div class="modal-overlay" id="modalWindowSignUp">
-                <div class="modal-window animate__animated animate__bounceInDown">
+                <div class="modal-window animate__animated animate__bounceInDown" id="WindowSignUpBody">
                     <div class="modal-header">
-                        <span class="modal-title">Sign Up</span>
                         <button class="btn-close" id="closeWindowSignUp"></button>
                     </div>
                     <div class="modal-body">
+                        <p class="modal-title">Sign Up</p>
                         <form class="formSignUp">
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="userName" >
-                                <p class="errorInput" id="userNameInValid"></p>
+                            <div class="forInputEndLabel">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="userName" >
+                                    <p class="errorInput" id="userNameInValid"></p>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">E-mail</label>
+                                    <input type="email" class="form-control" id="emailSignUp" >
+                                    <p class="errorInput" id="emailSignUpInValid"></p>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="passwordSignUp">
+                                    <p class="errorInput" id="passwordSignUpInValid"></p>
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="emailSignUp" >
-                                <p class="errorInput" id="emailSignUpInValid"></p>
+                            <div class="btnSubmit">
+                                <div class="divForErrorForm">
+                                    <p class="notFoundUser" id="errorSignUpSubmit"></p>
+                                </div>
+                                <button type="submit" id="submitFormSignUp">Submit</button>
                             </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="passwordSignUp">
-                                <p class="errorInput" id="passwordSignUpInValid"></p>
-                            </div>
-                            <button type="submit" class="btn btn-dark" id="submitFormSignUp">Submit</button>
                         </form>
-                        <div class="mb-3">
-                            <p class="notFoundUser" id="errorSignUpSubmit"></p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -89,7 +90,7 @@
         <!-- Sign in Modal Window -->
         <div class="modalSignIn">
             <div class="modal-overlay" id="modalWindowSignIn">
-                <div class="modal-window animate__animated animate__bounceInDown">
+                <div class="modal-window animate__animated animate__bounceInDown" id="WindowSignInBody">
                     <div class="modal-header">
                         <button class="btn-close" id="closeWindowSignIn"></button>
                     </div>
@@ -109,7 +110,7 @@
                                 </div>
                             </div>
                             <div class="btnSubmit">
-                                <div class="mb-3">
+                                <div class="divForErrorForm">
                                     <p class="notFoundUser" id="notFoundUserError"></p>
                                 </div>
                                 <button type="submit" id="btnForLogin">Submit</button>

@@ -1,17 +1,10 @@
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background: rgba(165, 162, 179, 0.5);
-    display: none;
 
-    #WindowSignInBody {
+    #WindowSignUpBody {
         width: 50vw;
         border-radius: 5px;
         background: #fff;
-        margin: 18vh auto;
+        margin: 10vh auto;
         height: auto;
         color: #4D5352;
         font-style: normal;
@@ -34,7 +27,7 @@
                 margin-bottom: 3vh;
             }
 
-            .formSignIn {
+            .formSignUp {
                 font-size: 3vh;
 
                 .forInputEndLabel {
@@ -68,7 +61,7 @@
                         font-weight: bold;
                     }
 
-                    #btnForLogin:hover {
+                    #submitFormSignUp:hover {
                         background: #c4cde4;;
                     }
                 }

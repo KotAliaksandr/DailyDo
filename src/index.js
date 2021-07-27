@@ -23,18 +23,12 @@ window.onload = () => {
             };
             break;
         case (paths.registration):
-            modalSignInBtn.onfocus = () => {
                 showModalSignIn();
                 signInHandlers();
-            };
-            modalSignUpBtn.onfocus = () => {
                 showModalSignUp();
                 signUpHandlers();
-            };
             break;
         default:
             break;
     };
-
-    console.log(window.location);
 };

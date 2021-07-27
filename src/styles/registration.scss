@@ -3,63 +3,59 @@
 
 .registrHeader {
     position: relative;
-    width: 100vw;
-    height: 50vh;
 
     &__nameVeb {
 
         h1 {
             position: absolute;
-            width: 356px;
-            height: 113px;
-            left: 542px;
-            top: 102px;
-            font-style: normal;
+            left: 38vw;
+            top: 9vh;
             font-weight: bold;
-            font-size: 96px;
-            line-height: 113px;
+            font-size: 6vw;
             color: #4D5352;
         }
 
         p {
             position: absolute;
-            width: 392px;
-            height: 56px;
-            left: 516px;
-            top: 242px;
-            font-style: normal;
+            width: 28vw;
+            left: 35vw;
+            top: 27vh;
             font-weight: bold;
-            font-size: 24px;
-            line-height: 28px;
+            font-size: 1.5vw;
+            line-height: 4vh;
             text-align: center;
             color: #4D5352;
         }
     }
 
     &__btnRegistration {
-        width: 100vw;
-        height: 50vh;
 
         #modalSignInBtn {
             position: absolute;
-            width: 137px;
-            height: 56px;
-            left: 1185px;
-            top: 130px;
+            width: 8vw;
+            height: 7vh;
+            left: 77vw;
+            top: 14vh;
             background: #D4DCF2;
             border-radius: 10px;
             border: none;
+            font-weight: bold;
+            color: #4D5352;
+            font-size: 3vh;
         }
 
         #modalSignUpBtn {
             position: absolute;
-            width: 137px;
-            height: 56px;
-            left: 1185px;
-            top: 222px;
+            width: 8vw;
+            height: 7vh;
+            left: 77vw;
+            top: 25vh;
             background: #D4DCF2;
             border-radius: 10px;
             border: none;
+            font-weight: bold;
+            color: #4D5352;
+            font-size: 3vh;
         }
 
         #modalSignUpBtn:hover, #modalSignInBtn:hover {
@@ -69,41 +65,34 @@
 }
 
 .descriptionDaily {
-    display: flex;
-    flex-direction: row;
 
     &__img {
         position: absolute;
-        width: 654px;
-        height: 518px;
-        left: 79px;
-        top: 357px;
+        width: 53vw;
+        height: 56vh;
+        left: 7vw;
+        top: 40vh;
         background-image: url(../../shared/img/imageForMainPage.JPG);
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
+        max-width: 800px;
     }
 
     &__container {
-        position: absolute;
-        width: 558px;
-        height: 409px;
-        left: 764px;
-        top: 398px;
-        background: #FFFFFF;
 
-        &__text {
-            position: absolute;
-            width: 501px;
-            height: 359px;
-            left: 28px;
-            top: 34px;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 24px;
-            line-height: 28px;
-            text-align: justify;
-            color: #4D5352;
+        position: absolute;
+        width: 31vw;
+        left: 53vw;
+        top: 49vh;
+        font-weight: bold;
+        font-size: 1.5vw;
+        line-height: 4vh;
+        text-align: justify;
+        color: #4D5352;
+
+        p {
+            margin-bottom: 3vh;
         }
     }
 }

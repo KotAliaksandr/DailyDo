@@ -55,7 +55,7 @@ export const signUpHandlers = () => {
         if (passwordLengthValidation(passwordInput.value)) {
             fieldsFormSignUp.password.isValid = true;
             hideMessagePasswordInValid();
-            passwordInput.style.borderColor = 'black'
+            passwordInput.style.borderColor = 'green'
         } else {
             fieldsFormSignUp.password.isValid = false;
             passwordInput.style.borderColor = 'brown';
@@ -73,7 +73,7 @@ export const signUpHandlers = () => {
         if (emailValidation(emailInput.value)) {
             fieldsFormSignUp.email.isValid = true;
             hideMessageEmaiInValid();
-            emailInput.style.borderColor = 'black'
+            emailInput.style.borderColor = 'green'
         } else {
             fieldsFormSignUp.email.isValid = false;
             emailInput.style.borderColor = 'brown';
@@ -90,7 +90,7 @@ export const signUpHandlers = () => {
         if (userNameValidation(userNameInput.value)) {
             fieldsFormSignUp.userName.isValid = true;
             hideMessageUserNameInValid();
-            userNameInput.style.borderColor = 'black'
+            userNameInput.style.borderColor = 'green'
         } else {
             fieldsFormSignUp.userName.isValid = false;
             userNameInput.style.borderColor = 'brown';
