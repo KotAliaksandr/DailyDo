@@ -1,15 +1,15 @@
+@import '../../src/styles/colors.scss';
+
 .modal-overlay {
 
     #WindowSignUpBody {
-        width: 50vw;
+        width: 40vw;
         border-radius: 5px;
-        background: #fff;
+        background: $colorWhite;
         margin: 10vh auto;
         height: auto;
-        color: #4D5352;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 3vh;
+        @extend %textTypeForElements;
+        font-size: 2vh;
 
         .modal-header {
             padding: 10px;
@@ -24,45 +24,46 @@
 
             .modal-title {
                 margin-left: 4vw;
-                margin-bottom: 3vh;
+                margin-bottom: 2vh;
             }
 
             .formSignUp {
-                font-size: 3vh;
+                font-size: 2vh;
 
                 .forInputEndLabel {
-                    width: 40vw;
+                    width: 30vw;
                     margin: auto;
-                    background-color: #D4DCF2;
+                    background-color: $mainColor;
                     padding: 2vh 4vw;
                     border-radius: 10px;
                     border: none;
 
                     input {
-                        font-size: 3vh;
+                        font-size: 2vh;
                         border-radius: 5px;
+                        border: none;
                     }
                 }
                 .btnSubmit {
-                    background-color: white;
+                    background-color: $colorWhite;
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
 
                     button {
                         padding: 1vh 1vw;
-                        font-size: 3vh;
+                        font-size: 2vh;
                         margin: 3vh 4vw 3vh 1vw;
                         width: auto;
                         height: auto;
-                        background: #D4DCF2;
+                        background: $mainColor;
                         border-radius: 5px;
                         border: none;
                         font-weight: bold;
                     }
 
                     #submitFormSignUp:hover {
-                        background: #c4cde4;;
+                        background: $hoverMainColor;
                     }
                 }
             }

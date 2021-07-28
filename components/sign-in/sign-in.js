@@ -45,7 +45,7 @@ export const signInHandlers = () => {
         if (passwordLengthValidation(passwordInput.value)) {
             fieldsForm.password.isValid = true;
             hideErrorMesagePasswordLength();
-            passwordInput.style.borderColor = 'green';
+            passwordInput.style.borderColor = 'white';
         } else {
             fieldsForm.password.isValid = false;
             passwordInput.style.borderColor = 'brown';
@@ -63,7 +63,7 @@ export const signInHandlers = () => {
         if (emailValidation(emailInput.value)) {
             fieldsForm.email.isValid = true;
             hideEmailErrorMesage();
-            emailInput.style.borderColor = 'green'
+            emailInput.style.borderColor = 'white'
         } else {
             fieldsForm.email.isValid = false;
             emailInput.style.borderColor = 'brown';

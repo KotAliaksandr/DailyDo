@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Qahiri&family=Uchen&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Otomanopee+One&family=Qahiri&family=Uchen&display=swap');
-@import './var.scss';
+@import '../../src/styles/colors.scss';
 
-.fatherDaily {
+.registrHeader {
     position: relative;
 
     &__nameVeb {
@@ -29,11 +29,20 @@
         }
     }
 
-    &__btnLogOut {
+    &__btnRegistration {
 
-        #btnLogOut {
+        #modalSignInBtn {
             top: 7vw;
             @extend %forBtnRegistration;
+        }
+
+        #modalSignUpBtn {
+            top: 13vw;
+            @extend %forBtnRegistration;
+        }
+
+        #modalSignUpBtn:hover, #modalSignInBtn:hover {
+            background: $hoverMainColor;
         }
     }
 }

@@ -1,0 +1,20 @@
+@import '../styles/colors.scss';
+
+%forBtnRegistration {
+    position: absolute;
+    width: 8vw;
+    height: 3.6vw;
+    left: 84vw;
+    background: $mainColor;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    color: $colorText;
+    font-size: 1.5vw;
+}
+
+%textTypeForElements {
+    color: $colorText;
+    font-style: normal;
+    font-weight: bold;
+}

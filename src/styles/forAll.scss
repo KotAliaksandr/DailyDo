@@ -1,5 +1,7 @@
+@import '../styles/colors.scss';
+
 .errorInput {
-    color: brown;
+    color: $colorError;
     display: none;
     position: absolute;
 }
@@ -13,7 +15,7 @@
         width: auto;
         margin-top: 1vh;
         font-size: 2vh;
-        background: rgba(211, 207, 230, 0.9);
+        background: $colorBackgroundForErrorMessage;
         border-radius: 5px;
         z-index: 1;
     }
@@ -25,9 +27,9 @@
 
     .notFoundUser {
         text-align: center;
-        color: white;
+        color: $colorWhite;
         display: none;
-        background-color: brown;
+        background-color: $colorError;
         padding: 5px 10px;
         border-radius: 3px;
         z-index: 1;

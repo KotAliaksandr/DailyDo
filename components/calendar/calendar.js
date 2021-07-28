@@ -14,12 +14,13 @@ export const workCalendar = () => {
         'July','August','September','October','November','December'
     ];
 
-    const setMonthCalendar = (year,month) => {
-        const monthDays = new Date(year, month + 1, 0).getDate();
-        const monthPrefix = new Date(year, month, 0).getDay();
+    const setMonthCalendar = (year, month) => {
+        const monthDays = new Date(year, month + 1, 0).getDate();//дата последнего дня текущего месяца
+        const monthPrefix = new Date(year, month, 0).getDay();//номер дня недели, которым заканчивается прошлый месяц
         let monthDaysText = '';
 
         monthContainer.textContent = monthName[month];
+        console.log(monthName[3]);
         yearContainer.textContent = year;
         daysContainer.innerHTML = '';
 
@@ -28,7 +29,7 @@ export const workCalendar = () => {
                 monthDaysText += '<li></li>';
             };
         };
-
+        // console.log(monthDaysText);
         for (let i = 1; i <= monthDays; i++){
             monthDaysText += '<li>' + i + '</li>';
         };

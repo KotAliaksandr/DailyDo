@@ -8,14 +8,14 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     plugins: [
-        new HTMLWebpackPlugin({
+        new HTMLWebpackPlugin ({
             filename: 'index.html',
             template: './src/index.html'
         }),
 
-        new HTMLWebpackPlugin ({
+        new HTMLWebpackPlugin({
             filename: 'registration.html',
-            template: './src/registration.html'
+            template: './components/registration/registration.html'
         })
     ],
     module: {

@@ -1,13 +1,15 @@
 .fatherDaily {
+    position: relative;
 
     &__containerForCalendar {
+        position: absolute;
         box-sizing: border-box;
-        font-family: "Roboto", sans-serif;
-        width: 60vw;
+        width: 42vw;
         margin: auto;
+        left: 25vw;
+        top: 40vw;
 
         &__calendar {
-            width: 100%;
 
             .month {
                 margin: 0;
@@ -15,17 +17,17 @@
                 background: #555555;
                 text-align: center;
                 width: 100%;
-                color: #ffffff;
+                color: white;
                 list-style: none;
 
                 li {
                     padding: 0;
                     margin: 0;
-                    font-size: 1.5rem;
-                    line-height: 1.4;
-                    letter-spacing: 0.1rem;
+                    font-size: 1.5vw;
+                    line-height: 1vw;
+                    letter-spacing: 0.1vw;
                     text-transform: uppercase;
-                    font-weight: 700;
+                    font-weight: bold;
 
                 }
 
@@ -42,16 +44,15 @@
                 }
 
                 .year-name {
-                    font-size: 1.2rem;
-                    font-weight: 400;
+                    font-size: 1.2vw;
+                    font-weight: bold;
                 }
             }
 
             .weekdays {
                 margin: 0;
-                padding: 1rem 0;
-                background-color: #dddddd;
-                width: 100%;
+                padding: 0;
+                background-color: white;
                 display: flex;
                 flex-direction: row;
                 flex-wrap: nowrap;
@@ -61,14 +62,16 @@
                     display: inline-block;
                     flex: 0 0 calc(100% / 7);
                     text-align: center;
+                    font-size: 1.2vw;
+                    margin: 0.1vw;
                 }
             }
 
             .days {
                 margin: 0;
                 padding: 1rem 0;
-                background-color: white;
-                width: 100%;
+                background-color: #D4DCF2;
+                width: 42vw;
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: left;
