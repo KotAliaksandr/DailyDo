@@ -48,7 +48,7 @@ export const signUpHandlers = () => {
                     setToken(token);
                     window.location.href = routes.mainPage;
                 };
-            })
+            });
     });
 
     passwordInput.oninput = () => {
