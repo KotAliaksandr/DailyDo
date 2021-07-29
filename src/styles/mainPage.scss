@@ -6,13 +6,13 @@
     &__btnLogOut {
 
         #btnLogOut {
-            top: 7vw;
+            top: 5vw;
             @extend %forBtnRegistration;
         }
 
         #btnBack {
             display: none;
-            top: 7vw;
+            top: 5vw;
             @extend %forBtnRegistration;
         }
 
@@ -30,7 +30,7 @@
         &__forImgUser {
             position: absolute;
             left: 4.5vw;
-            top: 7vw;
+            top: 5vw;
             width: 4.5vw;
             height: 4.5vw;
             border-radius: 50%;
@@ -44,7 +44,7 @@
                 margin-bottom: 0;
                 position: absolute;
                 left: 10.8vw;
-                top: 7vw;
+                top: 5vw;
                 font-size: 1.5vw;
                 color: $colorText;
                 font-weight: bold;
@@ -55,7 +55,7 @@
             #userNameForAccount {
                 position: absolute;
                 left: 10.8vw;
-                top: 9.5vw;
+                top: 7.5vw;
                 font-size: 1.5vw;
                 color: $colorText;
                 font-weight: bold;

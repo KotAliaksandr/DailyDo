@@ -6,14 +6,16 @@ export const workToDo = () => {
     const btnBack = document.getElementById('btnBack');
 
     BtnForShowToDoList.onclick = () => {
-        contentForUser.style.display = 'none';
+        contentForUser.classList.add('animate__animated', 'animate__backOutUp')
         btnLogOut.style.display = 'none';
         btnBack.style.display = 'block';
-        divToDoList.style.display = 'block';
+        setTimeout(() => {
+            divToDoList.style.display = 'block';
+        },300)
     };
 
     btnBack.onclick = () => {
-        contentForUser.style.display = 'block';
+        contentForUser.classList.remove('animate__animated', 'animate__backOutUp');
         btnLogOut.style.display = 'block';
         btnBack.style.display = 'none';
         divToDoList.style.display = 'none';
