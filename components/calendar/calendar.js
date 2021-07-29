@@ -1,6 +1,5 @@
 export const workCalendar = () => {
     const nowDate = new Date();
-    const nowDateNumber = nowDate.getDate();
     const nowMonth = nowDate.getMonth();
     const nowYear = nowDate.getFullYear();
     const container = document.getElementById('month-calendar');
@@ -20,7 +19,6 @@ export const workCalendar = () => {
         let monthDaysText = '';
 
         monthContainer.textContent = monthName[month];
-        console.log(monthName[3]);
         yearContainer.textContent = year;
         daysContainer.innerHTML = '';
 
@@ -29,17 +27,12 @@ export const workCalendar = () => {
                 monthDaysText += '<li></li>';
             };
         };
-        // console.log(monthDaysText);
+
         for (let i = 1; i <= monthDays; i++){
             monthDaysText += '<li>' + i + '</li>';
         };
 
         daysContainer.innerHTML = monthDaysText;
-
-        if (month == nowMonth && year == nowYear){
-            const days = daysContainer.getElementsByTagName('li');
-            days[monthPrefix + nowDateNumber - 1].classList.add('date-now');
-        };
     };
 
     setMonthCalendar(nowYear,nowMonth);

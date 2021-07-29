@@ -1,39 +1,144 @@
 @import url('https://fonts.googleapis.com/css2?family=Qahiri&family=Uchen&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Otomanopee+One&family=Qahiri&family=Uchen&display=swap');
-@import './var.scss';
+@import './colors.scss';
 
 .fatherDaily {
     position: relative;
-
-    &__nameVeb {
-
-        h1 {
-            position: absolute;
-            left: 38.6vw;
-            top: 4vw;
-            font-weight: bold;
-            font-size: 6vw;
-            color: $colorText;
-        }
-
-        p {
-            position: absolute;
-            width: 28vw;
-            left: 36vw;
-            top: 13vw;
-            font-weight: bold;
-            font-size: 1.5vw;
-            line-height: 2vw;
-            text-align: center;
-            color: $colorText;
-        }
-    }
 
     &__btnLogOut {
 
         #btnLogOut {
             top: 7vw;
             @extend %forBtnRegistration;
+        }
+
+        #btnBack {
+            display: none;
+            top: 7vw;
+            @extend %forBtnRegistration;
+        }
+
+        #btnBack:hover {
+            background: $hoverMainColor;
+        }
+
+        #btnLogOut:hover {
+            background: $hoverMainColor;
+        }
+    }
+
+    &__headerUserAccount {
+
+        &__forImgUser {
+            position: absolute;
+            left: 4.5vw;
+            top: 7vw;
+            width: 4.5vw;
+            height: 4.5vw;
+            border-radius: 50%;
+            background: $mainColor;
+        }
+
+        &__forFullNameUser {
+
+            .namePage {
+                margin-top: 0;
+                margin-bottom: 0;
+                position: absolute;
+                left: 10.8vw;
+                top: 7vw;
+                font-size: 1.5vw;
+                color: $colorText;
+                font-weight: bold;
+                width: 6vw;
+                height: 2vw;
+            }
+
+            #userNameForAccount {
+                position: absolute;
+                left: 10.8vw;
+                top: 9.5vw;
+                font-size: 1.5vw;
+                color: $colorText;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .contentForUser {
+
+        &__toDo {
+            background-color: $mainColor;
+            position: absolute;
+            left: 4vw;
+            top: 20vw;
+            padding: 2vw 6vw;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 2vw;
+            color: $colorText;
+            width: 24.7vw;
+            height: 7.8vw;
+        }
+
+        &__calendar {
+            background-color: $mainColor;
+            position: absolute;
+            left: 37.4vw;
+            top: 20vw;
+            padding: 2vw 6vw;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 2vw;
+            color: $colorText;
+            width: 24.7vw;
+            height: 7.8vw;
+        }
+
+        &__reminder {
+            background-color: $mainColor;
+            position: absolute;
+            left: 71vw;
+            top: 20vw;
+            padding: 2vw 6vw;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 2vw;
+            color: $colorText;
+            width: 24.7vw;
+            height: 7.8vw;
+        }
+
+        .contentForUser__toDo:hover, .contentForUser__reminder:hover {
+            background: $hoverMainColor;
+            cursor: pointer;
+        }
+
+        #imgToDo {
+            position: absolute;
+            width: 25.7vw;
+            height: 23.9vw;
+            top: 30.5vw;
+            left: 3vw;
+            background-image: url(../../shared/img/toDo.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #imgReminder {
+            position: absolute;
+            width: 24.7vw;
+            height: 22.9vw;
+            top: 33.2vw;
+            left: 72.8vw;
+            background-image: url(../../shared/img/reminder.JPG);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
     }
 }
