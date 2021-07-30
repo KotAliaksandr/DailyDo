@@ -1,4 +1,6 @@
-import { modalSignInBtn, modalSignUpBtn } from "./constants/domConst";
+import { modalSignInBtn, modalSignUpBtn } from './constants/domConst';
+import { signInHandlers } from '../components/sign-in/sign-in';
+import { signUpHandlers } from '../components/sign-up/sign-up';
 
 export const showModalSignIn = () => {
     const modalWindowSignIn = document.getElementById('modalWindowSignIn');
@@ -6,6 +8,7 @@ export const showModalSignIn = () => {
 
     modalSignInBtn.onclick = () => {
         modalWindowSignIn.style.display = 'block';
+        signInHandlers();
     };
 
     closeWindowSignIn.onclick = () => {
@@ -19,12 +22,12 @@ export const showModalSignUp = () => {
 
     modalSignUpBtn.onclick = () => {
         modalWindowSignUp.style.display = 'block';
+        signUpHandlers();
     };
 
     closeWindowSignUp.onclick = () => {
         modalWindowSignUp.style.display = 'none';
     };
-
 };
 
 export const outModalSignIn = () => {

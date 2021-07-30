@@ -1,7 +1,5 @@
 import { routes, paths } from '../shared/constants/routes';
 import { showModalSignIn, showModalSignUp} from '../shared/modalWindow';
-import { signInHandlers } from '../components/sign-in/sign-in';
-import { signUpHandlers } from '../components/sign-up/sign-up';
 import { logOut } from '../logout/accountUser';
 import { getToken } from '../shared/ls-service';
 import { workCalendar } from '../components/calendar/calendar';
@@ -25,9 +23,7 @@ window.onload = () => {
             break;
         case (paths.registration):
             showModalSignIn();
-            signInHandlers();
             showModalSignUp();
-            signUpHandlers();
             break;
         default:
             break;

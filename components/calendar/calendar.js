@@ -14,8 +14,8 @@ export const workCalendar = () => {
     ];
 
     const setMonthCalendar = (year, month) => {
-        const monthDays = new Date(year, month + 1, 0).getDate();//дата последнего дня текущего месяца
-        const monthPrefix = new Date(year, month, 0).getDay();//номер дня недели, которым заканчивается прошлый месяц
+        const monthDays = new Date(year, month + 1, 0).getDate();
+        const monthPrefix = new Date(year, month, 0).getDay();
         let monthDaysText = '';
 
         monthContainer.textContent = monthName[month];
