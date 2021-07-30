@@ -1,6 +1,5 @@
 export const workCalendar = () => {
     const nowDate = new Date();
-    const nowDateNumber = nowDate.getDate();
     const nowMonth = nowDate.getMonth();
     const nowYear = nowDate.getFullYear();
     const container = document.getElementById('month-calendar');
@@ -14,7 +13,7 @@ export const workCalendar = () => {
         'July','August','September','October','November','December'
     ];
 
-    const setMonthCalendar = (year,month) => {
+    const setMonthCalendar = (year, month) => {
         const monthDays = new Date(year, month + 1, 0).getDate();
         const monthPrefix = new Date(year, month, 0).getDay();
         let monthDaysText = '';
@@ -34,30 +33,23 @@ export const workCalendar = () => {
         };
 
         daysContainer.innerHTML = monthDaysText;
-
-        if (month == nowMonth && year == nowYear){
-            const days = daysContainer.getElementsByTagName('li');
-            days[monthPrefix + nowDateNumber - 1].classList.add('date-now');
-        };
     };
 
     setMonthCalendar(nowYear,nowMonth);
 
     prev.onclick = () => {
-        const curDate = new Date(yearContainer.textContent,monthName.indexOf(monthContainer.textContent));
+        let curDate = new Date(yearContainer.textContent,monthName.indexOf(monthContainer.textContent));
         curDate.setMonth(curDate.getMonth() - 1);
         const curYear = curDate.getFullYear();
         const curMonth = curDate.getMonth();
-
         setMonthCalendar(curYear,curMonth);
     };
 
     next.onclick = () => {
-        const curDate = new Date(yearContainer.textContent,monthName.indexOf(monthContainer.textContent));
+        let curDate = new Date(yearContainer.textContent,monthName.indexOf(monthContainer.textContent));
         curDate.setMonth(curDate.getMonth() + 1);
         const curYear = curDate.getFullYear();
         const curMonth = curDate.getMonth();
-
         setMonthCalendar(curYear,curMonth);
     };
 };

@@ -1,7 +1,6 @@
 import { signUp } from "../../api/api-handlers";
-import { setToken, setUserEmail } from "../../shared/ls-service";
-import { userAccountLogin } from "../../DOM/accountUser";
-import { outModalSignUp } from "../../shared/modalWindow";
+import { setToken } from "../../shared/ls-service";
+import { routes } from "../../shared/constants/routes";
 import { passwordLengthValidation, emailValidation, userNameValidation } from "../../shared/validation";
 import {
     showMessageUserNameInValid,
@@ -10,7 +9,6 @@ import {
     hideMessageEmaiInValid,
     hideMessagePasswordInValid,
     hideMessageUserNameInValid,
-    showErrorSignUpSubmit
 } from "../../shared/helpUserSignUp.js";
 
 export const signUpHandlers = () => {
@@ -48,19 +46,16 @@ export const signUpHandlers = () => {
                     const { email } = response.user;
 
                     setToken(token);
-                    setUserEmail(email);
+                    window.location.href = routes.mainPage;
                 };
-            })
-            .catch(err => err)
-            .then( err => err ? showErrorSignUpSubmit(err) : outModalSignUp())
-            .then( () => userAccountLogin());
+            });
     });
 
     passwordInput.oninput = () => {
         if (passwordLengthValidation(passwordInput.value)) {
             fieldsFormSignUp.password.isValid = true;
             hideMessagePasswordInValid();
-            passwordInput.style.borderColor = 'black'
+            passwordInput.style.borderColor = 'white'
         } else {
             fieldsFormSignUp.password.isValid = false;
             passwordInput.style.borderColor = 'brown';
@@ -78,7 +73,7 @@ export const signUpHandlers = () => {
         if (emailValidation(emailInput.value)) {
             fieldsFormSignUp.email.isValid = true;
             hideMessageEmaiInValid();
-            emailInput.style.borderColor = 'black'
+            emailInput.style.borderColor = 'white'
         } else {
             fieldsFormSignUp.email.isValid = false;
             emailInput.style.borderColor = 'brown';
@@ -95,7 +90,7 @@ export const signUpHandlers = () => {
         if (userNameValidation(userNameInput.value)) {
             fieldsFormSignUp.userName.isValid = true;
             hideMessageUserNameInValid();
-            userNameInput.style.borderColor = 'black'
+            userNameInput.style.borderColor = 'white'
         } else {
             fieldsFormSignUp.userName.isValid = false;
             userNameInput.style.borderColor = 'brown';
@@ -110,6 +105,8 @@ export const signUpHandlers = () => {
 
     const checkValidityFormSignUp = () => {
         const validityFormSignUp = Object.values(fieldsFormSignUp).every(value => value.isValid);
-        validityFormSignUp ? submitFormSignUp.removeAttribute('disabled') : submitFormSignUp.setAttribute('disabled', true);
+        validityFormSignUp ?
+            submitFormSignUp.removeAttribute('disabled') :
+            submitFormSignUp.setAttribute('disabled', true);
     };
 };

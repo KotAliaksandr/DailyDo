@@ -1,0 +1,60 @@
+@import '../../src/styles/colors.scss';
+
+.divToDoList {
+    display: none;
+    width: 46.9vw;
+    height: auto;
+    background: $mainColor;
+    position: absolute;
+    top: 10vw;
+    left: 26.5vw;
+    border-radius: 10px;
+    padding-top: 5vw;
+    padding-bottom: 2vw;
+
+    #btnSetOwnСategories {
+        position: absolute;
+        top: 3vw;
+        left: 36vw;
+        width: 7.5vw;
+        height: 2.5vw;
+        font-size: 1.3vw;
+        color: $colorText;
+        background: $colorWhite;
+        border-radius: 5px;
+        border: none;
+        font-weight: bold;
+    }
+
+    .listСategories {
+        width: 40vw;
+        height: 3vw;
+        background: $colorWhite;
+        border-radius: 5px;
+        margin: 2vw auto;
+        font-size: 1.3vw;
+        padding-left: 1vw;
+        padding-top: 1vw;
+        font-weight: bold;
+        align-items: flex-start;
+        color: $colorText;
+    }
+
+    .forBtnList {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 3vw;
+        padding-right: 3vw;
+
+        button {
+            width: 7.5vw;
+            height: 2.5vw;
+            font-size: 1.3vw;
+            color: $colorText;
+            background: $colorWhite;
+            border-radius: 5px;
+            border: none;
+            font-weight: bold;
+        }
+    }
+}

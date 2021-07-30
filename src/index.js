@@ -1,31 +1,31 @@
+import { routes, paths } from '../shared/constants/routes';
 import { showModalSignIn, showModalSignUp} from '../shared/modalWindow';
-import { signInHandlers } from '../components/sign-in/sign-in';
-import { signUpHandlers } from '../components/sign-up/sign-up';
-import { logOut } from '../DOM/accountUser';
-import { initApi } from '../api/api-handlers';
+import { logOut } from '../logout/accountUser';
 import { getToken } from '../shared/ls-service';
-import { workCalendar } from '../components/calendar/calendar'
+import { workCalendar } from '../components/calendar/calendar';
+import { workToDo } from '../components/ToDoList/toDo';
 import './styles/styles.scss';
 
 window.onload = () => {
-    const modalSignInBtn = document.getElementById('modalSignInBtn');
-    const modalSignUpBtn = document.getElementById('modalSignUpBtn');
-    const btnLogOut = document.getElementById('btnLogOut');
-    const tokenUsers = getToken();
 
-    if (!tokenUsers) {
-        initApi();
+    const pathname = Object.values(paths).find( path => path === window.location.pathname );;
 
-        modalSignInBtn.onfocus = () => {
+    switch(pathname) {
+        case (paths.mainPage):
+            const token = getToken();
+            if (!token) {
+                window.location.href = routes.registration;
+            } else {
+                workToDo();
+                workCalendar();
+                logOut();
+            };
+            break;
+        case (paths.registration):
             showModalSignIn();
-            signInHandlers();
-        };
-
-        modalSignUpBtn.onfocus = () => {
             showModalSignUp();
-            signUpHandlers();
-        };
-    }  workCalendar();
-
-    btnLogOut.onfocus = () => logOut();
+            break;
+        default:
+            break;
+    };
 };

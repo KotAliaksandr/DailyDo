@@ -8,9 +8,14 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     plugins: [
-        new HTMLWebpackPlugin({
+        new HTMLWebpackPlugin ({
             filename: 'index.html',
             template: './src/index.html'
+        }),
+
+        new HTMLWebpackPlugin({
+            filename: 'registration.html',
+            template: './components/registration/registration.html'
         })
     ],
     module: {
@@ -29,6 +34,10 @@ module.exports = {
                         }
                     }
                 ]
+            },
+            {
+                test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+                type: 'asset/resource',
             }
         ]
     },

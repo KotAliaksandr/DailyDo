@@ -1,11 +1,14 @@
-export const showModalSignIn = () => {
+import { modalSignInBtn, modalSignUpBtn } from './constants/domConst';
+import { signInHandlers } from '../components/sign-in/sign-in';
+import { signUpHandlers } from '../components/sign-up/sign-up';
 
-    const modalSignInBtn = document.getElementById('modalSignInBtn');
+export const showModalSignIn = () => {
     const modalWindowSignIn = document.getElementById('modalWindowSignIn');
     const closeWindowSignIn = document.getElementById('closeWindowSignIn');
 
     modalSignInBtn.onclick = () => {
         modalWindowSignIn.style.display = 'block';
+        signInHandlers();
     };
 
     closeWindowSignIn.onclick = () => {
@@ -14,18 +17,17 @@ export const showModalSignIn = () => {
 };
 
 export const showModalSignUp = () => {
-    const modalSignUpBtn = document.getElementById('modalSignUpBtn');
     const modalWindowSignUp = document.getElementById('modalWindowSignUp');
     const closeWindowSignUp = document.getElementById('closeWindowSignUp');
 
     modalSignUpBtn.onclick = () => {
         modalWindowSignUp.style.display = 'block';
+        signUpHandlers();
     };
 
     closeWindowSignUp.onclick = () => {
         modalWindowSignUp.style.display = 'none';
     };
-
 };
 
 export const outModalSignIn = () => {

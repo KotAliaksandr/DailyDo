@@ -1,20 +1,37 @@
+@import '../styles/colors.scss';
+
 .errorInput {
-    color: brown;
+    color: $colorError;
     display: none;
     position: absolute;
 }
 
 .mb-3 {
-    margin-bottom: 7vh !important;
+    margin-bottom: 4vh !important;
     position: relative;
+
+    p {
+        padding: 1vh;
+        width: auto;
+        margin-top: 1vh;
+        font-size: 2vh;
+        background: $colorBackgroundForErrorMessage;
+        border-radius: 5px;
+        z-index: 1;
+    }
 }
 
-.notFoundUser {
-    color: white;
-    display: none;
-    position: absolute;
-    background-color: brown;
-    margin-left: 13vw;
-    padding: 5px 10px;
-    border-radius: 3px;
+.divForErrorForm {
+    margin: 3vh 4vw 1vh 4vw;
+    width: 30vw;
+
+    .notFoundUser {
+        text-align: center;
+        color: $colorWhite;
+        display: none;
+        background-color: $colorError;
+        padding: 5px 10px;
+        border-radius: 3px;
+        z-index: 1;
+    }
 }

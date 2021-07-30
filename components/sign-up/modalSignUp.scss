@@ -1,19 +1,12 @@
 @import '../../src/styles/colors.scss';
 
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background: $colorBackgroundForModal;
-    display: none;
 
-    #WindowSignInBody {
+    #WindowSignUpBody {
         width: 40vw;
         border-radius: 5px;
         background: $colorWhite;
-        margin: 18vh auto;
+        margin: 10vh auto;
         height: auto;
         @extend %textTypeForElements;
         font-size: 2vh;
@@ -31,10 +24,10 @@
 
             .modal-title {
                 margin-left: 4vw;
-                margin-bottom: 3vh;
+                margin-bottom: 2vh;
             }
 
-            .formSignIn {
+            .formSignUp {
                 font-size: 2vh;
 
                 .forInputEndLabel {
@@ -48,7 +41,6 @@
                     input {
                         font-size: 2vh;
                         border-radius: 5px;
-                        background: $colorWhite;
                         border: none;
                     }
                 }
@@ -70,7 +62,7 @@
                         font-weight: bold;
                     }
 
-                    #btnForLogin:hover {
+                    #submitFormSignUp:hover {
                         background: $hoverMainColor;
                     }
                 }
