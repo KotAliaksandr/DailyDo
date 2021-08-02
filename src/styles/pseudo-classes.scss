@@ -1,0 +1,14 @@
+@import './colors.scss';
+
+#btnBack:hover {
+    background: $hoverMainColor;
+}
+
+#btnLogOut:hover {
+    background: $hoverMainColor;
+}
+
+#BtnForShowToDoList:hover, #BtnForShowRemider:hover {
+    background: $hoverMainColor;
+    cursor: pointer;
+}
