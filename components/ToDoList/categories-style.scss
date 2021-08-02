@@ -1,0 +1,18 @@
+@import '../../src/styles/colors.scss';
+
+%stylesCategory {
+    width: 40vw;
+    height: 3vw;
+    background: $colorWhite;
+    border-radius: 5px;
+    margin: 2vw auto;
+    font-size: 1.3vw;
+    color: $colorText;
+}
+
+%stylesCategoryDefault {
+    padding-left: 1vw;
+    padding-top: 1vw;
+    font-weight: bold;
+    align-items: flex-start;
+}
