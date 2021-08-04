@@ -1,4 +1,5 @@
 import { inputCategoryValidation } from "../../shared/validation";
+import { workToDoCategoryListShopping } from "./ToDo-Item/todo-item";
 
 export const workToDo = () => {
     const contentForUser = document.querySelector('.contentForUser');
@@ -8,12 +9,12 @@ export const workToDo = () => {
     const btnBack = document.getElementById('btnBack');
 
     BtnForShowToDoList.onclick = () => {
-        contentForUser.classList.add('animate__animated', 'animate__backOutUp')
+        contentForUser.classList.add('animate__animated', 'animate__backOutUp');
+        contentForUser.style.display = 'none'
         btnLogOut.style.display = 'none';
         btnBack.style.display = 'block';
-        setTimeout(() => {
-            divToDoList.style.display = 'block';
-        },300)
+        setTimeout(() => divToDoList.style.display = 'block', 300);
+        workToDoCategoryListShopping();
         setOwnCategories();
         deletedivForListMy();
     };
@@ -23,6 +24,7 @@ export const workToDo = () => {
         btnLogOut.style.display = 'block';
         btnBack.style.display = 'none';
         divToDoList.style.display = 'none';
+        contentForUser.style.display = 'block';
     };
 };
 
