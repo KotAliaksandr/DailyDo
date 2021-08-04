@@ -1,0 +1,75 @@
+@import '../../../src/styles/colors.scss';
+
+.shopping {
+    display: none;
+    width: 46.9vw;
+    height: auto;
+    background: $mainColor;
+    position: absolute;
+    top: 8vw;
+    left: 26.5vw;
+    border-radius: 10px;
+    padding-top: 1vw;
+    padding-bottom: 2vw;
+
+    h3 {
+        font-size: 1.5vw;
+        font-weight: bold;
+        color: $colorText;
+        margin: 2vw 0 3vw 5vw;
+    }
+
+    .buttonAdd {
+        position: absolute;
+        width: 3.8vw;
+        height: 3.8vw;
+        font-size: 1.6vw;
+        color: $colorText;
+        background: $colorWhite;
+        border-radius: 50%;
+        border: none;
+        font-weight: bold;
+        left: 40vw;
+        top: 2.5vw;
+        padding-bottom: 0.4vw;
+    }
+
+    .containerForStringListСategory {
+
+        .listTasks {
+            @extend %stylesCategory;
+            @extend %stylesCategoryDefault;
+        }
+    }
+
+    .divForInputEnterNewString {
+        @extend %stylesCategory;
+
+        input {
+            width: 100%;
+            height: 100%;
+            border: none;
+            font-size: 1.3vw;
+            font-weight: bold;
+        }
+    }
+
+    .forBtnListCategory {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 3vw;
+        padding-right: 3vw;
+        margin-top: 10vw;
+
+        button {
+            width: 7.5vw;
+            height: 2.5vw;
+            font-size: 1.3vw;
+            color: $colorText;
+            background: $colorWhite;
+            border-radius: 5px;
+            border: none;
+            font-weight: bold;
+        }
+    }
+}
