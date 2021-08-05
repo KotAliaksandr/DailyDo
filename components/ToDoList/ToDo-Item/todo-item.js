@@ -38,9 +38,7 @@ export const workToDoCategoryListShopping = () => {
 
                 btnSaveStringCategoryList.onclick =() => {
 
-                    if (!inputCategoryValidation(inputEnterNewString.value)) {
-                        null
-                    } else {
+                    if (inputCategoryValidation(inputEnterNewString.value)) {
                         const divListTasks = document.createElement('div');
 
                         divListTasks.classList.add('listTasks')
@@ -50,7 +48,7 @@ export const workToDoCategoryListShopping = () => {
                         divForInputEnterNewString.remove();
                     };
                 };
-            } null;
+            };
         };
     };
 
@@ -65,7 +63,7 @@ export const workToDoCategoryListShopping = () => {
 
             if (divForInputEnterNewString) {
                 divForInputEnterNewString.remove();
-            } return;
+            };
         };
     };
 
@@ -76,11 +74,11 @@ export const workToDoCategoryListShopping = () => {
             if (!divForInputEnterNewString) {
                 const divListTasks = document.querySelector('.listTasks');
                 divListTasks ? divListTasks.remove() : null;
-            } null;
+            };
 
             if (divForInputEnterNewString) {
                 divForInputEnterNewString.remove();
-            } null;
+            };
         };
     };
 };
