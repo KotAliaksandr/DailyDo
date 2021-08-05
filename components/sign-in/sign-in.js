@@ -1,5 +1,5 @@
 import { signIn } from "../../api/api-handlers";
-import { setToken } from "../../shared/ls-service";
+import { localStorageService } from "../../shared/ls-service";
 import { routes } from "../../shared/constants/routes";
 import { passwordLengthValidation, emailValidation } from "../../shared/validation";
 import {
@@ -32,13 +32,6 @@ export const signInHandlers = () => {
         const password = passwordInput.value;
 
         signIn(email,password)
-            .then(response => {
-                if (response) {
-                    const { idToken: token } = response.data;
-                    setToken(token);
-                    window.location.href = routes.mainPage;
-                };
-            })
     });
 
     passwordInput.oninput = () => {
