@@ -1,6 +1,7 @@
 import { inputCategoryValidation } from '../../../shared/validation';
 
 export const workToDoCategoryListShopping = () => {
+    const contentForUser = document.querySelector('.contentForUser');
     const fatherDaily = document.querySelector('.fatherDaily');
     const shoppingCategory = document.querySelector('.listСategories');
     const divToDoList = document.querySelector('.divToDoList');
@@ -33,7 +34,7 @@ export const workToDoCategoryListShopping = () => {
                 divForInputEnterNewString.classList.add('divForInputEnterNewString');
                 inputEnterNewString.classList.add('form-control');
                 divForInputEnterNewString.prepend(inputEnterNewString);
-                containerForStringListСategory.append(divForInputEnterNewString);
+                containerForStringListСategory.prepend(divForInputEnterNewString);
 
                 btnSaveStringCategoryList.onclick =() => {
 
@@ -55,16 +56,27 @@ export const workToDoCategoryListShopping = () => {
 
     const hideListShopping = () => {
         btnCloseDivForCategoryList.onclick = () => {
+            const divForInputEnterNewString = document.querySelector('.divForInputEnterNewString');
+
             divForCategoryList.style.display = 'none';
             divToDoList.style.display = 'block';
             fatherDaily.style.display = 'block';
+            contentForUser.style.display = 'none';
+
+            if (divForInputEnterNewString) {
+                divForInputEnterNewString.remove();
+            } return;
         };
     };
 
     const deleteTaskShopping = () => {
         btnDeleteStringCategoryList.onclick = () => {
+            const divForInputEnterNewString = document.querySelector('.divForInputEnterNewString');
             const divListTasks = document.querySelector('.listTasks');
             divListTasks ? divListTasks.remove() : null;
+            if (divForInputEnterNewString) {
+                divForInputEnterNewString.remove();
+            } return;
         };
     };
 };

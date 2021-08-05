@@ -10,7 +10,6 @@ export const workToDo = () => {
 
     BtnForShowToDoList.onclick = () => {
         contentForUser.classList.add('animate__animated', 'animate__backOutUp');
-        contentForUser.style.display = 'none'
         btnLogOut.style.display = 'none';
         btnBack.style.display = 'block';
         setTimeout(() => divToDoList.style.display = 'block', 300);

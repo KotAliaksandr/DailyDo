@@ -1,6 +1,4 @@
 import { signUp } from "../../api/api-handlers";
-import { setToken } from "../../shared/ls-service";
-import { routes } from "../../shared/constants/routes";
 import { passwordLengthValidation, emailValidation, userNameValidation } from "../../shared/validation";
 import {
     showMessageUserNameInValid,
@@ -35,20 +33,13 @@ export const signUpHandlers = () => {
     formSignUp.addEventListener('submit', event => {
         event.preventDefault();
 
-        const name = userNameInput.value;
-        const email = emailInput.value;
-        const password = passwordInput.value;
+        const user = {
+            userName: userNameInput.value,
+            email: emailInput.value,
+            password: passwordInput.value
+        };
 
-        signUp(email, password)
-            .then(response => {
-                if (response) {
-                    const { za: token } = response.user;
-                    const { email } = response.user;
-
-                    setToken(token);
-                    window.location.href = routes.mainPage;
-                };
-            });
+        signUp(user);
     });
 
     passwordInput.oninput = () => {
