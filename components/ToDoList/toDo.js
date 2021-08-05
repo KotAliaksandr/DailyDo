@@ -19,6 +19,12 @@ export const workToDo = () => {
     };
 
     btnBack.onclick = () => {
+        const divForInputEnterNewCategory = document.querySelector('.listСategoriesForInput');
+
+        if (divForInputEnterNewCategory) {
+            divForInputEnterNewCategory.remove();
+        };
+
         contentForUser.classList.remove('animate__animated', 'animate__backOutUp');
         btnLogOut.style.display = 'block';
         btnBack.style.display = 'none';
@@ -47,9 +53,7 @@ const setOwnCategories = () => {
 
             btnSaveСategories.onclick =() => {
 
-                if (!inputCategoryValidation(inputEnterNewCategory.value)) {
-                    null
-                } else {
+                if (inputCategoryValidation(inputEnterNewCategory.value)) {
                     const divForListMy = document.createElement('div');
 
                     divForListMy.classList.add('divForListMy')
@@ -57,16 +61,25 @@ const setOwnCategories = () => {
                     containerForListСategories.append(divForListMy);
                     inputEnterNewCategory.value = '';
                     divForInputEnterNewCategory.remove();
-                }
-            }
-        } null;
+                };
+            };
+        };
     };
 };
 
 const deletedivForListMy = () => {
     const btnDeleteСategories = document.getElementById('btnDeleteСategories');
+
     btnDeleteСategories.onclick = () => {
-        const divForListMy = document.querySelector('.divForListMy');
-        divForListMy ? divForListMy.remove() : null;
+        const divForInputEnterNewCategory = document.querySelector('.listСategoriesForInput');
+
+        if (!divForInputEnterNewCategory) {
+            const divForListMy = document.querySelector('.divForListMy');
+            divForListMy ? divForListMy.remove() : null;
+        };
+
+        if (divForInputEnterNewCategory) {
+            divForInputEnterNewCategory.remove();
+        };
     };
 };
