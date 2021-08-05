@@ -72,11 +72,15 @@ export const workToDoCategoryListShopping = () => {
     const deleteTaskShopping = () => {
         btnDeleteStringCategoryList.onclick = () => {
             const divForInputEnterNewString = document.querySelector('.divForInputEnterNewString');
-            const divListTasks = document.querySelector('.listTasks');
-            divListTasks ? divListTasks.remove() : null;
+
+            if (!divForInputEnterNewString) {
+                const divListTasks = document.querySelector('.listTasks');
+                divListTasks ? divListTasks.remove() : null;
+            } null;
+
             if (divForInputEnterNewString) {
                 divForInputEnterNewString.remove();
-            } return;
+            } null;
         };
     };
 };

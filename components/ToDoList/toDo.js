@@ -19,6 +19,12 @@ export const workToDo = () => {
     };
 
     btnBack.onclick = () => {
+        const divForInputEnterNewCategory = document.querySelector('.listСategoriesForInput')
+
+        if (divForInputEnterNewCategory) {
+            divForInputEnterNewCategory.remove();
+        };
+
         contentForUser.classList.remove('animate__animated', 'animate__backOutUp');
         btnLogOut.style.display = 'block';
         btnBack.style.display = 'none';
@@ -65,8 +71,17 @@ const setOwnCategories = () => {
 
 const deletedivForListMy = () => {
     const btnDeleteСategories = document.getElementById('btnDeleteСategories');
+
     btnDeleteСategories.onclick = () => {
-        const divForListMy = document.querySelector('.divForListMy');
-        divForListMy ? divForListMy.remove() : null;
+        const divForInputEnterNewCategory = document.querySelector('.listСategoriesForInput')
+
+        if (!divForInputEnterNewCategory) {
+            const divForListMy = document.querySelector('.divForListMy');
+            divForListMy ? divForListMy.remove() : null;
+        } null;
+
+        if (divForInputEnterNewCategory) {
+            divForInputEnterNewCategory.remove();
+        }null;
     };
 };

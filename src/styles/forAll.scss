@@ -27,11 +27,9 @@
 
     .notFoundUser {
         text-align: center;
-        color: $colorWhite;
+        color: $colorError;
         display: none;
-        background-color: $colorError;
         padding: 5px 10px;
-        border-radius: 3px;
         z-index: 1;
     }
 }
