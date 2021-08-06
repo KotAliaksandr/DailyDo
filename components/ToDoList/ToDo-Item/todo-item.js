@@ -13,9 +13,16 @@ export const workToDoCategoryListShopping = () => {
     const btnDeleteStringCategoryList = document.getElementById('btnDeleteStringCategoryList');
 
     shoppingCategory.onclick = () => {
+        const divForInputEnterNewCategory = document.querySelector('.listСategoriesForInput');
+
+        if (divForInputEnterNewCategory) {
+            divForInputEnterNewCategory.remove();
+        };
+
         fatherDaily.style.display = 'none';
         divToDoList.style.display = 'none';
         divForCategoryList.style.display = 'block';
+
         hideListShopping();
         addNewStringListShopping();
         deleteTaskShopping();
