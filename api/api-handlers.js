@@ -11,8 +11,9 @@ export const initApi = () => {
   firebase.initializeApp(FIREBASE_CONFIG);
 };
 
-export const createListTasksUsers = (listTasks) => {
+export const createListTasksUsers = listTasks => {
   const { tasks, nameCategory } = listTasks;
+
   return axios.post(`${databaseURL}/todolist.json`, {
     tasks,
     userId: localStorageService.getUID(),
@@ -21,11 +22,13 @@ export const createListTasksUsers = (listTasks) => {
     .catch(error => error);
 };
 
-export const deleteListTasksUsers = (id) => {
+export const deleteListTasksUsers = id => {
+
   return axios.delete(`${databaseURL}/todolist/${id}.json`);
 };
 
 export const getListTasksUsers = () => {
+
   return axios.get(`${databaseURL}/todolist.json`)
     .then(response => {
 
@@ -34,10 +37,10 @@ export const getListTasksUsers = () => {
         return transformedListTasksUsers;
       };
     })
-    .catch(error => error)
 };
 
 export const getUser = () => {
+
   return axios.get(`${databaseURL}/users.json`)
     .then(response => {
       if (response) {
@@ -50,6 +53,7 @@ export const getUser = () => {
 };
 
 export const signIn = (email, password) => {
+
   return axios.post(authUrl, {
     email,
     password,
@@ -67,6 +71,7 @@ export const signIn = (email, password) => {
 };
 
 export const createAuthDataUser = (email, password) => {
+
   return firebase
     .auth()
     .createUserWithEmailAndPassword(email, password)
@@ -80,6 +85,7 @@ export const createAuthDataUser = (email, password) => {
 
 export const createUser = user => {
   const { userName, email } = user;
+
   return axios.post(`${databaseURL}/users.json`, {
     userName,
     email,
@@ -89,6 +95,7 @@ export const createUser = user => {
 
 export const signUp = async user => {
   const { email, password } = user;
+
   try {
     await createAuthDataUser(email, password);
     await createUser(user).then( response =>localStorageService.setUserID(response.data.name));

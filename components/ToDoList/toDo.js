@@ -1,8 +1,8 @@
-import { inputCategoryValidation } from "../../shared/validation";
+import { inputCategoryValidation } from '../../shared/validation';
 import {
   renderListTasksUsers,
   workToDoCategoryListShopping,
-} from "./ToDo-Item/todo-item";
+} from './ToDo-Item/todo-item';
 
 const arrForCategoriesList = ['Shopping', 'Holidays', 'Family', 'Business'];
 

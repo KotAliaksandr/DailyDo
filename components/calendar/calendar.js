@@ -17,20 +17,22 @@ export const workCalendar = () => {
     const monthDays = new Date(year, month + 1, 0).getDate();
     const monthPrefix = new Date(year, month, 0).getDay();
     let monthDaysText = '';
-
+    const arrForDays = [ ...Array(monthDays).keys() ];
+    const arrForEmptyCell = [ ...Array(monthPrefix + 1).keys() ];
     monthContainer.textContent = monthName[month];
     yearContainer.textContent = year;
     daysContainer.innerHTML = '';
 
-    if (monthPrefix > 0){
-      for (let i = 1  ; i <= monthPrefix; i++){
+    arrForEmptyCell.forEach((item) => {
+
+      if (item > 0) {
         monthDaysText += '<li></li>';
       };
-    };
+    });
 
-    for (let i = 1; i <= monthDays; i++){
-      monthDaysText += '<li>' + i + '</li>';
-    };
+    arrForDays.forEach((item) => {
+      monthDaysText += `<li>${item + 1}</li>`;
+    });
 
     daysContainer.innerHTML = monthDaysText;
   };
