@@ -2,32 +2,32 @@
 
 .descriptionDaily {
 
-    &__img {
-        position: absolute;
-        width: 43vw;
-        height: 34vw;
-        left: 7vw;
-        top: 20vw;
-        background-image: url(../../shared/img/imageForMainPage.JPG);
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
+  &__img {
+    position: absolute;
+    width: 43vw;
+    height: 34vw;
+    left: 7vw;
+    top: 20vw;
+    background-image: url(../../shared/img/imageForMainPage.JPG);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__container {
+
+    position: absolute;
+    width: 33vw;
+    left: 57vw;
+    top: 25vw;
+    font-weight: bold;
+    font-size: 1.5vw;
+    line-height: 2vw;
+    text-align: justify;
+    color: $colorText;
+
+    p {
+      margin-bottom: 3vw;
     }
-
-    &__container {
-
-        position: absolute;
-        width: 33vw;
-        left: 57vw;
-        top: 25vw;
-        font-weight: bold;
-        font-size: 1.5vw;
-        line-height: 2vw;
-        text-align: justify;
-        color: $colorText;
-
-        p {
-            margin-bottom: 3vw;
-        }
-    }
+  }
 }
