@@ -31,11 +31,47 @@
     .listСategories {
       @extend %stylesCategory;
       @extend %stylesCategoryDefault;
+      width: 40.8vw;
     }
+  }
+
+  .containerForListСategoriesUser {
+    min-height: 6vw;
 
     .divForListMy {
       @extend %stylesCategory;
       @extend %stylesCategoryDefault;
+      display: flex;
+      justify-content: space-between;
+      padding-right: 0.5vw;
+      padding-bottom: 1vw;
+      position: relative;
+      width: 37vw;
+
+      button {
+        width: 3vw;
+        height: 3vw;
+        position: absolute;
+        top: 0;
+        left: 37.8vw;
+        border: none;
+        border-radius: 50%;
+        background: $colorWhite;
+
+        p {
+          position: absolute;
+          font-size: 2vw;
+          font-weight: bold;
+          color: $colorText;
+          top: -0.15vw;
+          left: 0.8vw;
+        }
+      }
+
+      label {
+        cursor: pointer;
+        width: 34vw;
+      }
     }
   }
 

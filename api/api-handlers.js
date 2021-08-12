@@ -11,25 +11,23 @@ export const initApi = () => {
   firebase.initializeApp(FIREBASE_CONFIG);
 };
 
-export const createListTasksUsers = listTasks => {
-  const { tasks, nameCategory } = listTasks;
+export const createListTasksUsers = (listTasks, nameCollection) => {
+  const { tasks, nameCategory, category } = listTasks;
 
-  return axios.post(`${databaseURL}/todolist.json`, {
+  return axios.post(`${databaseURL}/${nameCollection}.json`, {
     tasks,
     userId: localStorageService.getUID(),
     nameCategory,
+    category,
   })
     .catch(error => error);
 };
 
-export const deleteListTasksUsers = id => {
+export const deleteListTasksUsers = (id, nameCollection) => axios.delete(`${databaseURL}/${nameCollection}/${id}.json`);
 
-  return axios.delete(`${databaseURL}/todolist/${id}.json`);
-};
+export const getListTasksUsers = nameCollection => {
 
-export const getListTasksUsers = () => {
-
-  return axios.get(`${databaseURL}/todolist.json`)
+  return axios.get(`${databaseURL}/${nameCollection}.json`)
     .then(response => {
 
       if (response) {

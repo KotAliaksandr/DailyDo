@@ -1,8 +1,12 @@
-import { inputCategoryValidation } from '../../shared/validation';
 import {
   renderListTasksUsers,
-  workToDoCategoryListShopping,
+  workToDoCategoryListDefault,
 } from './ToDo-Item/todo-item';
+import { renderListCategories,
+  categoriesHandler,
+  deletedivForListMy
+} from './createCategory';
+
 
 const arrForCategoriesList = ['Shopping', 'Holidays', 'Family', 'Business'];
 
@@ -44,10 +48,10 @@ export const workToDo = () => {
         divToDoList.style.display = 'none';
         divForCategoryList.style.display = 'block';
 
-        workToDoCategoryListShopping();
+        workToDoCategoryListDefault();
       };
     });
-
+    renderListCategories();
     setOwnCategories();
     deletedivForListMy();
   };
@@ -57,7 +61,7 @@ export const workToDo = () => {
     arrForCategoriesList.length = 0;
 
     if (divForInputEnterNewCategory) {
-        divForInputEnterNewCategory.remove();
+      divForInputEnterNewCategory.remove();
     };
 
     contentForUser.classList.remove('animate__animated', 'animate__backOutUp');
@@ -72,7 +76,6 @@ const setOwnCategories = () => {
   const btnSetOwnСategories = document.getElementById('btnSetOwnСategories');
 
   btnSetOwnСategories.onclick = () => {
-    const btnSaveСategories = document.getElementById('btnSaveСategories');
     const containerForListСategories = document.querySelector('.containerForListСategories');
     const divForInputEnterNewCategory = document.querySelector('.listСategoriesForInput')
 
@@ -86,35 +89,7 @@ const setOwnCategories = () => {
       divForInputEnterNewCategory.prepend(inputEnterNewCategory);
       containerForListСategories.append(divForInputEnterNewCategory);
 
-      btnSaveСategories.onclick =() => {
-
-        if (inputCategoryValidation(inputEnterNewCategory.value)) {
-          const divForListMy = document.createElement('div');
-
-          divForListMy.classList.add('divForListMy')
-          divForListMy.innerHTML = inputEnterNewCategory.value;
-          containerForListСategories.append(divForListMy);
-          inputEnterNewCategory.value = '';
-          divForInputEnterNewCategory.remove();
-        };
-      };
-    };
-  };
-};
-
-const deletedivForListMy = () => {
-  const btnDeleteСategories = document.getElementById('btnDeleteСategories');
-
-  btnDeleteСategories.onclick = () => {
-    const divForInputEnterNewCategory = document.querySelector('.listСategoriesForInput');
-
-    if (!divForInputEnterNewCategory) {
-      const divForListMy = document.querySelector('.divForListMy');
-      divForListMy ? divForListMy.remove() : null;
-    };
-
-    if (divForInputEnterNewCategory) {
-      divForInputEnterNewCategory.remove();
+      categoriesHandler();
     };
   };
 };

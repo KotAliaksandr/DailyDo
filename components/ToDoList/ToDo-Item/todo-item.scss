@@ -6,7 +6,7 @@
   height: auto;
   background: $mainColor;
   position: absolute;
-  top: 8vw;
+  top: 4vw;
   left: 26.5vw;
   border-radius: 10px;
   padding-top: 1vw;
@@ -35,6 +35,7 @@
   }
 
   .containerForStringListСategory {
+    min-height: 20vw;
 
     .listTasks {
       @extend %stylesCategory;
