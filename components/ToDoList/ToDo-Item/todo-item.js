@@ -4,7 +4,7 @@ import { localStorageService } from '../../../shared/ls-service';
 
 const arrforListId = [];
 
-export const workToDoCategoryListShopping = () => {
+export const workToDoCategoryListDefault = () => {
   const fatherDaily = document.querySelector('.fatherDaily');
   const divToDoList = document.querySelector('.divToDoList');
   const containerForStringListСategory = document.querySelector('.containerForStringListСategory');
@@ -57,15 +57,17 @@ export const workToDoCategoryListShopping = () => {
 
     btnDeleteStringCategoryList.onclick = () => {
 
-      const deleteTasks = () => {
-        arrforListId.forEach(item => {
-          deleteListTasksUsers(item)
-            .then( () => arrforListId.shift())
-        });
-      };
+      if (arrforListId.length > 0) {
+        const deleteTasks = () => {
+          arrforListId.forEach(item => {
+            deleteListTasksUsers(item,'todolist')
+              .then( () => arrforListId.shift())
+          });
+        };
 
-      deleteTasks();
-      setTimeout( () => renderListTasksUsers().catch(error => error), 1000);
+        deleteTasks();
+        setTimeout( () => renderListTasksUsers().catch(error => error), 600);
+      };
     };
   };
 
@@ -79,7 +81,7 @@ export const renderListTasksUsers = async () => {
 
   containerForStringListСategory.innerHTML = null;
 
-  await getListTasksUsers().then(response => listsTasks = response);
+  await getListTasksUsers('todolist').then(response => listsTasks = response);
 
   listsTasks.forEach(list => {
     if (list.userId === localStorageService.getUID() && list.nameCategory === nameListTasks.innerText) {
@@ -125,7 +127,7 @@ export const toDoHandler = () => {
       listTasks.tasks = inputEnterNewString.value;
       listTasks.nameCategory = nameListTasks.innerText;
 
-      createListTasksUsers(listTasks)
+      createListTasksUsers(listTasks, 'todolist')
         .then( () => renderListTasksUsers());
 
       inputEnterNewString.value = null;
