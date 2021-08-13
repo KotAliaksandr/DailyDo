@@ -76,8 +76,8 @@ const setOwnCategories = () => {
   const btnSetOwnСategories = document.getElementById('btnSetOwnСategories');
 
   btnSetOwnСategories.onclick = () => {
-    const containerForListСategories = document.querySelector('.containerForListСategories');
-    const divForInputEnterNewCategory = document.querySelector('.listСategoriesForInput')
+    const divForInputEnterNewCategory = document.querySelector('.listСategoriesForInput');
+    const divToDoList = document.querySelector('.divToDoList');
 
     if (!divForInputEnterNewCategory) {
       const divForInputEnterNewCategory = document.createElement('div');
@@ -87,7 +87,7 @@ const setOwnCategories = () => {
       divForInputEnterNewCategory.classList.add('listСategoriesForInput');
       inputEnterNewCategory.classList.add('form-control');
       divForInputEnterNewCategory.prepend(inputEnterNewCategory);
-      containerForListСategories.append(divForInputEnterNewCategory);
+      divToDoList.prepend(divForInputEnterNewCategory);
 
       categoriesHandler();
     };

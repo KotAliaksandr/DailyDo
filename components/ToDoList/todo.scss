@@ -27,6 +27,7 @@
   }
 
   .containerForListСategories {
+    padding-top: 4vw;
 
     .listСategories {
       @extend %stylesCategory;
@@ -76,6 +77,9 @@
   }
 
   .listСategoriesForInput {
+    position: absolute;
+    top: 5vw;
+    width: 41vw;
     @extend %stylesCategory;
 
     input {

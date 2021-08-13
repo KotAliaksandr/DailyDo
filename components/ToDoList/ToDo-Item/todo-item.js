@@ -56,8 +56,10 @@ export const workToDoCategoryListDefault = () => {
   const deleteTaskShopping = () => {
 
     btnDeleteStringCategoryList.onclick = () => {
+      const divForInputEnterNewString = document.querySelector('.divForInputEnterNewString');
 
       if (arrforListId.length > 0) {
+
         const deleteTasks = () => {
           arrforListId.forEach(item => {
             deleteListTasksUsers(item,'todolist')
@@ -68,6 +70,8 @@ export const workToDoCategoryListDefault = () => {
         deleteTasks();
         setTimeout( () => renderListTasksUsers().catch(error => error), 600);
       };
+
+      divForInputEnterNewString ? divForInputEnterNewString.remove() : null;
     };
   };
 

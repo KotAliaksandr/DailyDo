@@ -100,6 +100,7 @@ export const categoriesHandler = () => {
         .then( () => renderListCategories());
 
         inputEnterNewCategory.value = null;
+        divForInputEnterNewCategory.remove();
     };
   });
 };
