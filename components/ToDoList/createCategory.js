@@ -1,19 +1,19 @@
 import { inputCategoryValidation } from '../../shared/validation';
 import { localStorageService } from '../../shared/ls-service';
+import { workToDoCategoryListDefault } from './ToDo-Item/todo-item';
+import { renderListTasksUsers, renderBtnDeleteTasks } from './ToDo-Item/render-item';
 import {
   createListTasksUsers,
   getListTasksUsers,
   deleteListTasksUsers
 } from '../../api/api-handlers';
-import {
-  renderListTasksUsers,
-  workToDoCategoryListDefault,
-} from './ToDo-Item/todo-item';
 
 const arrForBtnDeleteCategories = [];
 
 export const renderListCategories = async () => {
   const containerForListСategoriesUser = document.querySelector('.containerForListСategoriesUser');
+  const btnBackAccount = document.getElementById('btnBackAccount');
+
   let listsCategories;
 
   containerForListСategoriesUser.innerHTML = null;
@@ -29,7 +29,7 @@ export const renderListCategories = async () => {
       const textButtonCrossed = document.createElement('p');
 
       buttonCrossed.id = list.category;
-      textButtonCrossed.innerHTML = '&#215;';
+      textButtonCrossed.innerHTML = '';
       textCategory.htmlFor = list.category;
       textCategory.innerText = list.category;
       divForListCategoryUser.classList.add('divForListMy');
@@ -45,21 +45,27 @@ export const renderListCategories = async () => {
           buttonCrossed.setAttribute('clicked', true);
           textCategory.classList.add('crossedOut');
           arrForBtnDeleteCategories.push(list);
+          textButtonCrossed.innerHTML = '&#10003;';
         } else {
           buttonCrossed.removeAttribute('clicked');
           textCategory.classList.remove('crossedOut');
           arrForBtnDeleteCategories.splice(arrForBtnDeleteCategories.indexOf(list), 1);
+          textButtonCrossed.innerHTML = '';
         }
       };
 
       textCategory.addEventListener('click', event => {
         event.preventDefault();
-        const fatherDaily = document.querySelector('.fatherDaily');
-        const divForCategoryList = document.querySelector('.shopping');
+        const divForCategoryList = document.querySelector('.containerForListTasks');
         const divForInputEnterNewCategory = document.querySelector('.listСategoriesForInput');
-        const nameListTasks = document.getElementById('nameListTasks');
         const divToDoList = document.querySelector('.divToDoList');
+        const nameListTasks = document.getElementById('nameListTasks');
+        const btnBackCategories = document.getElementById('btnBackCategories');
 
+        divToDoList.style.display = 'none';
+        divForCategoryList.style.display = 'block';
+        btnBackAccount.style.display = 'block';
+        btnBackCategories.style.display = 'block';
         nameListTasks.innerText = textCategory.innerText;
 
         if (divForInputEnterNewCategory) {
@@ -69,11 +75,8 @@ export const renderListCategories = async () => {
         renderListTasksUsers()
           .catch(error => error);
 
-        fatherDaily.style.display = 'none';
-        divToDoList.style.display = 'none';
-        divForCategoryList.style.display = 'block';
-
         workToDoCategoryListDefault();
+        renderBtnDeleteTasks();
       });
     };
   });
