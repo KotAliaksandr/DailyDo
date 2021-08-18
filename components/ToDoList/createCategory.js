@@ -4,6 +4,7 @@ import { workToDoCategoryListDefault } from './ToDo-Item/todo-item';
 import { renderListTasksUsers, renderBtnDeleteTasks } from './ToDo-Item/render-item';
 import { createListTasksUsers, getListTasksUsers } from '../../api/api-handlers';
 import { arrForBtnDeleteCategories } from './deleteCategoriesUser';
+import { renderbtnDeleteСategories } from './renderCategories';
 
 export const renderListCategories = async () => {
   const containerForListСategoriesUser = document.querySelector('.containerForListСategoriesUser');
@@ -54,14 +55,14 @@ export const renderListCategories = async () => {
 
         if (!isCklicked) {
           buttonCrossed.setAttribute('clicked', true);
-          textCategory.classList.add('crossedOut');
           arrForBtnDeleteCategories.push(list);
           textButtonCrossed.innerHTML = '&#10003;';
+          renderbtnDeleteСategories();
         } else {
           buttonCrossed.removeAttribute('clicked');
-          textCategory.classList.remove('crossedOut');
           arrForBtnDeleteCategories.splice(arrForBtnDeleteCategories.indexOf(list), 1);
           textButtonCrossed.innerHTML = '';
+          renderbtnDeleteСategories();
         }
       };
 
@@ -78,6 +79,7 @@ export const renderListCategories = async () => {
         btnBackAccount.style.display = 'block';
         btnBackCategories.style.display = 'block';
         nameListTasks.innerText = textCategory.innerText;
+        arrForBtnDeleteCategories.length = 0;
 
         if (divForInputEnterNewCategory) {
           divForInputEnterNewCategory.remove();
@@ -114,7 +116,6 @@ export const categoriesHandler = () => {
         .then( () => renderListCategories());
 
         inputEnterNewCategory.value = null;
-        divForInputEnterNewCategory.remove();
     };
   });
 };

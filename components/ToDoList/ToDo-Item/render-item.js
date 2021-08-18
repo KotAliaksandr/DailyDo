@@ -51,7 +51,7 @@ export const renderBtnDeleteTasks = () => {
   const btnDeleteStringCategoryList = document.getElementById('btnDeleteStringCategoryList');
 
   (arrforListId.length <= 0) ?
-  btnDeleteStringCategoryList.style.display = 'none' : btnDeleteStringCategoryList.style.display = 'block';
+  btnDeleteStringCategoryList.style.display = 'none' : btnDeleteStringCategoryList.style.display = 'flex';
 };
 
 export const renderInputForEnterNameTask = () => {

@@ -1,7 +1,7 @@
 import { arrforListId } from './ToDo-Item/todo-item';
 import { renderCategoriesDefault } from './renderCategories';
 import { renderListCategories, categoriesHandler } from './createCategory';
-import { deletedivForListMy } from './deleteCategoriesUser';
+import { deletedivForListMy, arrForBtnDeleteCategories } from './deleteCategoriesUser';
 
 export const workToDo = async () => {
   const contentForUser = document.querySelector('.contentForUser');
@@ -33,14 +33,11 @@ export const workToDo = async () => {
     const divForInputEnterNewString = document.querySelector('.divForInputEnterNewString');
 
     arrforListId.length = 0;
+    arrForBtnDeleteCategories.length = 0;
 
-    if (divForInputEnterNewCategory) {
-      divForInputEnterNewCategory.remove();
-    };
+    divForInputEnterNewCategory ? divForInputEnterNewCategory.remove() : null;
 
-    if (divForInputEnterNewString) {
-      divForInputEnterNewString.remove();
-    };
+    divForInputEnterNewString ? divForInputEnterNewString.remove() : null;
 
     contentForUser.classList.remove('animate__animated', 'animate__backOutUp');
     contentForUser.style.display = 'block';
