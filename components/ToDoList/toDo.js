@@ -1,8 +1,8 @@
+import { workToDoCategoryListDefault } from './ToDo-Item/todo-item';
+import { renderListTasksUsers, renderBtnDeleteTasks } from './ToDo-Item/render-item';
+import { arrforListId } from './ToDo-Item/todo-item';
 import {
-  renderListTasksUsers,
-  workToDoCategoryListDefault,
-} from './ToDo-Item/todo-item';
-import { renderListCategories,
+  renderListCategories,
   categoriesHandler,
   deletedivForListMy
 } from './createCategory';
@@ -16,25 +16,30 @@ export const workToDo = () => {
   const BtnForShowToDoList = document.getElementById('BtnForShowToDoList');
   const divToDoList = document.querySelector('.divToDoList');
   const btnLogOut = document.getElementById('btnLogOut');
-  const btnBack = document.getElementById('btnBack');
+  const btnBackAccount = document.getElementById('btnBackAccount');
+  const btnBackCategories = document.getElementById('btnBackCategories');
 
   BtnForShowToDoList.onclick = () => {
-    const fatherDaily = document.querySelector('.fatherDaily');
-    const divForCategoryList = document.querySelector('.shopping');
+    const divForCategoryList = document.querySelector('.containerForListTasks');
+
     contentForUser.classList.add('animate__animated', 'animate__backOutUp');
     btnLogOut.style.display = 'none';
-    btnBack.style.display = 'block';
+    btnBackAccount.style.display = 'block';
+
     setTimeout( () => divToDoList.style.display = 'block', 300);
 
 
     arrForCategoriesList.forEach(category => {
       const divCategory = document.createElement('div');
+
       divCategory.classList.add('listСategories');
       divCategory.innerHTML = category;
       containerForListСategories.append(divCategory);
+
       divCategory.onclick = () => {
         const divForInputEnterNewCategory = document.querySelector('.listСategoriesForInput');
         const nameListTasks = document.getElementById('nameListTasks');
+
         nameListTasks.innerText = category;
 
         if (divForInputEnterNewCategory) {
@@ -44,11 +49,12 @@ export const workToDo = () => {
         renderListTasksUsers()
           .catch(error => error);
 
-        fatherDaily.style.display = 'none';
         divToDoList.style.display = 'none';
         divForCategoryList.style.display = 'block';
+        btnBackCategories.style.display = 'block';
 
         workToDoCategoryListDefault();
+        renderBtnDeleteTasks();
       };
     });
     renderListCategories();
@@ -56,19 +62,30 @@ export const workToDo = () => {
     deletedivForListMy();
   };
 
-  btnBack.onclick = () => {
+  btnBackAccount.onclick = () => {
     const divForInputEnterNewCategory = document.querySelector('.listСategoriesForInput');
+    const divForCategoryList = document.querySelector('.containerForListTasks');
+    const btnBackCategories = document.getElementById('btnBackCategories');
+    const divForInputEnterNewString = document.querySelector('.divForInputEnterNewString');
+
     arrForCategoriesList.length = 0;
+    arrforListId.length = 0;
 
     if (divForInputEnterNewCategory) {
       divForInputEnterNewCategory.remove();
     };
 
+    if (divForInputEnterNewString) {
+      divForInputEnterNewString.remove();
+    };
+
     contentForUser.classList.remove('animate__animated', 'animate__backOutUp');
-    btnLogOut.style.display = 'block';
-    btnBack.style.display = 'none';
-    divToDoList.style.display = 'none';
     contentForUser.style.display = 'block';
+    btnLogOut.style.display = 'block';
+    btnBackAccount.style.display = 'none';
+    divToDoList.style.display = 'none';
+    divForCategoryList.style.display = 'none';
+    btnBackCategories.style.display = 'none';
   };
 };
 

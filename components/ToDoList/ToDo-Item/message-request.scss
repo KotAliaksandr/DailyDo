@@ -1,0 +1,34 @@
+.containerDivForMessageConfirmation {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: $colorBackgroundForMessageRequest;
+
+  .divForMessageConfirmation {
+    width: 11vw;
+    height: 6vw;
+    top: 24vw;
+    left: 45vw;
+    background-color: $colorBackgroundForModal;
+    border-radius: 5px;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 0.5vw 1vw;
+
+    div {
+      height: 2.5vw;
+      font-weight: bold;
+      font-size: 1.3vw;
+      color: $colorText;
+      margin: 0;
+    }
+
+    #deleteTsk {
+      align-self: baseline;
+    }
+  }
+}

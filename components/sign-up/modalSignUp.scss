@@ -2,71 +2,72 @@
 
 .modal-overlay {
 
-    #windowSignUpBody {
-        width: 40vw;
-        border-radius: 5px;
-        background: $colorWhite;
-        margin: 10vh auto;
-        height: auto;
-        @extend %textTypeForElements;
+  #windowSignUpBody {
+    width: 40vw;
+    border-radius: 5px;
+    background: $colorWhite;
+    margin: 10vh auto;
+    height: auto;
+    @extend %textTypeForElements;
+    font-size: 2vh;
+
+    .modal-header {
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+      border: none;
+    }
+
+    .modal-body {
+      height: auto;
+
+      .modal-title {
+        margin-left: 4vw;
+        margin-bottom: 2vh;
+      }
+
+      .formSignUp {
         font-size: 2vh;
 
-        .modal-header {
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            font-weight: bold;
+        .forInputEndLabel {
+          width: 30vw;
+          margin: auto;
+          background-color: $mainColor;
+          padding: 2vh 4vw;
+          border-radius: 10px;
+          border: none;
+
+          input {
+            font-size: 2vh;
+            border-radius: 5px;
             border: none;
+          }
         }
 
-        .modal-body {
+        .btnSubmit {
+          background-color: $colorWhite;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          button {
+            padding: 1vh 1vw;
+            font-size: 2vh;
+            margin: 3vh 4vw 3vh 1vw;
+            width: auto;
             height: auto;
+            background: $mainColor;
+            border-radius: 5px;
+            border: none;
+            font-weight: bold;
+          }
 
-            .modal-title {
-                margin-left: 4vw;
-                margin-bottom: 2vh;
-            }
-
-            .formSignUp {
-                font-size: 2vh;
-
-                .forInputEndLabel {
-                    width: 30vw;
-                    margin: auto;
-                    background-color: $mainColor;
-                    padding: 2vh 4vw;
-                    border-radius: 10px;
-                    border: none;
-
-                    input {
-                        font-size: 2vh;
-                        border-radius: 5px;
-                        border: none;
-                    }
-                }
-                .btnSubmit {
-                    background-color: $colorWhite;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-
-                    button {
-                        padding: 1vh 1vw;
-                        font-size: 2vh;
-                        margin: 3vh 4vw 3vh 1vw;
-                        width: auto;
-                        height: auto;
-                        background: $mainColor;
-                        border-radius: 5px;
-                        border: none;
-                        font-weight: bold;
-                    }
-
-                    #submitFormSignUp:hover {
-                        background: $hoverMainColor;
-                    }
-                }
-            }
+          #submitFormSignUp:hover {
+            background: $hoverMainColor;
+          }
         }
+      }
     }
+  }
 }

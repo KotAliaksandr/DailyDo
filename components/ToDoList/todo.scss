@@ -27,12 +27,13 @@
   }
 
   .containerForListСategories {
-    padding-top: 4vw;
+    padding-top: 4.5vw;
 
     .listСategories {
       @extend %stylesCategory;
       @extend %stylesCategoryDefault;
       width: 40.8vw;
+      margin: 1vw 3vw;
     }
   }
 
@@ -48,24 +49,22 @@
       padding-bottom: 1vw;
       position: relative;
       width: 37vw;
+      margin: 1vw 3vw;
 
       button {
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
         width: 3vw;
         height: 3vw;
         position: absolute;
         top: 0;
         left: 37.8vw;
         border: none;
-        border-radius: 50%;
         background: $colorWhite;
 
         p {
-          position: absolute;
-          font-size: 2vw;
-          font-weight: bold;
-          color: $colorText;
-          top: -0.15vw;
-          left: 0.8vw;
+          @extend %textForBtn;
         }
       }
 
@@ -78,8 +77,9 @@
 
   .listСategoriesForInput {
     position: absolute;
-    top: 5vw;
-    width: 41vw;
+    top: 6.6vw;
+    left: 3vw;
+    width: 40.8vw;
     @extend %stylesCategory;
 
     input {

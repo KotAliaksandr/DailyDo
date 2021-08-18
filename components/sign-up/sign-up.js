@@ -1,103 +1,106 @@
 import { signUp } from "../../api/api-handlers";
 import { passwordLengthValidation, emailValidation, userNameValidation } from "../../shared/validation";
 import {
-    showMessageUserNameInValid,
-    showMessagePasswordInValid,
-    showMessageEmaiInValid,
-    hideMessageEmaiInValid,
-    hideMessagePasswordInValid,
-    hideMessageUserNameInValid,
+  showMessageUserNameInValid,
+  showMessagePasswordInValid,
+  showMessageEmaiInValid,
+  hideMessageEmaiInValid,
+  hideMessagePasswordInValid,
+  hideMessageUserNameInValid,
 } from "../../shared/helpUserSignUp.js";
 
 export const signUpHandlers = () => {
-    const formSignUp = document.querySelector('.formSignUp');
-    const userNameInput = document.getElementById('userName');
-    const emailInput = document.getElementById('emailSignUp');
-    const passwordInput = document.getElementById('passwordSignUp');
-    const submitFormSignUp = document.getElementById('submitFormSignUp');
+  const formSignUp = document.querySelector('.formSignUp');
+  const userNameInput = document.getElementById('userName');
+  const emailInput = document.getElementById('emailSignUp');
+  const passwordInput = document.getElementById('passwordSignUp');
+  const submitFormSignUp = document.getElementById('submitFormSignUp');
 
-    const fieldsFormSignUp = {
-        email: {
-            isValid: false
-        },
-        password: {
-            isValid: false
-        },
-        userName: {
-            isValid: false
-        }
+  const fieldsFormSignUp = {
+    email: {
+      isValid: false
+    },
+    password: {
+      isValid: false
+    },
+    userName: {
+      isValid: false
+    }
+  };
+
+  submitFormSignUp.setAttribute('disabled', true);
+
+  formSignUp.addEventListener('submit', event => {
+    event.preventDefault();
+
+    const user = {
+      userName: userNameInput.value,
+      email: emailInput.value,
+      password: passwordInput.value
     };
 
-    submitFormSignUp.setAttribute('disabled', true);
+    signUp(user);
+  });
 
-    formSignUp.addEventListener('submit', event => {
-        event.preventDefault();
+  passwordInput.oninput = () => {
 
-        const user = {
-            userName: userNameInput.value,
-            email: emailInput.value,
-            password: passwordInput.value
-        };
-
-        signUp(user);
-    });
-
-    passwordInput.oninput = () => {
-        if (passwordLengthValidation(passwordInput.value)) {
-            fieldsFormSignUp.password.isValid = true;
-            hideMessagePasswordInValid();
-            passwordInput.style.borderColor = 'white'
-        } else {
-            fieldsFormSignUp.password.isValid = false;
-            passwordInput.style.borderColor = 'brown';
-        };
-
-        checkValidityFormSignUp();
+    if (passwordLengthValidation(passwordInput.value)) {
+      fieldsFormSignUp.password.isValid = true;
+      hideMessagePasswordInValid();
+      passwordInput.style.borderColor = 'white'
+    } else {
+      fieldsFormSignUp.password.isValid = false;
+      passwordInput.style.borderColor = 'brown';
     };
 
-    passwordInput.onblur = () => {
-        !passwordLengthValidation(passwordInput.value) ?
-        showMessagePasswordInValid() : hideMessagePasswordInValid();
+    checkValidityFormSignUp();
+  };
+
+  passwordInput.onblur = () => {
+    !passwordLengthValidation(passwordInput.value) ?
+    showMessagePasswordInValid() : hideMessagePasswordInValid();
+  };
+
+  emailInput.oninput = () => {
+
+    if (emailValidation(emailInput.value)) {
+      fieldsFormSignUp.email.isValid = true;
+      hideMessageEmaiInValid();
+      emailInput.style.borderColor = 'white'
+    } else {
+      fieldsFormSignUp.email.isValid = false;
+      emailInput.style.borderColor = 'brown';
     };
 
-    emailInput.oninput = () => {
-        if (emailValidation(emailInput.value)) {
-            fieldsFormSignUp.email.isValid = true;
-            hideMessageEmaiInValid();
-            emailInput.style.borderColor = 'white'
-        } else {
-            fieldsFormSignUp.email.isValid = false;
-            emailInput.style.borderColor = 'brown';
-        };
+    checkValidityFormSignUp();
+  };
 
-        checkValidityFormSignUp();
+  emailInput.onblur = () => {
+    !emailValidation(emailInput.value) ? showMessageEmaiInValid() : hideMessageEmaiInValid();
+  };
+
+  userNameInput.oninput = () => {
+
+    if (userNameValidation(userNameInput.value)) {
+      fieldsFormSignUp.userName.isValid = true;
+      hideMessageUserNameInValid();
+      userNameInput.style.borderColor = 'white'
+    } else {
+      fieldsFormSignUp.userName.isValid = false;
+      userNameInput.style.borderColor = 'brown';
     };
 
-    emailInput.onblur = () => {
-        !emailValidation(emailInput.value) ? showMessageEmaiInValid() : hideMessageEmaiInValid();
-    };
+    checkValidityFormSignUp();
+  };
 
-    userNameInput.oninput = () => {
-        if (userNameValidation(userNameInput.value)) {
-            fieldsFormSignUp.userName.isValid = true;
-            hideMessageUserNameInValid();
-            userNameInput.style.borderColor = 'white'
-        } else {
-            fieldsFormSignUp.userName.isValid = false;
-            userNameInput.style.borderColor = 'brown';
-        };
+  userNameInput.onblur = () => {
+    !userNameValidation(userNameInput.value) ? showMessageUserNameInValid() : hideMessageUserNameInValid();
+  };
 
-        checkValidityFormSignUp();
-    };
-
-    userNameInput.onblur = () => {
-        !userNameValidation(userNameInput.value) ? showMessageUserNameInValid() : hideMessageUserNameInValid();
-    };
-
-    const checkValidityFormSignUp = () => {
-        const validityFormSignUp = Object.values(fieldsFormSignUp).every(value => value.isValid);
-        validityFormSignUp ?
-            submitFormSignUp.removeAttribute('disabled') :
-            submitFormSignUp.setAttribute('disabled', true);
+  const checkValidityFormSignUp = () => {
+    const validityFormSignUp = Object.values(fieldsFormSignUp).every(value => value.isValid);
+    validityFormSignUp ?
+      submitFormSignUp.removeAttribute('disabled') :
+      submitFormSignUp.setAttribute('disabled', true);
     };
 };

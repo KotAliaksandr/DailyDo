@@ -9,25 +9,27 @@ import './styles/styles.scss';
 
 window.onload = () => {
 
-    const pathname = Object.values(paths).find( path => path === window.location.pathname );;
+  const pathname = Object.values(paths).find( path => path === window.location.pathname );;
 
-    switch(pathname) {
-        case (paths.mainPage):
-            const token = localStorageService.getToken();
-            if (!token) {
-                window.location.href = routes.registration;
-            } else {
-                setUserName();
-                workToDo();
-                workCalendar();
-                logOut();
-            };
-            break;
-        case (paths.registration):
-            showModalSignIn();
-            showModalSignUp();
-            break;
-        default:
-            break;
-    };
+  switch(pathname) {
+    case (paths.mainPage):
+      const token = localStorageService.getToken();
+
+      if (!token) {
+        window.location.href = routes.registration;
+      } else {
+        setUserName();
+        workToDo();
+        workCalendar();
+        logOut();
+      };
+
+      break;
+    case (paths.registration):
+      showModalSignIn();
+      showModalSignUp();
+      break;
+    default:
+      break;
+  };
 };

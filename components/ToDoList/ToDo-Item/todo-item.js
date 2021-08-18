@@ -1,16 +1,11 @@
-import { inputCategoryValidation } from '../../../shared/validation';
-import { createListTasksUsers, getListTasksUsers, deleteListTasksUsers } from '../../../api/api-handlers';
-import { localStorageService } from '../../../shared/ls-service';
+import { deleteListTasksUsers } from '../../../api/api-handlers';
+import { renderListTasksUsers, renderInputForEnterNameTask, renderBtnDeleteTasks } from './render-item';
+import { toDoHandler } from './handler-item';
 
-const arrforListId = [];
+export const arrforListId = [];
 
 export const workToDoCategoryListDefault = () => {
-  const fatherDaily = document.querySelector('.fatherDaily');
-  const divToDoList = document.querySelector('.divToDoList');
-  const containerForStringListСategory = document.querySelector('.containerForStringListСategory');
-  const divForCategoryList = document.querySelector('.shopping');
   const btnAddStringCategoryList = document.getElementById('btnAddStringCategoryList');
-  const btnCloseDivForCategoryList = document.getElementById('btnCloseDivForCategoryList');
   const btnDeleteStringCategoryList = document.getElementById('btnDeleteStringCategoryList');
 
   const addNewStringListShopping = () => {
@@ -19,15 +14,7 @@ export const workToDoCategoryListDefault = () => {
       const divForInputEnterNewString = document.querySelector('.divForInputEnterNewString');
 
       if (!divForInputEnterNewString) {
-        const divForInputEnterNewString = document.createElement('div');
-        const inputEnterNewString = document.createElement('input');
-
-        inputEnterNewString.innerHTML = '';
-        divForInputEnterNewString.classList.add('divForInputEnterNewString');
-        inputEnterNewString.classList.add('form-control');
-        divForInputEnterNewString.prepend(inputEnterNewString);
-        containerForStringListСategory.prepend(divForInputEnterNewString);
-
+        renderInputForEnterNameTask();
         toDoHandler();
       };
     };
@@ -35,106 +22,87 @@ export const workToDoCategoryListDefault = () => {
 
   addNewStringListShopping();
 
-  const hideListShopping = () => {
-    btnCloseDivForCategoryList.onclick = () => {
-      const divForInputEnterNewString = document.querySelector('.divForInputEnterNewString');
-      const contentForUser = document.querySelector('.contentForUser');
-
-      divForCategoryList.style.display = 'none';
-      divToDoList.style.display = 'block';
-      fatherDaily.style.display = 'block';
-      contentForUser.style.display = 'none';
-
-      if (divForInputEnterNewString) {
-        divForInputEnterNewString.remove();
-      };
-    };
-  };
-
-  hideListShopping();
-
-  const deleteTaskShopping = () => {
+  const deleteTaskCategory = () => {
 
     btnDeleteStringCategoryList.onclick = () => {
-      const divForInputEnterNewString = document.querySelector('.divForInputEnterNewString');
+      confirmationRequest();
 
-      if (arrforListId.length > 0) {
+      const confirmationDelete = () => {
+        const answerNo = document.getElementById('answerNo');
+        const answerYes = document.getElementById('answerYes');
 
-        const deleteTasks = () => {
-          arrforListId.forEach(item => {
-            deleteListTasksUsers(item,'todolist')
-              .then( () => arrforListId.shift())
-          });
+        answerNo.onclick = () => {
+          const containerDivForMessageConfirmation = document.querySelector('.containerDivForMessageConfirmation');
+          containerDivForMessageConfirmation.remove();
         };
 
-        deleteTasks();
-        setTimeout( () => renderListTasksUsers().catch(error => error), 600);
-      };
+        answerYes.onclick = () => {
 
-      divForInputEnterNewString ? divForInputEnterNewString.remove() : null;
+          if (arrforListId.length > 0) {
+            const containerDivForMessageConfirmation = document.querySelector('.containerDivForMessageConfirmation');
+
+            const deleteTasks = () => {
+              arrforListId.forEach(item => {
+                deleteListTasksUsers(item,'todolist')
+                  .then( () => arrforListId.shift())
+                  .then( () => renderBtnDeleteTasks());
+              });
+            };
+
+            containerDivForMessageConfirmation.remove();
+
+            deleteTasks();
+            setTimeout( () => renderListTasksUsers().catch(error => error), 600);
+          };
+        };
+      }
+      confirmationDelete();
     };
   };
 
-  deleteTaskShopping();
+  deleteTaskCategory();
+  backToCategories();
 };
 
-export const renderListTasksUsers = async () => {
-  const containerForStringListСategory = document.querySelector('.containerForStringListСategory');
-  const nameListTasks = document.getElementById('nameListTasks');
-  let listsTasks;
+export const backToCategories = () => {
+  const btnBackCategories = document.getElementById('btnBackCategories');
 
-  containerForStringListСategory.innerHTML = null;
+  btnBackCategories.onclick = () => {
+    const divForCategoryList = document.querySelector('.containerForListTasks');
+    const btnBackCategories = document.getElementById('btnBackCategories');
+    const divForInputEnterNewString = document.querySelector('.divForInputEnterNewString');
+    const divToDoList = document.querySelector('.divToDoList')
 
-  await getListTasksUsers('todolist').then(response => listsTasks = response);
+    arrforListId.length = 0;
 
-  listsTasks.forEach(list => {
-    if (list.userId === localStorageService.getUID() && list.nameCategory === nameListTasks.innerText) {
-      const divListTasks = document.createElement('div');
-
-      divListTasks.classList.add('listTasks');
-      divListTasks.innerHTML = list.tasks;
-      containerForStringListСategory.append(divListTasks);
-
-      divListTasks.onclick = () => {
-        const isCklicked = divListTasks.getAttribute('clicked');
-        if (!isCklicked) {
-          divListTasks.setAttribute('clicked', true);
-          divListTasks.classList.add('crossedOut');
-          arrforListId.push(list.id);
-        } else {
-          divListTasks.removeAttribute('clicked');
-          divListTasks.classList.remove('crossedOut');
-          arrforListId.splice(arrforListId.indexOf(list.id), 1);
-        };
-      };
+    if (divForInputEnterNewString) {
+      divForInputEnterNewString.remove();
     };
-  });
-};
 
-export const toDoHandler = () => {
-  const btnSaveStringCategoryList = document.getElementById('btnSaveStringCategoryList');
-  const divForInputEnterNewString = document.querySelector('.divForInputEnterNewString');
-  const inputEnterNewString = divForInputEnterNewString.getElementsByTagName('input')[0];
-  inputEnterNewString.innerHTML = '';
-
-  const listTasks = {
-    tasks: null,
-    userId: null,
-    nameCategory: null
+    divToDoList.style.display = 'block';
+    divForCategoryList.style.display = 'none';
+    btnBackCategories.style.display = 'none';
   };
+};
 
-  btnSaveStringCategoryList.addEventListener('click', event => {
-    event.preventDefault();
-    const nameListTasks = document.getElementById('nameListTasks');
+export const confirmationRequest = () => {
+  const containerDivForMessageConfirmation = document.createElement('div');
+  const divForMessageConfirmation = document.createElement('div');
+  const request = document.createElement('div');
+  const answerUserNo = document.createElement('div');
+  const answerUserYes = document.createElement('div');
 
-    if (inputCategoryValidation(inputEnterNewString.value)) {
-      listTasks.tasks = inputEnterNewString.value;
-      listTasks.nameCategory = nameListTasks.innerText;
+  document.body.append(containerDivForMessageConfirmation);
+  containerDivForMessageConfirmation.classList.add('containerDivForMessageConfirmation');
+  containerDivForMessageConfirmation.append(divForMessageConfirmation);
+  divForMessageConfirmation.classList.add('divForMessageConfirmation');
+  divForMessageConfirmation.append(answerUserNo, request, answerUserYes);
 
-      createListTasksUsers(listTasks, 'todolist')
-        .then( () => renderListTasksUsers());
+  request.id = 'deleteTsk';
+  answerUserNo.id = 'answerNo';
+  answerUserYes.id = 'answerYes';
 
-      inputEnterNewString.value = null;
-    };
-  });
+  request.innerHTML = 'Delete?';
+  answerUserNo.innerHTML = 'No';
+  answerUserYes.innerHTML = 'Yes';
 };
