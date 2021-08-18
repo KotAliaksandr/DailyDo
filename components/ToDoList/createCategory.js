@@ -2,23 +2,21 @@ import { inputCategoryValidation } from '../../shared/validation';
 import { localStorageService } from '../../shared/ls-service';
 import { workToDoCategoryListDefault } from './ToDo-Item/todo-item';
 import { renderListTasksUsers, renderBtnDeleteTasks } from './ToDo-Item/render-item';
-import {
-  createListTasksUsers,
-  getListTasksUsers,
-  deleteListTasksUsers
-} from '../../api/api-handlers';
-
-const arrForBtnDeleteCategories = [];
+import { createListTasksUsers, getListTasksUsers } from '../../api/api-handlers';
+import { arrForBtnDeleteCategories } from './deleteCategoriesUser';
 
 export const renderListCategories = async () => {
   const containerForListСategoriesUser = document.querySelector('.containerForListСategoriesUser');
   const btnBackAccount = document.getElementById('btnBackAccount');
+  const arrForTasksInCategory = [];
 
   let listsCategories;
+  let listTasks;
 
   containerForListСategoriesUser.innerHTML = null;
 
   await getListTasksUsers('categoriesUser').then(response => listsCategories = response);
+  await getListTasksUsers('todolist').then(response => listTasks = response);
 
   listsCategories.forEach(list => {
 
@@ -27,16 +25,29 @@ export const renderListCategories = async () => {
       const buttonCrossed = document.createElement('button');
       const textCategory = document.createElement('label');
       const textButtonCrossed = document.createElement('p');
+      const numbersTasks = document.createElement('div');
+
+      listTasks.forEach(listTasksItem => {
+
+        if (listTasksItem.userId === localStorageService.getUID() && listTasksItem.nameCategory === list.category ) {
+          arrForTasksInCategory.push(listTasksItem);
+          numbersTasks.innerHTML = arrForTasksInCategory.length;
+        }
+      })
+
+      arrForTasksInCategory.length = 0;
 
       buttonCrossed.id = list.category;
       textButtonCrossed.innerHTML = '';
       textCategory.htmlFor = list.category;
       textCategory.innerText = list.category;
+
+      numbersTasks.classList.add('numbersTasks');
       divForListCategoryUser.classList.add('divForListMy');
       containerForListСategoriesUser.append(divForListCategoryUser);
       buttonCrossed.append(textButtonCrossed);
       divForListCategoryUser.append(buttonCrossed);
-      divForListCategoryUser.prepend(textCategory);
+      divForListCategoryUser.prepend(textCategory, numbersTasks);
 
       buttonCrossed.onclick = () => {
         const isCklicked = buttonCrossed.getAttribute('clicked');
@@ -106,52 +117,4 @@ export const categoriesHandler = () => {
         divForInputEnterNewCategory.remove();
     };
   });
-};
-
-export const deletedivForListMy = () => {
-  const btnDeleteСategories = document.getElementById('btnDeleteСategories');
-
-  btnDeleteСategories.onclick = () => {
-    const divForInputEnterNewCategory = document.querySelector('.listСategoriesForInput');
-
-    const compareCollections = async () => {
-      const arrForIdDelete = [];
-      const arrNameCategoryListsTasksUser = arrForBtnDeleteCategories.map(item => item.category)
-      let listsTasks;
-      await getListTasksUsers('todolist').then(response => listsTasks = response);
-
-      const deleteTasksFromCategory = () => {
-        const listsTasksUser = listsTasks.filter(item => item.userId === localStorageService.getUID() ? item : null);
-
-        listsTasksUser.map(itemTask =>  {
-          arrNameCategoryListsTasksUser.map(itemDelete => {
-            itemTask.nameCategory === itemDelete ? arrForIdDelete.push(itemTask) : null;
-          });
-          arrForIdDelete.forEach(item => {
-            deleteListTasksUsers(item.id, 'todolist');
-          });
-        });
-      };
-
-      deleteTasksFromCategory();
-
-      const deleteCategories = () => {
-        arrForBtnDeleteCategories.forEach(item => {
-          deleteListTasksUsers(item.id,'categoriesUser')
-            .then( () => arrForBtnDeleteCategories.shift());
-        });
-      };
-
-      deleteCategories();
-    };
-
-    if (arrForBtnDeleteCategories.length > 0) {
-      compareCollections();
-      setTimeout( () =>  renderListCategories().catch(error => error), 700);
-    };
-
-    if (divForInputEnterNewCategory) {
-      divForInputEnterNewCategory.remove();
-    };
-  };
 };
