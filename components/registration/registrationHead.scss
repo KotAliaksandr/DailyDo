@@ -30,12 +30,16 @@
   &__btnRegistration {
 
     #modalSignInBtn {
-      top: 7vw;
+      top: 5vw !important;
+      left: 84vw;
+
       @extend %forBtnRegistration;
     }
 
     #modalSignUpBtn {
-      top: 13vw;
+      top: 11vw !important;
+      left: 84vw;
+
       @extend %forBtnRegistration;
     }
 

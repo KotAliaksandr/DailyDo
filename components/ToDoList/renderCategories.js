@@ -2,6 +2,7 @@ import { getListTasksUsers } from '../../api/api-handlers';
 import { localStorageService } from '../../shared/ls-service';
 import { renderListTasksUsers, renderBtnDeleteTasks } from './ToDo-Item/render-item';
 import { workToDoCategoryListDefault } from './ToDo-Item/todo-item';
+import { arrForBtnDeleteCategories } from './deleteCategoriesUser';
 
 export const arrForCategoriesList = ['Shopping', 'Holidays', 'Family', 'Business'];
 
@@ -13,6 +14,8 @@ export const renderCategoriesDefault = async () => {
 
   const listTasks = [];
   const arrForTasksInCategory = [];
+
+  renderbtnDeleteСategories();
 
   await getListTasksUsers('todolist')
     .then(response => {
@@ -49,10 +52,9 @@ export const renderCategoriesDefault = async () => {
       const nameListTasks = document.getElementById('nameListTasks');
 
       nameListTasks.innerText = category;
+      arrForBtnDeleteCategories.length = 0;
 
-      if (divForInputEnterNewCategory) {
-        divForInputEnterNewCategory.remove();
-      };
+      divForInputEnterNewCategory ? divForInputEnterNewCategory.remove() : null;
 
       renderListTasksUsers()
         .catch(error => error);
@@ -67,4 +69,11 @@ export const renderCategoriesDefault = async () => {
       containerForListСategories.innerHTML = null;
     };
   });
+};
+
+export const renderbtnDeleteСategories = () => {
+  const btnDeleteСategories = document.getElementById('btnDeleteСategories');
+
+  (arrForBtnDeleteCategories.length <= 0) ?
+  btnDeleteСategories.style.display = 'none' : btnDeleteСategories.style.display = 'flex';
 };

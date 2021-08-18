@@ -1,7 +1,7 @@
 import { deleteListTasksUsers } from '../../../api/api-handlers';
 import { renderListTasksUsers, renderInputForEnterNameTask, renderBtnDeleteTasks } from './render-item';
 import { toDoHandler } from './handler-item';
-import { renderCategoriesDefault } from '../renderCategories';
+import { renderCategoriesDefault, renderbtnDeleteСategories } from '../renderCategories';
 import { renderListCategories } from '../createCategory';
 
 export const arrforListId = [];
@@ -78,9 +78,7 @@ export const backToCategories = () => {
 
     arrforListId.length = 0;
 
-    if (divForInputEnterNewString) {
-      divForInputEnterNewString.remove();
-    };
+    divForInputEnterNewString ? divForInputEnterNewString.remove() : null;
 
     divToDoList.style.display = 'block';
     divForCategoryList.style.display = 'none';
@@ -90,6 +88,7 @@ export const backToCategories = () => {
     renderCategoriesDefault();
     renderListCategories();
   };
+  renderbtnDeleteСategories();
 };
 
 export const confirmationRequest = () => {
