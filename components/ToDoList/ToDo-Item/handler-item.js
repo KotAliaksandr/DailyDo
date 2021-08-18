@@ -1,6 +1,7 @@
-import { renderListTasksUsers, renderInputForEnterNameTask } from "./render-item";
-import { createListTasksUsers } from "../../../api/api-handlers";
-import { inputCategoryValidation } from "../../../shared/validation";
+import { renderListTasksUsers, renderBtnDeleteTasks } from './render-item';
+import { createListTasksUsers } from '../../../api/api-handlers';
+import { inputCategoryValidation } from '../../../shared/validation';
+import { arrforListId } from './todo-item';
 
 export const toDoHandler = () => {
   const btnSaveStringCategoryList = document.getElementById('btnSaveStringCategoryList');
@@ -25,6 +26,8 @@ export const toDoHandler = () => {
 
       createListTasksUsers(listTasks, 'todolist')
         .then( () => renderListTasksUsers())
+        .then( () => arrforListId.length = 0)
+        .then( () => renderBtnDeleteTasks());
 
       inputEnterNewString.value = null;
     };

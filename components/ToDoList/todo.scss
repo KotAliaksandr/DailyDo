@@ -32,8 +32,16 @@
     .listСategories {
       @extend %stylesCategory;
       @extend %stylesCategoryDefault;
-      width: 40.8vw;
+      width: 37vw;
       margin: 1vw 3vw;
+      display: flex;
+      justify-content: space-between;
+
+      .numberOfTasksInCategory {
+        width: 2vw;
+        display: flex;
+        justify-content: center;
+      }
     }
   }
 
@@ -71,6 +79,12 @@
       label {
         cursor: pointer;
         width: 34vw;
+      }
+
+      .numbersTasks {
+        width: 2vw;
+        display: flex;
+        justify-content: center;
       }
     }
   }

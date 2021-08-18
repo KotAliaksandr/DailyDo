@@ -1,6 +1,8 @@
 import { deleteListTasksUsers } from '../../../api/api-handlers';
 import { renderListTasksUsers, renderInputForEnterNameTask, renderBtnDeleteTasks } from './render-item';
 import { toDoHandler } from './handler-item';
+import { renderCategoriesDefault } from '../renderCategories';
+import { renderListCategories } from '../createCategory';
 
 export const arrforListId = [];
 
@@ -71,7 +73,8 @@ export const backToCategories = () => {
     const divForCategoryList = document.querySelector('.containerForListTasks');
     const btnBackCategories = document.getElementById('btnBackCategories');
     const divForInputEnterNewString = document.querySelector('.divForInputEnterNewString');
-    const divToDoList = document.querySelector('.divToDoList')
+    const divToDoList = document.querySelector('.divToDoList');
+    const containerForListСategories = document.querySelector('.containerForListСategories');
 
     arrforListId.length = 0;
 
@@ -82,6 +85,10 @@ export const backToCategories = () => {
     divToDoList.style.display = 'block';
     divForCategoryList.style.display = 'none';
     btnBackCategories.style.display = 'none';
+    containerForListСategories.innerHTML = null;
+
+    renderCategoriesDefault();
+    renderListCategories();
   };
 };
 
