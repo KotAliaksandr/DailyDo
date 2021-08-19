@@ -2,16 +2,22 @@ import { arrforListId } from './ToDo-Item/todo-item';
 import { renderCategoriesDefault } from './renderCategories';
 import { renderListCategories, categoriesHandler } from './createCategory';
 import { deletedivForListMy, arrForBtnDeleteCategories } from './deleteCategoriesUser';
+import { localStorageService } from '../../shared/ls-service';
+import { forReloadPageListTasks } from './ToDo-Item/render-item';
 
 export const workToDo = async () => {
   const contentForUser = document.querySelector('.contentForUser');
   const BtnForShowToDoList = document.getElementById('BtnForShowToDoList');
   const divToDoList = document.querySelector('.divToDoList');
+  const nameDivToDoList = divToDoList.getElementsByTagName('h3')[0];
   const btnLogOut = document.getElementById('btnLogOut');
   const btnBackAccount = document.getElementById('btnBackAccount');
 
   BtnForShowToDoList.onclick = () => {
     const containerForListСategories = document.querySelector('.containerForListСategories');
+    let categories = nameDivToDoList.innerText
+    localStorageService.setIdCategoriesBoard(categories);
+
 
     containerForListСategories.innerHTML = null;
 
@@ -20,6 +26,7 @@ export const workToDo = async () => {
     btnBackAccount.style.display = 'block';
 
     setTimeout( () => divToDoList.style.display = 'block', 300);
+    setTimeout( () => contentForUser.style.display = 'none', 700);
     renderCategoriesDefault();
     renderListCategories();
     setOwnCategories();
@@ -46,7 +53,11 @@ export const workToDo = async () => {
     divToDoList.style.display = 'none';
     divForCategoryList.style.display = 'none';
     btnBackCategories.style.display = 'none';
+    localStorageService.deleteIdCategoriesBoard();
+    localStorageService.deleteIdListTasksBoard();
   };
+  forReloadPage();
+  forReloadPageListTasks();
 };
 
 const setOwnCategories = () => {
@@ -68,5 +79,23 @@ const setOwnCategories = () => {
 
       categoriesHandler();
     };
+  };
+};
+
+export const forReloadPage = () => {
+  const idCategoriesBoard = localStorageService.getIdCategoriesBoard();
+  const btnBackAccount = document.getElementById('btnBackAccount');
+  const contentForUser = document.querySelector('.contentForUser');
+  const divToDoList = document.querySelector('.divToDoList');
+
+  if (idCategoriesBoard) {
+    btnBackAccount.style.display = 'block';
+    divToDoList.style.display = 'block';
+    contentForUser.style.display = 'none';
+
+    renderCategoriesDefault();
+    renderListCategories();
+    setOwnCategories();
+    deletedivForListMy();
   };
 };

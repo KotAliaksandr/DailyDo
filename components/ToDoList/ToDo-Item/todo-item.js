@@ -3,6 +3,7 @@ import { renderListTasksUsers, renderInputForEnterNameTask, renderBtnDeleteTasks
 import { toDoHandler } from './handler-item';
 import { renderCategoriesDefault, renderbtnDeleteСategories } from '../renderCategories';
 import { renderListCategories } from '../createCategory';
+import { localStorageService } from '../../../shared/ls-service';
 
 export const arrforListId = [];
 
@@ -75,6 +76,8 @@ export const backToCategories = () => {
     const divForInputEnterNewString = document.querySelector('.divForInputEnterNewString');
     const divToDoList = document.querySelector('.divToDoList');
     const containerForListСategories = document.querySelector('.containerForListСategories');
+    const nameDivToDoList = divToDoList.getElementsByTagName('h3')[0];
+
 
     arrforListId.length = 0;
 
@@ -84,6 +87,8 @@ export const backToCategories = () => {
     divForCategoryList.style.display = 'none';
     btnBackCategories.style.display = 'none';
     containerForListСategories.innerHTML = null;
+    localStorageService.setIdCategoriesBoard(nameDivToDoList.innerText);
+    localStorageService.deleteIdListTasksBoard()
 
     renderCategoriesDefault();
     renderListCategories();

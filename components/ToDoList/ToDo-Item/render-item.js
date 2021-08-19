@@ -1,6 +1,6 @@
 import { getListTasksUsers } from '../../../api/api-handlers';
 import { localStorageService } from '../../../shared/ls-service';
-import { arrforListId } from './todo-item';
+import { arrforListId, workToDoCategoryListDefault } from './todo-item';
 
 export const renderListTasksUsers = async () => {
   const containerForStringListСategory = document.querySelector('.containerForStringListСategory');
@@ -64,4 +64,28 @@ export const renderInputForEnterNameTask = () => {
   inputEnterNewString.classList.add('form-control');
   divForInputEnterNewString.prepend(inputEnterNewString);
   containerForStringListСategory.prepend(divForInputEnterNewString);
+};
+
+export const forReloadPageListTasks = () => {
+  const IdListTasksBoard = localStorageService.getIdListTasksBoard();
+  const btnBackAccount = document.getElementById('btnBackAccount');
+  const contentForUser = document.querySelector('.contentForUser');
+  const btnBackCategories = document.getElementById('btnBackCategories');
+  const divForCategoryList = document.querySelector('.containerForListTasks');
+  const nameListTasks = document.getElementById('nameListTasks');
+
+  nameListTasks.innerText = IdListTasksBoard;
+
+  if (IdListTasksBoard) {
+    btnBackAccount.style.display = 'block';
+    btnBackCategories.style.display = 'block';
+    divForCategoryList.style.display = 'block';
+    contentForUser.style.display = 'none';
+
+    renderListTasksUsers()
+      .catch(error => error);
+
+    workToDoCategoryListDefault();
+    renderBtnDeleteTasks();
+  };
 };

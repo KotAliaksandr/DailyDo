@@ -81,8 +81,10 @@
   }
 
   .containerForStringListСategory {
-    min-height: 20vw;
-    margin-top: 6.8vw;
+    min-height: 23vw;
+    max-height: 24vw;
+    overflow-y: auto;
+    margin-top: 5.3vw;
 
     .listTasks {
       @extend %stylesCategory;
@@ -132,21 +134,11 @@
     }
   }
 
-  .forBtnListCategory {
-    display: flex;
-    margin-top: 2vw;
-    margin-bottom: 1vw;
-
-    button {
-      width: 7.5vw;
-      height: 2.5vw;
-      font-size: 1.3vw;
-      color: $colorText;
-      background: $colorWhite;
-      border-radius: 4px;
-      border: none;
-      font-weight: bold;
-      margin-left: 36vw;
-    }
+  img {
+    position: fixed;
+    top: 19vw;
+    left: 47vw;
+    width: 24vw;
+    height: 24vw;
   }
 }

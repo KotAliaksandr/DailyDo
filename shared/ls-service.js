@@ -34,4 +34,28 @@ export class localStorageService {
   static clearLocalStorage() {
     localStorage.clear();
   };
+
+  static getIdCategoriesBoard() {
+    return localStorage.getItem('IdCategoriesBoard');
+  };
+
+  static setIdCategoriesBoard(IdCategoriesBoard) {
+    localStorage.setItem('IdCategoriesBoard', IdCategoriesBoard);
+  };
+
+  static deleteIdCategoriesBoard() {
+    localStorage.removeItem('IdCategoriesBoard');
+  };
+
+  static getIdListTasksBoard() {
+    return localStorage.getItem('IdListTasksBoard');
+  };
+
+  static setIdListTasksBoard(IdListTasksBoard) {
+    localStorage.setItem('IdListTasksBoard', IdListTasksBoard);
+  };
+
+  static deleteIdListTasksBoard() {
+    localStorage.removeItem('IdListTasksBoard');
+  };
 };
