@@ -81,67 +81,72 @@
     }
   }
 
-  .containerForListСategories {
-    padding-top: 2.3vw;
+  .maxHeight {
+    min-height: 25vw;
+    max-height: 28vw;
+    overflow-y: auto;
+    margin-top: 6vw;
 
-    .listСategories {
-      @extend %stylesCategory;
-      @extend %stylesCategoryDefault;
+    .containerForListСategories {
 
-      width: 32vw;
-      margin: 1vw 0 1vw 5vw;
-      display: flex;
-      justify-content: space-between;
+      .listСategories {
+        @extend %stylesCategory;
+        @extend %stylesCategoryDefault;
 
-      .numberOfTasksInCategory {
-        width: 2vw;
+        width: 32vw;
+        margin: 0.2vw 0 1vw 5vw;
         display: flex;
-        justify-content: center;
-      }
-    }
-  }
+        justify-content: space-between;
 
-  .containerForListСategoriesUser {
-    min-height: 6vw;
-
-    .divForListMy {
-      @extend %stylesCategory;
-      @extend %stylesCategoryDefault;
-
-      display: flex;
-      justify-content: space-between;
-      padding-right: 0.5vw;
-      padding-bottom: 1vw;
-      position: relative;
-      width: 32vw;
-      margin: 1vw 0 1vw 5vw;
-
-      button {
-        border-radius: 4px;
-        display: flex;
-        justify-content: center;
-        width: 3vw;
-        height: 3vw;
-        position: absolute;
-        top: 0;
-        left: 33.8vw;
-        border: none;
-        background: $colorWhite;
-
-        p {
-          @extend %textForBtn;
+        .numberOfTasksInCategory {
+          width: 2vw;
+          display: flex;
+          justify-content: center;
         }
       }
+    }
 
-      label {
-        cursor: pointer;
-        width: 34vw;
-      }
+    .containerForListСategoriesUser {
 
-      .numbersTasks {
-        width: 2vw;
+      .divForListMy {
+        @extend %stylesCategory;
+        @extend %stylesCategoryDefault;
+
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
+        padding-right: 0.5vw;
+        padding-bottom: 1vw;
+        position: relative;
+        width: 32vw;
+        margin: 1vw 0 1vw 5vw;
+
+        button {
+          border-radius: 4px;
+          display: flex;
+          justify-content: center;
+          width: 3vw;
+          height: 3vw;
+          position: absolute;
+          top: 0;
+          left: 33.8vw;
+          border: none;
+          background: $colorWhite;
+
+          p {
+            @extend %textForBtn;
+          }
+        }
+
+        label {
+          cursor: pointer;
+          width: 34vw;
+        }
+
+        .numbersTasks {
+          width: 2vw;
+          display: flex;
+          justify-content: center;
+        }
       }
     }
   }
@@ -163,21 +168,11 @@
     }
   }
 
-  .forBtnList {
-    display: flex;
-    justify-content: space-between;
-    padding-left: 3vw;
-    padding-right: 3vw;
-
-    button {
-      width: 7.5vw;
-      height: 2.5vw;
-      font-size: 1.3vw;
-      color: $colorText;
-      background: $colorWhite;
-      border-radius: 5px;
-      border: none;
-      font-weight: bold;
-    }
+  img {
+    position: fixed;
+    top: 19vw;
+    left: -24vw;
+    width: 24vw;
+    height: 24vw;
   }
 }

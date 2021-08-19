@@ -81,9 +81,9 @@ export const renderListCategories = async () => {
         nameListTasks.innerText = textCategory.innerText;
         arrForBtnDeleteCategories.length = 0;
 
-        if (divForInputEnterNewCategory) {
-          divForInputEnterNewCategory.remove();
-        };
+        divForInputEnterNewCategory ? divForInputEnterNewCategory.remove() : null;
+        localStorageService.deleteIdCategoriesBoard();
+        localStorageService.setIdListTasksBoard(textCategory.innerText);
 
         renderListTasksUsers()
           .catch(error => error);
