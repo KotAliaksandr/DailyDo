@@ -18,7 +18,6 @@ export const workToDo = async () => {
     let categories = nameDivToDoList.innerText
     localStorageService.setIdCategoriesBoard(categories);
 
-
     containerForListСategories.innerHTML = null;
 
     contentForUser.classList.add('animate__animated', 'animate__backOutUp');
