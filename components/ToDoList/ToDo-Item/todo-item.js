@@ -4,6 +4,9 @@ import { toDoHandler } from './handler-item';
 import { renderCategoriesDefault, renderbtnDeleteСategories } from '../renderCategories';
 import { renderListCategories } from '../createCategory';
 import { localStorageService } from '../../../shared/ls-service';
+import { setOwnCategories } from '../toDo';
+import { deletedivForListMy } from '../deleteCategoriesUser';
+import { hideMessageEnterStringForTasks } from '../../../shared/helpUserEnterStringCategory';
 
 export const arrforListId = [];
 
@@ -29,6 +32,7 @@ export const workToDoCategoryListDefault = () => {
 
     btnDeleteStringCategoryList.onclick = () => {
       confirmationRequest();
+      hideMessageEnterStringForTasks();
 
       const confirmationDelete = () => {
         const answerNo = document.getElementById('answerNo');
@@ -78,7 +82,6 @@ export const backToCategories = () => {
     const containerForListСategories = document.querySelector('.containerForListСategories');
     const nameDivToDoList = divToDoList.getElementsByTagName('h3')[0];
 
-
     arrforListId.length = 0;
 
     divForInputEnterNewString ? divForInputEnterNewString.remove() : null;
@@ -88,11 +91,14 @@ export const backToCategories = () => {
     btnBackCategories.style.display = 'none';
     containerForListСategories.innerHTML = null;
     localStorageService.setIdCategoriesBoard(nameDivToDoList.innerText);
-    localStorageService.deleteIdListTasksBoard()
+    localStorageService.deleteIdListTasksBoard();
 
     renderCategoriesDefault();
     renderListCategories();
+    hideMessageEnterStringForTasks();
   };
+  deletedivForListMy();
+  setOwnCategories();
   renderbtnDeleteСategories();
 };
 

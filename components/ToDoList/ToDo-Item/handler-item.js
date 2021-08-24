@@ -2,6 +2,7 @@ import { renderListTasksUsers, renderBtnDeleteTasks } from './render-item';
 import { createListTasksUsers } from '../../../api/api-handlers';
 import { inputCategoryValidation } from '../../../shared/validation';
 import { arrforListId } from './todo-item';
+import { showMessageEnterStringForTasks, hideMessageEnterStringForTasks } from '../../../shared/helpUserEnterStringCategory';
 
 export const toDoHandler = () => {
   const btnSaveStringCategoryList = document.getElementById('btnSaveStringCategoryList');
@@ -9,6 +10,10 @@ export const toDoHandler = () => {
   const inputEnterNewString = divForInputEnterNewString.getElementsByTagName('input')[0];
 
   inputEnterNewString.innerHTML = '';
+
+  inputEnterNewString.oninput = () => {
+    inputCategoryValidation(inputEnterNewString.value) ? hideMessageEnterStringForTasks() : showMessageEnterStringForTasks();
+  };
 
   const listTasks = {
     tasks: null,

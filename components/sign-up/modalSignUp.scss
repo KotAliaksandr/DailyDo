@@ -3,16 +3,16 @@
 .modal-overlay {
 
   #windowSignUpBody {
-    width: 40vw;
+    width: 42vw;
     border-radius: 5px;
     background: $colorWhite;
-    margin: 10vh auto;
-    height: auto;
+    margin: 5vw auto;
+    height: 40vw;
     @extend %textTypeForElements;
-    font-size: 2vh;
+    font-size: 1.3vw;
 
     .modal-header {
-      padding: 10px;
+      padding: 1vw;
       display: flex;
       justify-content: space-between;
       font-weight: bold;
@@ -20,26 +20,30 @@
     }
 
     .modal-body {
-      height: auto;
+      height: 35vw;
+      padding: 0 1vw;
 
       .modal-title {
         margin-left: 4vw;
-        margin-bottom: 2vh;
+        margin-bottom: 1.5vw;
       }
 
       .formSignUp {
-        font-size: 2vh;
+        font-size: 1.3vw;
+        height: 35vw;
 
         .forInputEndLabel {
-          width: 30vw;
+          width: 32vw;
+          height: 27vw;
           margin: auto;
           background-color: $mainColor;
-          padding: 2vh 4vw;
+          padding: 1vw 4vw;
           border-radius: 10px;
           border: none;
 
           input {
-            font-size: 2vh;
+            font-size: 1.3vw;
+            height: 2.5vw;
             border-radius: 5px;
             border: none;
           }
@@ -52,11 +56,11 @@
           justify-content: space-between;
 
           button {
-            padding: 1vh 1vw;
-            font-size: 2vh;
-            margin: 3vh 4vw 3vh 1vw;
+            padding: 0.5vw 1vw;
+            font-size: 1.3vw;
+            margin: 1.5vw 4vw 0.5vw 1vw;
             width: auto;
-            height: auto;
+            height: 3vw;
             background: $mainColor;
             border-radius: 5px;
             border: none;

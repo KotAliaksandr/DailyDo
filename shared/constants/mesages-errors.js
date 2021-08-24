@@ -3,8 +3,8 @@ export const ERROR_MESAGES = {
     `The password must contain at least 8 characters,
     at least one uppercase and one lowercase letter, and a number.`,
 
-  email: `(A-z, 0-9)@(A-z, 0-9).(A-z)`,
+  email: `Please, enter correct e-mail`,
 
   name:
-    `(A-z, 0-9, ! * # / . , @ % &)`
+    `cannot exceed 20 characters`
 };

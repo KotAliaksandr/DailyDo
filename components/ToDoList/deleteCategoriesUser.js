@@ -3,6 +3,7 @@ import { renderListCategories } from './createCategory';
 import { localStorageService } from '../../shared/ls-service';
 import { renderbtnDeleteСategories } from './renderCategories';
 import { confirmationRequest } from './ToDo-Item/todo-item';
+import { hideMessageEnterString } from '../../shared/helpUserEnterStringCategory';
 
 export const arrForBtnDeleteCategories = [];
 
@@ -11,6 +12,7 @@ export const deletedivForListMy = () => {
 
   btnDeleteСategories.onclick = () => {
     confirmationRequest();
+    hideMessageEnterString();
 
     const confirmationDeleteCategories = () => {
       const answerNo = document.getElementById('answerNo');

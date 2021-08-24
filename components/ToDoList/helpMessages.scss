@@ -1,0 +1,31 @@
+#nameCategoryInValid {
+  left: 64vw;
+  border-bottom-right-radius: 1vw;
+
+  @extend %forMessage;
+}
+
+#nameTaskInValid {
+  left: 27vw;
+  border-bottom-left-radius: 1vw;
+
+  @extend %forMessage;
+}
+
+%forMessage {
+  display: none;
+  position: absolute;
+  top: 14.5vw;
+  padding: 0.2vw 0.2vw;
+  width: 9vw;
+  height: 3.8vw;
+  font-size: 1vw;
+  background: $colorBackgroundForMessage;
+  border: 1px solid $colorTextLight;
+  border-top-left-radius: 1vw;
+  border-top-right-radius: 1vw;
+  z-index: 1;
+  font-weight: bold;
+  color: $colorText;
+  text-align: center;
+}
