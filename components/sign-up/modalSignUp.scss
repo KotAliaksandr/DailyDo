@@ -1,13 +1,14 @@
 @import '../../src/styles/colors.scss';
 
 .modal-overlay {
+  overflow-y: auto;
 
   #windowSignUpBody {
     width: 42vw;
     border-radius: 5px;
     background: $colorWhite;
-    margin: 5vw auto;
-    height: 40vw;
+    margin: 3vw auto;
+    height: 43vw;
     @extend %textTypeForElements;
     font-size: 1.3vw;
 
@@ -17,6 +18,7 @@
       justify-content: space-between;
       font-weight: bold;
       border: none;
+      margin-bottom: 2vw;
     }
 
     .modal-body {
@@ -46,6 +48,34 @@
             height: 2.5vw;
             border-radius: 5px;
             border: none;
+          }
+
+          .helpForEnterPassword {
+            display: none;
+            position: absolute;
+            width: 15vw;
+            height: 10.5vw;
+            background: $hoverMainColor;
+            border-radius: 5px;
+            border: solid 1px $hoverMainColor;
+            left: 9vw;
+            top: 27vw;
+            text-align: center;
+
+            p {
+              font-size: 1.2vw;
+              margin: 0;
+            }
+
+            .passwordStatusInfo {
+              text-align: start;
+              padding-left: 1.5vw;
+
+              p {
+                font-size: 1.1vw;
+                margin: 0;
+              }
+            }
           }
         }
 

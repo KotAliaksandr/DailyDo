@@ -14,7 +14,7 @@
     border-radius: 5px;
     background: $colorWhite;
     margin: 9vw auto;
-    height: 33vw;
+    height: 34vw;
     @extend %textTypeForElements;
     font-size: 1.3vw;
 
@@ -53,6 +53,34 @@
             height: 2.5vw;
             border-radius: 5px;
             border: none;
+          }
+
+          .helpForEnterPasswordSignIn {
+            display: none;
+            position: absolute;
+            width: 15vw;
+            height: 10.5vw;
+            background: $hoverMainColor;
+            border-radius: 5px;
+            border: solid 1px $hoverMainColor;
+            left: 9vw;
+            top: 20vw;
+            text-align: center;
+
+            p {
+              font-size: 1.2vw;
+              margin: 0;
+            }
+
+            .passwordStatusInfoSignIn {
+              text-align: start;
+              padding-left: 1.5vw;
+
+              p {
+                font-size: 1.1vw;
+                margin: 0;
+              }
+            }
           }
         }
 

@@ -1,10 +1,15 @@
 export const ERROR_MESAGES = {
-  password_length:
-    `The password must contain at least 8 characters,
-    at least one uppercase and one lowercase letter, and a number.`,
+  password_length: `Invalid password`,
 
   email: `Please, enter correct e-mail`,
 
   name:
-    `cannot exceed 20 characters`
+    `Cannot exceed 20 characters`
+};
+
+export const PASSWORD_STRENGTHS = {
+  Weak: 1,
+  Moderate: 2,
+  Strong: 3,
+  ['Very Strong']: 4
 };

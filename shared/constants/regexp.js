@@ -1,5 +1,9 @@
 export const REGEXP = {
-    PASSWORD_LENGTH: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/,
+    PASSWORD_LENGTH: /^.{8,}$/,
+    UPPER_CASE: /(?=.*[A-Z])/,
+    LOWER_CASE: /(?=.*[a-z])/,
+    NUMBERS: /(?=.*\d)/,
+    EIGHT_CHARACTERS: /[a-zA-Z\d@$#!%?&*^()-=+_]{8,}/,
     EMAIL: /^[A-Z0-9]{2,}@[A-Z0-9]{2,}\.[A-Z]{2,6}$/i,
     USERNAME:/^[A-Z0-9\S]{1,20}$|^[A-Z0-9\S][A-Z0-9\S\s]{1,19}$/,
     INPUT_CATEGORY: /^[A-Z0-9\S]{1,20}$|^[A-Z0-9\S][A-Z0-9\S\s]{1,19}$/i

@@ -1,4 +1,5 @@
-@media (max-width: 650px) {
+@media (max-width: 800px) {
+
   .fatherDaily {
 
     &__btnLogOut {
@@ -8,42 +9,35 @@
         width: auto;
         height: 8vw;
         font-size: 4vw;
-        top: 4vw;
-        left: 70vw;
+        top: 9vw;
+        left: 71vw;
+        padding-bottom: 1vw;
       }
 
       #btnBackAccount {
-        min-width: 10vw;
-        width: auto;
-        height: 3.9vw;
-        font-size: 1.5vw;
-        top: 2vw;
-        display: none;
-        left: 84vw;
+        min-width: 27vw;
+        height: 8vw;
+        font-size: 4vw;
+        top: 7vw;
+        left: 67vw;
+        padding-bottom: 1vw;
       }
 
       #btnBackCategories {
-        position: absolute;
-        min-width: 10vw;
-        width: auto;
-        height: 3.9vw;
-        background: $mainColor;
-        border-radius: 5px;
-        border: none;
-        font-weight: bold;
-        color: $colorText;
-        font-size: 1.5vw;
-        top: 2vw;
-        display: none;
-        left: 72vw;
+        min-width: 27vw;
+        height: 8vw;
+        font-size: 4vw;
+        top: 18vw;
+        left: 67vw;
+        padding-bottom: 1vw;
       }
     }
 
     &__headerUserAccount {
 
       &__forImgUser {
-        left: 15vw;
-        top: 2vw;
+        left: 7vw;
+        top: 7vw;
         width: 14vw;
         height: 14vw;
       }
@@ -51,15 +45,15 @@
       &__forFullNameUser {
 
         .namePage {
-          left: 31vw;
-          top: 2vw;
+          left: 23vw;
+          top: 7vw;
           font-size: 5vw;
         }
 
         #userNameForAccount {
-          left: 31vw;
-          top: 7vw;
-          font-size: 5vw;
+          left: 23vw;
+          top: 14vw;
+          font-size: 4vw;
           word-wrap: break-word;
           width: 35vw;
           height: auto;
@@ -70,8 +64,8 @@
     .contentForUser {
 
       &__toDo {
-        left: 5vw;
-        top: 25vw;
+        left: 10vw;
+        top: 40vw;
         padding: 2vw 6vw;
         font-size: 5vw;
         width: 60vw;
@@ -80,7 +74,7 @@
 
       &__calendar {
         left: 10vw;
-        top: 75vw;
+        top: 90vw;
         padding: 2vw 6vw;
         font-size: 5vw;
         width: 80vw;
@@ -88,8 +82,8 @@
       }
 
       &__reminder {
-        left: 35vw;
-        top: 50vw;
+        left: 29vw;
+        top: 65vw;
         padding: 2vw 6vw;
         font-size: 5vw;
         width: 60vw;
@@ -97,13 +91,13 @@
       }
 
       #imgToDo {
-        top: 18vw;
-        left: 68vw;
+        top: 33.5vw;
+        left: 71vw;
       }
 
       #imgReminder {
-        top: 45vw;
-        left: 3vw;
+        top: 60vw;
+        left: 1vw;
       }
     }
   }

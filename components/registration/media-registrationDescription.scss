@@ -1,0 +1,31 @@
+@media (max-width: 800px) {
+
+  .descriptionDaily {
+
+    &__img {
+      position: absolute;
+      width: 40vw;
+      height: 32vw;
+      left: 59vw;
+      top: 80vw;
+      background-image: url(../../shared/img/imageForMainPage.JPG);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    &__container {
+
+      position: absolute;
+      width: 53vw;
+      left: 4vw;
+      top: 52vw;
+      font-weight: bold;
+      font-size: 4vw;
+      line-height: 5vw;
+      text-align: justify;
+      color: $colorText;
+      float: left;
+    }
+  }
+}

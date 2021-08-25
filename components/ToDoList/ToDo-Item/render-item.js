@@ -76,6 +76,7 @@ export const forReloadPageListTasks = () => {
   const btnBackCategories = document.getElementById('btnBackCategories');
   const divForCategoryList = document.querySelector('.containerForListTasks');
   const nameListTasks = document.getElementById('nameListTasks');
+  const btnLogOut = document.getElementById('btnLogOut');
 
   nameListTasks.innerText = IdListTasksBoard;
 
@@ -84,6 +85,7 @@ export const forReloadPageListTasks = () => {
     btnBackCategories.style.display = 'block';
     divForCategoryList.style.display = 'block';
     contentForUser.style.display = 'none';
+    btnLogOut.style.display = 'none';
 
     renderListTasksUsers()
       .catch(error => error);

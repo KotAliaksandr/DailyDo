@@ -1,16 +1,11 @@
 import { REGEXP } from './constants/regexp';
 import { PASSWORD_STRENGTHS } from './constants/mesages-errors';
 
-export const passwordLengthValidation = password => password.match(REGEXP.PASSWORD_LENGTH);
-export const emailValidation = email => email.match(REGEXP.EMAIL);
-export const userNameValidation = userName => userName.match(REGEXP.USERNAME);
-export const inputCategoryValidation = inputCategoryValue => inputCategoryValue.match(REGEXP.INPUT_CATEGORY);
-
-const validationStatus = document.querySelector('.statusCurrent');
-const validationLowercase = document.querySelector('.passwordStatusLowercase');
-const validationUppercase = document.querySelector('.passwordStatusUppercase');
-const validationNumbers = document.querySelector('.passwordStatusNumbers');
-const passwordStatusCharacters = document.querySelector('.passwordStatusCharacters');
+const validationStatus = document.querySelector('.statusCurrentSignIn');
+const validationLowercase = document.querySelector('.passwordStatusLowercaseSignIn');
+const validationUppercase = document.querySelector('.passwordStatusUppercaseSignIn');
+const validationNumbers = document.querySelector('.passwordStatusNumbersSignIn');
+const passwordStatusCharacters = document.querySelector('.passwordStatusCharactersSignIn');
 
 const lowerCaseCheck = password => {
   const result = REGEXP.LOWER_CASE.test(password);
@@ -40,8 +35,8 @@ const eightCharactersCheck = password => {
   return result;
 };
 
-export const passwordStrengthController = password => {
-  const password_strength_block = document.querySelector('.helpForEnterPassword');
+export const passwordStrengthControllerSignIn = password => {
+  const password_strength_block = document.querySelector('.helpForEnterPasswordSignIn');
   let passwordStrength;
 
   password_strength_block.style.display = 'block';
