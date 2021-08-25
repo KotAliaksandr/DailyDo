@@ -5,6 +5,7 @@ import { renderListTasksUsers, renderBtnDeleteTasks } from './ToDo-Item/render-i
 import { createListTasksUsers, getListTasksUsers } from '../../api/api-handlers';
 import { arrForBtnDeleteCategories } from './deleteCategoriesUser';
 import { renderbtnDeleteСategories } from './renderCategories';
+import { hideMessageEnterString } from '../../shared/helpUserEnterStringCategory';
 
 export const renderListCategories = async () => {
   const containerForListСategoriesUser = document.querySelector('.containerForListСategoriesUser');
@@ -64,6 +65,7 @@ export const renderListCategories = async () => {
           textButtonCrossed.innerHTML = '';
           renderbtnDeleteСategories();
         }
+        hideMessageEnterString();
       };
 
       textCategory.addEventListener('click', event => {
@@ -90,6 +92,7 @@ export const renderListCategories = async () => {
 
         workToDoCategoryListDefault();
         renderBtnDeleteTasks();
+        hideMessageEnterString();
       });
     };
   });

@@ -7,35 +7,34 @@
 }
 
 .mb-3 {
-  margin-bottom: 4vh !important;
+  margin-bottom: 3vw !important;
   position: relative;
 
   p {
-    padding: 1vh;
+    padding: 0.5vw;
     width: auto;
-    margin-top: 1vh;
-    font-size: 2vh;
-    background: $colorBackgroundForErrorMessage;
+    margin-top: 0.5vw;
+    font-size: 1.1vw;
+    background: $colorBackgroundForModal;
     border-radius: 5px;
     z-index: 1;
   }
 }
 
 .divForErrorForm {
-  margin: 3vh 4vw 1vh 4vw;
+  margin: 0.8vw 1vw 0 1vw;
   width: 30vw;
 
   .notFoundUser {
     text-align: center;
     color: $colorError;
     display: none;
-    padding: 5px 10px;
+    padding: 0.5vw 0.7vw;
+    padding-bottom: 0;
     z-index: 1;
+    margin-bottom: 0;
+    text-transform: lowercase;
   }
-}
-
-.crossedOut {
-  text-decoration: line-through;
 }
 
 .containerDivForMessageConfirmation {

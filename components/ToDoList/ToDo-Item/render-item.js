@@ -1,6 +1,7 @@
 import { getListTasksUsers } from '../../../api/api-handlers';
 import { localStorageService } from '../../../shared/ls-service';
 import { arrforListId, workToDoCategoryListDefault } from './todo-item';
+import { hideMessageEnterStringForTasks } from '../../../shared/helpUserEnterStringCategory';
 
 export const renderListTasksUsers = async () => {
   const containerForStringListСategory = document.querySelector('.containerForStringListСategory');
@@ -42,6 +43,8 @@ export const renderListTasksUsers = async () => {
           arrforListId.splice(arrforListId.indexOf(listItem.id), 1);
           renderBtnDeleteTasks();
         };
+
+        hideMessageEnterStringForTasks();
       };
     };
   });

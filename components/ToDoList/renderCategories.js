@@ -3,6 +3,7 @@ import { localStorageService } from '../../shared/ls-service';
 import { renderListTasksUsers, renderBtnDeleteTasks } from './ToDo-Item/render-item';
 import { workToDoCategoryListDefault } from './ToDo-Item/todo-item';
 import { arrForBtnDeleteCategories } from './deleteCategoriesUser';
+import { hideMessageEnterString } from '../../shared/helpUserEnterStringCategory';
 
 export const arrForCategoriesList = ['Shopping', 'Holidays', 'Family', 'Business'];
 
@@ -67,6 +68,7 @@ export const renderCategoriesDefault = async () => {
 
       workToDoCategoryListDefault();
       renderBtnDeleteTasks();
+      hideMessageEnterString();
 
       containerForListСategories.innerHTML = null;
     };

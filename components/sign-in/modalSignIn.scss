@@ -10,16 +10,16 @@
     display: none;
 
   #windowSignInBody {
-    width: 40vw;
+    width: 42vw;
     border-radius: 5px;
     background: $colorWhite;
-    margin: 18vh auto;
-    height: auto;
+    margin: 9vw auto;
+    height: 33vw;
     @extend %textTypeForElements;
-    font-size: 2vh;
+    font-size: 1.3vw;
 
     .modal-header {
-      padding: 10px;
+      padding: 1vw;
       display: flex;
       justify-content: space-between;
       font-weight: bold;
@@ -27,28 +27,31 @@
     }
 
     .modal-body {
-      height: auto;
+      height: 25vw;
+      padding: 1vw;
 
       .modal-title {
         margin-left: 4vw;
-        margin-bottom: 3vh;
+        margin-bottom: 1.5vw;
       }
 
       .formSignIn {
-        font-size: 2vh;
+        font-size: 1.3vw;
+        height: 20vw;
 
         .forInputEndLabel {
-          width: 30vw;
+          width: 32vw;
+          height: 19vw;
           margin: auto;
           background-color: $mainColor;
-          padding: 2vh 4vw;
+          padding: 1vw 4vw;
           border-radius: 10px;
           border: none;
 
           input {
-            font-size: 2vh;
+            font-size: 1.3vw;
+            height: 2.5vw;
             border-radius: 5px;
-            background: $colorWhite;
             border: none;
           }
         }
@@ -60,11 +63,11 @@
           justify-content: space-between;
 
           button {
-            padding: 1vh 1vw;
-            font-size: 2vh;
-            margin: 3vh 4vw 3vh 1vw;
+            padding: 0.5vw 1vw;
+            font-size: 1.3vw;
+            margin: 1.5vw 4vw 1.5vw 1vw;
             width: auto;
-            height: auto;
+            height: 3vw;
             background: $mainColor;
             border-radius: 5px;
             border: none;

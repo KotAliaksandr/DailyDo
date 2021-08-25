@@ -13,10 +13,13 @@
   padding-bottom: 2vw;
 
   h3 {
+    word-wrap: break-word;
+    height: auto;
     font-size: 1.5vw;
     font-weight: bold;
     color: $colorText;
-    margin: 2.5vw 0 3vw 5vw;
+    margin: 2vw 0 3vw 5vw;
+    width: 15vw;
   }
 
   #btnSaveStringCategoryList {

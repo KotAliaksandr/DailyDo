@@ -4,6 +4,12 @@ import { renderListCategories, categoriesHandler } from './createCategory';
 import { deletedivForListMy, arrForBtnDeleteCategories } from './deleteCategoriesUser';
 import { localStorageService } from '../../shared/ls-service';
 import { forReloadPageListTasks } from './ToDo-Item/render-item';
+import { inputCategoryValidation } from '../../shared/validation';
+import {
+  showMessageEnterString,
+  hideMessageEnterString,
+  hideMessageEnterStringForTasks
+} from '../../shared/helpUserEnterStringCategory';
 
 export const workToDo = async () => {
   const contentForUser = document.querySelector('.contentForUser');
@@ -17,7 +23,6 @@ export const workToDo = async () => {
     const containerForListСategories = document.querySelector('.containerForListСategories');
     let categories = nameDivToDoList.innerText
     localStorageService.setIdCategoriesBoard(categories);
-
 
     containerForListСategories.innerHTML = null;
 
@@ -55,12 +60,14 @@ export const workToDo = async () => {
     btnBackCategories.style.display = 'none';
     localStorageService.deleteIdCategoriesBoard();
     localStorageService.deleteIdListTasksBoard();
+    hideMessageEnterString();
+    hideMessageEnterStringForTasks();
   };
   forReloadPage();
   forReloadPageListTasks();
 };
 
-const setOwnCategories = () => {
+export const setOwnCategories = () => {
   const btnSetOwnСategories = document.getElementById('btnSetOwnСategories');
 
   btnSetOwnСategories.onclick = () => {
@@ -76,6 +83,10 @@ const setOwnCategories = () => {
       inputEnterNewCategory.classList.add('form-control');
       divForInputEnterNewCategory.prepend(inputEnterNewCategory);
       divToDoList.prepend(divForInputEnterNewCategory);
+
+      inputEnterNewCategory.oninput = () => {
+        inputCategoryValidation(inputEnterNewCategory.value) ? hideMessageEnterString() : showMessageEnterString();
+      };
 
       categoriesHandler();
     };
