@@ -1,0 +1,50 @@
+@media (max-width: 800px) {
+
+  .registrHeader {
+
+    &__nameVeb {
+
+      h1 {
+        position: absolute;
+        left: 17vw;
+        top: 6vw;
+        font-weight: bold;
+        font-size: 12vw;
+        color: $colorText;
+      }
+
+      p {
+        position: absolute;
+        width: 60vw;
+        left: 8vw;
+        top: 23vw;
+        font-weight: bold;
+        font-size: 5vw;
+        line-height: 6vw;
+        text-align: center;
+        color: $colorText;
+      }
+    }
+
+    &__btnRegistration {
+
+      #modalSignInBtn {
+        min-width: 20vw;
+        height: 8vw;
+        font-size: 4vw;
+        top: 7vw !important;
+        left: 75vw;
+        padding-bottom: 1vw;
+      }
+
+      #modalSignUpBtn {
+        min-width: 20vw;
+        height: 8vw;
+        font-size: 4vw;
+        top: 19vw !important;
+        left: 75vw;
+        padding-bottom: 1vw;
+      }
+    }
+  }
+}

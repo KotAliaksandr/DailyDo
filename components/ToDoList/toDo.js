@@ -98,11 +98,13 @@ export const forReloadPage = () => {
   const btnBackAccount = document.getElementById('btnBackAccount');
   const contentForUser = document.querySelector('.contentForUser');
   const divToDoList = document.querySelector('.divToDoList');
+  const btnLogOut = document.getElementById('btnLogOut');
 
   if (idCategoriesBoard) {
     btnBackAccount.style.display = 'block';
     divToDoList.style.display = 'block';
     contentForUser.style.display = 'none';
+    btnLogOut.style.display = 'none';
 
     renderCategoriesDefault();
     renderListCategories();

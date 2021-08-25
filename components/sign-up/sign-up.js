@@ -1,13 +1,11 @@
-import { signUp } from "../../api/api-handlers";
-import { passwordLengthValidation, emailValidation, userNameValidation } from "../../shared/validation";
+import { signUp } from '../../api/api-handlers';
+import { emailValidation, userNameValidation, passwordStrengthController } from '../../shared/validation';
 import {
   showMessageUserNameInValid,
-  showMessagePasswordInValid,
   showMessageEmaiInValid,
   hideMessageEmaiInValid,
-  hideMessagePasswordInValid,
   hideMessageUserNameInValid,
-} from "../../shared/helpUserSignUp.js";
+} from '../../shared/helpUserSignUp.js';
 
 export const signUpHandlers = () => {
   const formSignUp = document.querySelector('.formSignUp');
@@ -32,33 +30,21 @@ export const signUpHandlers = () => {
 
   formSignUp.addEventListener('submit', event => {
     event.preventDefault();
-
+    const password_strength_block = document.querySelector('.helpForEnterPassword');
     const user = {
       userName: userNameInput.value,
       email: emailInput.value,
       password: passwordInput.value
     };
 
+    password_strength_block.style.display = 'none';
+
     signUp(user);
   });
 
   passwordInput.oninput = () => {
-
-    if (passwordLengthValidation(passwordInput.value)) {
-      fieldsFormSignUp.password.isValid = true;
-      hideMessagePasswordInValid();
-      passwordInput.style.borderColor = 'white'
-    } else {
-      fieldsFormSignUp.password.isValid = false;
-      passwordInput.style.borderColor = 'brown';
-    };
-
+    fieldsFormSignUp.password.isValid = passwordStrengthController(passwordInput.value);
     checkValidityFormSignUp();
-  };
-
-  passwordInput.onblur = () => {
-    !passwordLengthValidation(passwordInput.value) ?
-    showMessagePasswordInValid() : hideMessagePasswordInValid();
   };
 
   emailInput.oninput = () => {

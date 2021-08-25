@@ -1,7 +1,7 @@
 @import '../styles/colors.scss';
 
 .errorInput {
-  color: $colorError;
+  color: $colorText;
   display: none;
   position: absolute;
 }
@@ -15,53 +15,24 @@
     width: auto;
     margin-top: 0.5vw;
     font-size: 1.1vw;
-    background: $colorBackgroundForModal;
+    background: $hoverMainColor;
     border-radius: 5px;
     z-index: 1;
   }
 }
 
 .divForErrorForm {
-  margin: 0.8vw 1vw 0 1vw;
+  margin: 0.5vw 1vw 0 1vw;
   width: 30vw;
 
   .notFoundUser {
     text-align: center;
-    color: $colorError;
+    color: $colorText;
     display: none;
     padding: 0.5vw 0.7vw;
     padding-bottom: 0;
     z-index: 1;
     margin-bottom: 0;
     text-transform: lowercase;
-  }
-}
-
-.containerDivForMessageConfirmation {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background: $colorBackgroundForMessageRequest;
-
-  .divForMessageConfirmation {
-    width: 10vw;
-    height: 5vw;
-    top: 10vw;
-    left: 20vw;
-    background-color: $colorBackgroundForModal;
-    border-radius: 5px;
-    position: fixed;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0.5vw;
-
-    p {
-      font-size: 1.3vw;
-      color: $colorText;
-      margin: 0;
-    }
   }
 }

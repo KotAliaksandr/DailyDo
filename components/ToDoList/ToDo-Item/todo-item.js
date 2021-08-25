@@ -52,14 +52,14 @@ export const workToDoCategoryListDefault = () => {
               arrforListId.forEach(item => {
                 deleteListTasksUsers(item,'todolist')
                   .then( () => arrforListId.shift())
-                  .then( () => renderBtnDeleteTasks());
+                  .then( () => renderBtnDeleteTasks())
+                  .then ( () => arrforListId <= 0 ? renderListTasksUsers().catch(error => error) : null);
               });
             };
 
             containerDivForMessageConfirmation.remove();
 
             deleteTasks();
-            setTimeout( () => renderListTasksUsers().catch(error => error), 600);
           };
         };
       }

@@ -1,0 +1,95 @@
+@media (max-width: 850px) {
+
+  .containerForListTasks {
+    width: 80vw;
+    top: 41vw;
+    left: 10vw;
+    padding-top: 1vw;
+    padding-bottom: 2vw;
+
+    h3 {
+      font-size: 4vw;
+      margin: 2.5vw 0 3vw 5vw;
+      width: 40vw;
+    }
+
+    #btnSaveStringCategoryList {
+      width: 8vw;
+      height: 8vw;
+      left: 55vw;
+      top: 2.5vw;
+
+      p {
+        margin-top: 1.5vw;
+        width: 5.5vw;
+        height: 4.5vw;
+      }
+    }
+
+    #btnDeleteStringCategoryList {
+      width: 8vw;
+      height: 8vw;
+      left: 44vw;
+      top: 2.5vw;
+
+      p {
+        font-size: 4vw;
+        margin-top: 0.5vw;
+      }
+    }
+
+    .buttonAdd {
+      width: 8vw;
+      height: 8vw;
+      left: 66vw;
+      top: 2.5vw;
+
+      p {
+        font-size: 4vw;
+        margin-top: 0.5vw;
+      }
+    }
+
+    .containerForStringListСategory {
+      min-height: 50vw;
+      max-height: 28vw;
+      margin-top: 14vw;
+
+      .listTasks {
+
+        padding: 0.8vw 2vw 1vw 2vw ;
+        height: 6vw;
+        font-size: 3vw;
+        width: 60vw;
+        margin: 2vw 0 1vw 15vw;
+
+        button {
+          width: 6vw;
+          height: 6vw;
+          top: 0;
+          left: -9vw;
+          padding-bottom: 2vw;
+
+          p {
+            font-size: 4vw;
+          }
+        }
+      }
+    }
+
+    .divForInputEnterNewString {
+      width: 60vw;
+      top: 15vw;
+      left: 15vw;
+      height: 6vw;
+
+      input {
+        font-size: 3vw;
+      }
+    }
+
+    img {
+      display: none;
+    }
+  }
+}

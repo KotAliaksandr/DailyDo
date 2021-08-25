@@ -1,0 +1,28 @@
+@media (max-width: 800px) {
+
+  .errorInput {
+    color: $colorText;
+    display: none;
+    position: absolute;
+  }
+
+  .mb-3 {
+    margin-bottom: 6vw !important;
+
+    p {
+      padding: 1vw;
+      width: auto;
+      margin-top: 1vw;
+      font-size: 3vw;
+    }
+  }
+
+  .divForErrorForm {
+    margin: 0.8vw 1vw 0 1vw;
+    width: 55vw;
+
+    .notFoundUser {
+      padding: 1.5vw 4.7vw;
+    }
+  }
+}

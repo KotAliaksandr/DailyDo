@@ -56,7 +56,8 @@ export const deletedivForListMy = () => {
               containerForListСategoriesUser.innerHTML = null;
               deleteListTasksUsers(item.id,'categoriesUser')
                 .then( () => arrForBtnDeleteCategories.shift())
-                .then( () => renderbtnDeleteСategories());
+                .then( () => renderbtnDeleteСategories())
+                .then( () => arrForBtnDeleteCategories <= 0 ? renderListCategories().catch(error => error) : null);
             });
           };
           deleteCategories();
@@ -64,7 +65,6 @@ export const deletedivForListMy = () => {
 
         if (arrForBtnDeleteCategories.length > 0) {
           compareCollections();
-          setTimeout( () =>  renderListCategories().catch(error => error), 1000);
           containerDivForMessageConfirmation.remove();
         };
       };
