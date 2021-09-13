@@ -1,0 +1,147 @@
+@import '../../../src/styles/colors.scss';
+
+.containerForListTasks {
+  display: none;
+  width: 46.9vw;
+  height: auto;
+  background: $mainColor;
+  position: absolute;
+  top: 8vw;
+  left: 26.5vw;
+  border-radius: 10px;
+  padding-top: 1vw;
+  padding-bottom: 2vw;
+
+  h3 {
+    word-wrap: break-word;
+    height: auto;
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: $colorText;
+    margin: 2vw 0 3vw 5vw;
+    width: 15vw;
+  }
+
+  #btnSaveStringCategoryList {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 3.8vw;
+    height: 3.8vw;
+    background: $colorWhite;
+    border-radius: 50%;
+    border: none;
+    left: 33vw;
+    top: 2.5vw;
+
+    p {
+      margin-top: 0.8vw;
+      background-image: url(../../shared/img/dsct2.png);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 2.2vw;
+      height: 1.9vw;
+    }
+  }
+
+  #btnDeleteStringCategoryList {
+    position: absolute;
+    display: none;
+    justify-content: center;
+    width: 3.8vw;
+    height: 3.8vw;
+    background: $colorWhite;
+    border-radius: 50%;
+    border: none;
+    left: 27vw;
+    top: 2.5vw;
+
+    p {
+      @extend %textForBtn;
+
+      margin-top: 0.4vw;
+    }
+  }
+
+  .buttonAdd {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 3.8vw;
+    height: 3.8vw;
+    background: $colorWhite;
+    border-radius: 50%;
+    border: none;
+    left: 39vw;
+    top: 2.5vw;
+
+    p {
+      @extend %textForBtn;
+
+      margin-top: 0.5vw;
+    }
+  }
+
+  .containerForStringListСategory {
+    min-height: 23vw;
+    max-height: 24vw;
+    overflow-y: auto;
+    margin-top: 6.1vw;
+
+    .listTasks {
+      @extend %stylesCategory;
+      @extend %stylesCategoryDefault;
+
+      display: flex;
+      justify-content: space-between;
+      padding-right: 0.5vw;
+      padding-bottom: 1vw;
+      position: relative;
+      width: 32vw;
+      margin: 1vw 0 1vw 10vw;
+
+      button {
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        width: 3vw;
+        height: 3vw;
+        position: absolute;
+        top: 0;
+        left: -5vw;
+        border: none;
+        background: $colorWhite;
+
+        p {
+          @extend %textForBtn;
+        }
+      }
+    }
+  }
+
+  .divForInputEnterNewString {
+    @extend %stylesCategory;
+
+    width: 32vw;
+    position: absolute;
+    top: 7.5vw;
+    left: 10vw;
+
+    input {
+      width: 100%;
+      height: 100%;
+      border: none;
+      font-size: 1.3vw;
+      font-weight: bold;
+    }
+  }
+
+  img {
+    position: fixed;
+    top: 19vw;
+    left: 47vw;
+    width: 24vw;
+    height: 24vw;
+  }
+}

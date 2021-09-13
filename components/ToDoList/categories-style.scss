@@ -1,0 +1,21 @@
+@import '../../src/styles/colors.scss';
+
+%stylesCategory {
+  height: 3vw;
+  background: $colorWhite;
+  border-radius: 5px;
+  font-size: 1.3vw;
+  color: $colorText;
+  cursor: pointer;
+}
+
+%stylesCategoryDefault {
+  padding: 0.5vw 2vw 0.5vw 1vw ;
+  font-weight: bold;
+}
+
+%textForBtn {
+  font-size: 1.8vw;
+  color: $colorText;
+  font-weight: bold;
+}

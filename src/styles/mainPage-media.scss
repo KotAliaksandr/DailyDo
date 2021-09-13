@@ -1,0 +1,104 @@
+@media (max-width: 800px) {
+
+  .fatherDaily {
+
+    &__btnLogOut {
+
+      #btnLogOut {
+        min-width: 10vw;
+        width: auto;
+        height: 8vw;
+        font-size: 4vw;
+        top: 9vw;
+        left: 71vw;
+        padding-bottom: 1vw;
+      }
+
+      #btnBackAccount {
+        min-width: 27vw;
+        height: 8vw;
+        font-size: 4vw;
+        top: 7vw;
+        left: 67vw;
+        padding-bottom: 1vw;
+      }
+
+      #btnBackCategories {
+        min-width: 27vw;
+        height: 8vw;
+        font-size: 4vw;
+        top: 18vw;
+        left: 67vw;
+        padding-bottom: 1vw;
+      }
+    }
+
+    &__headerUserAccount {
+
+      &__forImgUser {
+        left: 7vw;
+        top: 7vw;
+        width: 14vw;
+        height: 14vw;
+      }
+
+      &__forFullNameUser {
+
+        .namePage {
+          left: 23vw;
+          top: 7vw;
+          font-size: 5vw;
+        }
+
+        #userNameForAccount {
+          left: 23vw;
+          top: 14vw;
+          font-size: 4vw;
+          word-wrap: break-word;
+          width: 35vw;
+          height: auto;
+        }
+      }
+    }
+
+    .contentForUser {
+
+      &__toDo {
+        left: 10vw;
+        top: 40vw;
+        padding: 2vw 6vw;
+        font-size: 5vw;
+        width: 60vw;
+        height: auto;
+      }
+
+      &__calendar {
+        left: 10vw;
+        top: 90vw;
+        padding: 2vw 6vw;
+        font-size: 5vw;
+        width: 80vw;
+        height: auto;
+      }
+
+      &__reminder {
+        left: 29vw;
+        top: 65vw;
+        padding: 2vw 6vw;
+        font-size: 5vw;
+        width: 60vw;
+        height: auto;
+      }
+
+      #imgToDo {
+        top: 33.5vw;
+        left: 71vw;
+      }
+
+      #imgReminder {
+        top: 60vw;
+        left: 1vw;
+      }
+    }
+  }
+}

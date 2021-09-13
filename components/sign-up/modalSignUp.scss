@@ -1,0 +1,108 @@
+@import '../../src/styles/colors.scss';
+
+.modal-overlay {
+  overflow-y: auto;
+
+  #windowSignUpBody {
+    width: 42vw;
+    border-radius: 5px;
+    background: $colorWhite;
+    margin: 3vw auto;
+    height: 43vw;
+    @extend %textTypeForElements;
+    font-size: 1.3vw;
+
+    .modal-header {
+      padding: 1vw;
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+      border: none;
+      margin-bottom: 2vw;
+    }
+
+    .modal-body {
+      height: 35vw;
+      padding: 0 1vw;
+
+      .modal-title {
+        margin-left: 4vw;
+        margin-bottom: 1.5vw;
+      }
+
+      .formSignUp {
+        font-size: 1.3vw;
+        height: 35vw;
+
+        .forInputEndLabel {
+          width: 32vw;
+          height: 27vw;
+          margin: auto;
+          background-color: $mainColor;
+          padding: 1vw 4vw;
+          border-radius: 10px;
+          border: none;
+
+          input {
+            font-size: 1.3vw;
+            height: 2.5vw;
+            border-radius: 5px;
+            border: none;
+          }
+
+          .helpForEnterPassword {
+            display: none;
+            position: absolute;
+            width: 10vw;
+            height: 4.5vw;
+            border-radius: 5px;
+            border: solid 1px $hoverMainColor;
+            left: 9vw;
+            top: 25vw;
+            text-align: center;
+
+            p {
+              font-size: 0.8vw;
+              margin: 0;
+              color: $hoverColorText;
+            }
+
+            .passwordStatusInfo {
+              text-align: start;
+              padding-left: 0.7vw;
+
+              p {
+                font-size: 0.75vw;
+                margin: 0;
+                line-height: 0.75vw;
+              }
+            }
+          }
+        }
+
+        .btnSubmit {
+          background-color: $colorWhite;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          button {
+            padding: 0.5vw 1vw;
+            font-size: 1.3vw;
+            margin: 1.5vw 4vw 0.5vw 1vw;
+            width: auto;
+            height: 3vw;
+            background: $mainColor;
+            border-radius: 5px;
+            border: none;
+            font-weight: bold;
+          }
+
+          #submitFormSignUp:hover {
+            background: $hoverMainColor;
+          }
+        }
+      }
+    }
+  }
+}

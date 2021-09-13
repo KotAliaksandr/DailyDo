@@ -1,0 +1,84 @@
+@import '../../src/styles/colors.scss';
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: $colorBackgroundForModal;
+    display: none;
+
+  #windowSignInBody {
+    width: 42vw;
+    border-radius: 5px;
+    background: $colorWhite;
+    margin: 9vw auto;
+    height: 34vw;
+    @extend %textTypeForElements;
+    font-size: 1.3vw;
+
+    .modal-header {
+      padding: 1vw;
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+      border: none;
+    }
+
+    .modal-body {
+      height: 25vw;
+      padding: 1vw;
+
+      .modal-title {
+        margin-left: 4vw;
+        margin-bottom: 1.5vw;
+      }
+
+      .formSignIn {
+        font-size: 1.3vw;
+        height: 18vw;
+
+        .forInputEndLabel {
+          width: 32vw;
+          height: 18vw;
+          margin: auto;
+          background-color: $mainColor;
+          padding: 1vw 4vw;
+          border-radius: 10px;
+          border: none;
+
+          input {
+            font-size: 1.3vw;
+            height: 2.5vw;
+            border-radius: 5px;
+            border: none;
+          }
+        }
+
+        .btnSubmit {
+          background-color: $colorWhite;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          button {
+            padding: 0.5vw 1vw;
+            font-size: 1.3vw;
+            margin: 1.5vw 4vw 1.5vw 1vw;
+            width: auto;
+            height: 3vw;
+            background: $mainColor;
+            border-radius: 5px;
+            border: none;
+            font-weight: bold;
+          }
+
+          #btnForLogin:hover {
+            background: $hoverMainColor;
+          }
+        }
+      }
+    }
+  }
+}

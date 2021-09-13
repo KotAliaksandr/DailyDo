@@ -1,0 +1,15 @@
+@import './colors.scss';
+
+%bigBtn {
+  background-color: $mainColor;
+  position: absolute;
+  top: 14vw;
+  padding: 2vw 6vw;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2vw;
+  color: $colorText;
+  width: 24.7vw;
+  height: 6.8vw;
+}

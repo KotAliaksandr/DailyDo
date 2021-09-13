@@ -1,0 +1,50 @@
+@import '../../src/styles/colors.scss';
+
+.registrHeader {
+  position: relative;
+
+  &__nameVeb {
+
+    h1 {
+      position: absolute;
+      left: 38.6vw;
+      top: 4vw;
+      font-weight: bold;
+      font-size: 6vw;
+      color: $colorText;
+    }
+
+    p {
+      position: absolute;
+      width: 28vw;
+      left: 36vw;
+      top: 13vw;
+      font-weight: bold;
+      font-size: 1.5vw;
+      line-height: 2vw;
+      text-align: center;
+      color: $colorText;
+    }
+  }
+
+  &__btnRegistration {
+
+    #modalSignInBtn {
+      top: 5vw !important;
+      left: 84vw;
+
+      @extend %forBtnRegistration;
+    }
+
+    #modalSignUpBtn {
+      top: 11vw !important;
+      left: 84vw;
+
+      @extend %forBtnRegistration;
+    }
+
+    #modalSignUpBtn:hover, #modalSignInBtn:hover {
+      background: $hoverMainColor;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+@media (max-width: 800px) {
+
+  .modal-overlay {
+
+    #windowSignUpBody {
+      width: 80vw;
+      margin: 15vw auto;
+      height: 109vw;
+      font-size: 4vw;
+
+      .modal-header {
+        padding: 1vw;
+      }
+
+      .modal-body {
+        height: 55vw;
+        padding: 3vw;
+
+        .modal-title {
+          margin-left: 5vw;
+          margin-bottom: 4vw;
+        }
+
+        .formSignUp {
+          font-size: 4vw;
+
+          .forInputEndLabel {
+            width: 65vw;
+            height: 67vw;
+            padding: 3vw 4vw;
+
+            input {
+              font-size: 4vw;
+              height: 6vw;
+            }
+
+            .helpForEnterPassword {
+              width: 16vw;
+              height: 8vw;
+              left: 11vw;
+              top: 71vw;
+
+              p {
+                font-size: 1.6vw;
+              }
+
+              .passwordStatusInfo {
+                padding-left: 1vw;
+
+                p {
+                  font-size: 1.2vw;
+                  line-height: 1.2vw;
+                }
+              }
+            }
+          }
+
+          .btnSubmit {
+
+            button {
+              padding: 0.5vw 1vw;
+              font-size: 4vw;
+              margin: 5vw 4vw 1.5vw 1vw;
+              height: 7vw;
+            }
+          }
+        }
+      }
+    }
+  }
+}
