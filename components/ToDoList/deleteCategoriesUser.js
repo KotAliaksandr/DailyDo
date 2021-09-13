@@ -4,6 +4,7 @@ import { localStorageService } from '../../shared/ls-service';
 import { renderbtnDeleteСategories } from './renderCategories';
 import { confirmationRequest } from './ToDo-Item/todo-item';
 import { hideMessageEnterString } from '../../shared/helpUserEnterStringCategory';
+import { showSpinner, hideSpinner } from '../spinner/spinner';
 
 export const arrForBtnDeleteCategories = [];
 
@@ -25,6 +26,8 @@ export const deletedivForListMy = () => {
 
       answerYes.onclick = () => {
         const containerDivForMessageConfirmation = document.querySelector('.containerDivForMessageConfirmation');
+
+        showSpinner();
 
         const compareCollections = async () => {
           const arrForIdDelete = [];
@@ -57,7 +60,10 @@ export const deletedivForListMy = () => {
               deleteListTasksUsers(item.id,'categoriesUser')
                 .then( () => arrForBtnDeleteCategories.shift())
                 .then( () => renderbtnDeleteСategories())
-                .then( () => arrForBtnDeleteCategories <= 0 ? renderListCategories().catch(error => error) : null);
+                .then( () => arrForBtnDeleteCategories <= 0 ?
+                  renderListCategories()
+                    .then( () => hideSpinner()).catch(error => error) : null
+                );
             });
           };
           deleteCategories();
