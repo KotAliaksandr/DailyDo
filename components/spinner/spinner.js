@@ -1,5 +1,4 @@
 export const showSpinner = () => {
-  console.log('show spinner');
   const body = document.getElementsByTagName('body')[0];
   const wrapperSpinner = document.createElement('div');
   const divSpinner1 = document.createElement('div');
