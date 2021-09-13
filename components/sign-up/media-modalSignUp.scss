@@ -5,7 +5,7 @@
     #windowSignUpBody {
       width: 80vw;
       margin: 15vw auto;
-      height: 108vw;
+      height: 109vw;
       font-size: 4vw;
 
       .modal-header {
@@ -30,25 +30,26 @@
             padding: 3vw 4vw;
 
             input {
-              font-size: 4.5vw;
+              font-size: 4vw;
               height: 6vw;
             }
 
             .helpForEnterPassword {
-              width: 35vw;
-              height: 24vw;
+              width: 16vw;
+              height: 8vw;
               left: 11vw;
               top: 71vw;
 
               p {
-                font-size: 3vw;
+                font-size: 1.6vw;
               }
 
               .passwordStatusInfo {
-                padding-left: 1.5vw;
+                padding-left: 1vw;
 
                 p {
-                  font-size: 2.5vw;
+                  font-size: 1.2vw;
+                  line-height: 1.2vw;
                 }
               }
             }

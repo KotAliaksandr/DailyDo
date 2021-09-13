@@ -14,28 +14,28 @@ const passwordStatusCharacters = document.querySelector('.passwordStatusCharacte
 
 const lowerCaseCheck = password => {
   const result = REGEXP.LOWER_CASE.test(password);
-  result ? validationLowercase.style.color = 'blue' : validationLowercase.style.color = 'grey';
+  result ? validationLowercase.style.color = '#4D5352' : validationLowercase.style.color = '#9fa9c3';
 
   return REGEXP.LOWER_CASE.test(password);
 };
 
 const upperCaseCheck = password => {
   const result = REGEXP.UPPER_CASE.test(password);
-  result ? validationUppercase.style.color = 'blue' : validationUppercase.style.color = 'grey';
+  result ? validationUppercase.style.color = '#4D5352' : validationUppercase.style.color = '#9fa9c3';
 
   return result;
 };
 
 const numberCheck = password => {
   const result = REGEXP.NUMBERS.test(password);
-  result ? validationNumbers.style.color = 'blue' : validationNumbers.style.color = 'grey';
+  result ? validationNumbers.style.color = '#4D5352' : validationNumbers.style.color = '#9fa9c3';
 
   return result;
 };
 
 const eightCharactersCheck = password => {
   const result = REGEXP.EIGHT_CHARACTERS.test(password);
-  result ? passwordStatusCharacters.style.color = 'blue' : passwordStatusCharacters.style.color = 'grey';
+  result ? passwordStatusCharacters.style.color = '#4D5352' : passwordStatusCharacters.style.color = '#9fa9c3';
 
   return result;
 };
@@ -62,15 +62,19 @@ export const passwordStrengthController = password => {
   switch (passwordStrengthNum) {
     case 1:
       validationStatus.innerText = 'Weak password';
+      validationStatus.style.color = '#9fa9c3';
       break;
     case 2:
       validationStatus.innerText = 'Moderate password';
+      validationStatus.style.color = '#9fa9c3';
       break;
     case 3:
       validationStatus.innerText = 'Strong password';
+      validationStatus.style.color = '#9fa9c3';
       break;
     case 4:
       validationStatus.innerText = 'Complete password';
+      validationStatus.style.color = '#4D5352';
       break;
     default:
       break;

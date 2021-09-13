@@ -1,7 +1,11 @@
 import { signIn } from '../../api/api-handlers';
-import { passwordStrengthControllerSignIn } from '../../shared/validation-passwordSignIn';
-import { emailValidation } from '../../shared/validation';
-import { showEmailErrorMesage, hideEmailErrorMesage } from '../../shared/helpUserSignIn';
+import { emailValidation, passwordLengthValidation } from '../../shared/validation';
+import {
+  showEmailErrorMesage,
+  hideEmailErrorMesage,
+  showErrorMesagePasswordLength,
+  hideErrorMesagePasswordLength
+  } from '../../shared/helpUserSignIn';
 
 export const signInHandlers = () => {
   const formSignIn = document.querySelector('.formSignIn');
@@ -22,17 +26,25 @@ export const signInHandlers = () => {
 
   formSignIn.addEventListener('submit', event => {
     event.preventDefault();
-    const password_strength_block = document.querySelector('.helpForEnterPasswordSignIn');
     const email = emailInput.value;
     const password = passwordInput.value;
-
-    password_strength_block.style.display = 'none';
 
     signIn(email,password)
   });
 
+  passwordInput.onblur = () => {
+    !passwordLengthValidation(passwordInput.value) ? showErrorMesagePasswordLength() : hideErrorMesagePasswordLength();
+  };
+
   passwordInput.oninput = () => {
-    fieldsForm.password.isValid = passwordStrengthControllerSignIn(passwordInput.value);
+
+    if (passwordLengthValidation(passwordInput.value)) {
+      fieldsForm.password.isValid = true;
+      hideErrorMesagePasswordLength();
+    } else {
+      fieldsForm.password.isValid = false;
+    };
+
     checkValidityForm();
   };
 
