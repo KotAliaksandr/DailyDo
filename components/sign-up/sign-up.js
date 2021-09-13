@@ -37,6 +37,8 @@ export const signUpHandlers = () => {
       password: passwordInput.value
     };
 
+    console.log(user.password);
+
     password_strength_block.style.display = 'none';
 
     signUp(user);

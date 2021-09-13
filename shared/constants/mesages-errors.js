@@ -1,5 +1,5 @@
 export const ERROR_MESAGES = {
-  password_length: `Invalid password`,
+  password_length: `Please, enter correct password`,
 
   email: `Please, enter correct e-mail`,
 
