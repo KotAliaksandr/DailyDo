@@ -2,12 +2,11 @@ export const workCalendar = () => {
   const nowDate = new Date();
   const nowMonth = nowDate.getMonth();
   const nowYear = nowDate.getFullYear();
-  const container = document.getElementById('month-calendar');
-  const monthContainer = container.getElementsByClassName('month-name')[0];
-  const yearContainer = container.getElementsByClassName('year-name')[0];
-  const daysContainer = container.getElementsByClassName('days')[0];
-  const prev = container.getElementsByClassName('prev')[0];
-  const next = container.getElementsByClassName('next')[0];
+  const monthContainer = document.querySelector('.month-name');
+  const yearContainer = document.querySelector('.year-name');
+  const daysContainer = document.querySelector('.days');
+  const prev = document.querySelector('.prev');
+  const next = document.querySelector('.next');
   const monthName = [
     'January','February','March','April','May','June',
     'July','August','September','October','November','December'
@@ -16,42 +15,52 @@ export const workCalendar = () => {
   const setMonthCalendar = (year, month) => {
     const monthDays = new Date(year, month + 1, 0).getDate();
     const monthPrefix = new Date(year, month, 0).getDay();
-    let monthDaysText = '';
     const arrForDays = [ ...Array(monthDays).keys() ];
     const arrForEmptyCell = [ ...Array(monthPrefix + 1).keys() ];
+
     monthContainer.textContent = monthName[month];
     yearContainer.textContent = year;
     daysContainer.innerHTML = '';
 
     arrForEmptyCell.forEach((item) => {
-
-      if (item > 0) {
-        monthDaysText += '<li></li>';
-      };
+      const dateLi = document.createElement('li');
+      item > 0 ?  daysContainer.append(dateLi) : null;
     });
 
     arrForDays.forEach((item) => {
-      monthDaysText += `<li>${item + 1}</li>`;
-    });
+      const dateLiValue = document.createElement('li');
 
-    daysContainer.innerHTML = monthDaysText;
+      daysContainer.append(dateLiValue)
+      dateLiValue.innerHTML = item + 1;
+
+      if (month == nowMonth && year == nowYear){
+        nowDate.getDate() == dateLiValue.innerHTML ? dateLiValue.classList.add('dateNow') : null;
+      };
+    });
   };
 
   setMonthCalendar(nowYear,nowMonth);
 
+  const getCurMonth = monthPut => {
+    const curDate = new Date(yearContainer.textContent, monthName.indexOf(monthContainer.textContent));
+    const getCurDate = () => {
+      curDate.setMonth(curDate.getMonth() - monthPut);
+    };
+
+    const getCurMonthPut = () => {
+      const curYear = curDate.getFullYear();
+      const curMonth = curDate.getMonth();
+      setMonthCalendar(curYear,curMonth);
+    };
+    getCurDate();
+    getCurMonthPut();
+  };
+
   prev.onclick = () => {
-    let curDate = new Date(yearContainer.textContent,monthName.indexOf(monthContainer.textContent));
-    curDate.setMonth(curDate.getMonth() - 1);
-    const curYear = curDate.getFullYear();
-    const curMonth = curDate.getMonth();
-    setMonthCalendar(curYear,curMonth);
+    getCurMonth(1);
   };
 
   next.onclick = () => {
-    let curDate = new Date(yearContainer.textContent,monthName.indexOf(monthContainer.textContent));
-    curDate.setMonth(curDate.getMonth() + 1);
-    const curYear = curDate.getFullYear();
-    const curMonth = curDate.getMonth();
-    setMonthCalendar(curYear,curMonth);
+    getCurMonth(-1);
   };
 };

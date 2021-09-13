@@ -6,6 +6,7 @@ import { showNotFoundUserError } from '../shared/helpUserSignIn';
 import { showErrorSignUpSubmit } from '../shared/helpUserSignUp';
 import { localStorageService } from '../shared/ls-service';
 import { routes } from '../shared/constants/routes';
+import { showSpinner, hideSpinner } from '../components/spinner/spinner';
 
 export const initApi = () => {
   firebase.initializeApp(FIREBASE_CONFIG);
@@ -52,20 +53,27 @@ export const getUser = () => {
 
 export const signIn = (email, password) => {
 
+  showSpinner();
+
   return axios.post(authUrl, {
     email,
     password,
     returnSecureToken: true
   })
   .then(response => {
+
     if (response) {
       const { idToken: token, localId } = response.data;
       localStorageService.setToken(token);
       localStorageService.setUID(localId);
       getUser().then( () => window.location.href = routes.mainPage);
+      hideSpinner();
     };
   })
-  .catch(err => showNotFoundUserError(err));
+  .catch(err => {
+    hideSpinner();
+    showNotFoundUserError(err);
+  });
 };
 
 export const createAuthDataUser = (email, password) => {
@@ -94,11 +102,15 @@ export const createUser = user => {
 export const signUp = async user => {
   const { email, password } = user;
 
+  showSpinner();
+
   try {
     await createAuthDataUser(email, password);
     await createUser(user).then( response =>localStorageService.setUserID(response.data.name));
     await signIn(email, password);
+    hideSpinner();
   } catch (err) {
+    hideSpinner();
     showErrorSignUpSubmit(err);
   };
 };

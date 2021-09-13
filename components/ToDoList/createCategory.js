@@ -6,6 +6,7 @@ import { createListTasksUsers, getListTasksUsers } from '../../api/api-handlers'
 import { arrForBtnDeleteCategories } from './deleteCategoriesUser';
 import { renderbtnDeleteСategories } from './renderCategories';
 import { hideMessageEnterString } from '../../shared/helpUserEnterStringCategory';
+import { showSpinner, hideSpinner } from '../spinner/spinner';
 
 export const renderListCategories = async () => {
   const containerForListСategoriesUser = document.querySelector('.containerForListСategoriesUser');
@@ -17,7 +18,11 @@ export const renderListCategories = async () => {
 
   containerForListСategoriesUser.innerHTML = null;
 
-  await getListTasksUsers('categoriesUser').then(response => listsCategories = response);
+  await getListTasksUsers('categoriesUser')
+    .then(response => {
+      showSpinner();
+      return listsCategories = response
+    });
   await getListTasksUsers('todolist').then(response => listTasks = response);
 
   listsCategories.forEach(list => {
@@ -87,8 +92,7 @@ export const renderListCategories = async () => {
         localStorageService.deleteIdCategoriesBoard();
         localStorageService.setIdListTasksBoard(textCategory.innerText);
 
-        renderListTasksUsers()
-          .catch(error => error);
+        renderListTasksUsers().catch(error => error);
 
         workToDoCategoryListDefault();
         renderBtnDeleteTasks();
@@ -96,6 +100,7 @@ export const renderListCategories = async () => {
       });
     };
   });
+  setTimeout( () => hideSpinner(),500);
 };
 
 export const categoriesHandler = () => {

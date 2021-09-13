@@ -3,6 +3,7 @@ import { createListTasksUsers } from '../../../api/api-handlers';
 import { inputCategoryValidation } from '../../../shared/validation';
 import { arrforListId } from './todo-item';
 import { showMessageEnterStringForTasks, hideMessageEnterStringForTasks } from '../../../shared/helpUserEnterStringCategory';
+import { showSpinner, hideSpinner } from '../../spinner/spinner';
 
 export const toDoHandler = () => {
   const btnSaveStringCategoryList = document.getElementById('btnSaveStringCategoryList');
@@ -22,15 +23,16 @@ export const toDoHandler = () => {
   };
 
   btnSaveStringCategoryList.addEventListener('click', event => {
-    event.preventDefault();
     const nameListTasks = document.getElementById('nameListTasks');
 
     if (inputCategoryValidation(inputEnterNewString.value)) {
       listTasks.tasks = inputEnterNewString.value;
       listTasks.nameCategory = nameListTasks.innerText;
 
+      showSpinner();
+
       createListTasksUsers(listTasks, 'todolist')
-        .then( () => renderListTasksUsers())
+        .then( () => renderListTasksUsers().then( () => hideSpinner()))
         .then( () => arrforListId.length = 0)
         .then( () => renderBtnDeleteTasks());
 
